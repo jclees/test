@@ -1,0 +1,74 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>我的团队</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/style2.css" />
+        <style>
+        body{
+            background:#fff;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="myTeam">
+            <div class="team_tit">
+                <a href="javascript:;" class="screen_btn" onclick="bindScreen(this)">筛选<span class="arrow_icon"></span></a>
+                <ul class="screen_list">
+                    <li class="clearfix">
+                        <span>全部</span>
+                        <span>4</span>
+                    </li>
+                    <li class="clearfix">
+                        <span>代言人</span>
+                        <span>1</span>
+                    </li>
+                    <li class="clearfix">
+                        <span>代言人</span>
+                        <span>2</span>
+                    </li>
+                    <li class="clearfix">
+                        <span>代言人</span>
+                        <span>2</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="team_header clearfix">
+                <li>昵称</li>
+                <li>职位</li>
+                <li>团队人数</li>
+                <li>营业额</li>
+            </ul>
+            <ul class="team_con">
+                <li class="clearfix">
+                    <p>图图</p>
+                    <p>代言人</p>
+                    <p>1人</p>
+                    <p>1234元</p>
+                </li>
+                <li class="clearfix">
+                    <p>图图</p>
+                    <p>代言人</p>
+                    <p>1人</p>
+                    <p>1234元</p>
+                </li>
+                <li class="clearfix">
+                    <p>图图</p>
+                    <p>代言人</p>
+                    <p>1人</p>
+                    <p>1234元</p>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript">
+             function bindScreen(t){
+                $(".screen_list").toggle()
+             }
+        </script>   
+    </body>
+</html>
