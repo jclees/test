@@ -1,185 +1,276 @@
-(function () {
-    // slideMenu()
-    // scrollTop()
-})()
-var styleFlag = true
-function slideMenu() {
-    var slideout = new Slideout({
-        'panel': document.getElementById('panel'),
-        'menu': document.getElementById('menu'),
-        'padding': 256,
-        'tolerance': 70
-    });
-    $(".openMenu").on('click', function () {
-        slideout.open();
-        setTimeout(function () {
-            $(".panel").addClass("clolsemenu")
-        }, 500)
-        $('.hide').hide()
-    })
-    $("body").on('click', '.clolsemenu', function () {
-        slideout.close();
-        $(".clolsemenu").removeClass('clolsemenu')
-        $('.hide').show()
-    });
-    slideout.disableTouch();
-}
-// function scrollTop(imgUrl) {
-//     $('.scroll_top').remove()
-//     $(window).scroll(function () {
-//         var scroll = $(window).scrollTop()
-//         if (scroll > 200) {
-//             $('.scroll_top').remove()
-//             var newHtml = '<section class="scroll_top"><img src="' + imgUrl + '" /></section>'
-//             $('body').append(newHtml)
-//         } else {
-//             $('.scroll_top').remove()
-//         }
-//         $('.scroll_top').on('click', function () {
-//             $('body,html').animate({ scrollTop: 0 }, 500);
-//         })
-//     })
-// }
-window.onload = function () {
-    alert(111111111111111111112222222)
-    $(".signBtn").on("click", function () {
-        $(this).addClass('active')
-    })
-    $(".unfold").on("click", function () {
-        var tempintro = $(this).children("span").text()
-        var intro = tempintro.substring(0, 37)
-        console.log(intro)
-    })
-    $(".openSign").on("click", function () {
-        // $(".layer").addClass("fadeIn")
-        // setTimeout(() => {
-        $(".layer").show()
-        // }, 300);
-    })
-    $(".closeSign").on("click", function () {
-        // $(".layer").addClass("fadeOut")
-        // setTimeout(() => {
-        $(".layer").hide()
-        // }, 300);
-    })
-    $(".goReadingBook").on("click", function () {
-        window.location.href = 'readingbook.html'
-    })
-    $(".goBookQuan").on("click", function () {
-        window.location.href = 'mybookquan.html'
-    })
-    $(".openMl").on("click", function () {
-        $(".ml_list").removeClass("slideOutLeft").addClass("slideInLeft")
-        setTimeout(() => {
-            $(".main_mlwrap").show()
-        }, 300);
-    })
-    $(".closeMl").on("click", function () {
-        $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
-        setTimeout(() => {
-            $(".main_mlwrap").hide()
-        }, 300);
-    })
-    $(".openSet").on("click", function () {
-        $(".set_con").removeClass("slideOutDown").addClass("slideInUp")
-        setTimeout(() => {
-            $(".set_wrap").show()
-        }, 300);
-    })
-    $(".closeSet").on("click", function () {
-        $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
-        setTimeout(() => {
-            $(".set_wrap").hide()
-        }, 300);
-    })
-    $(".openPlmsg").on("click", function () {
-        $(".plmsg_con").removeClass("slideOutDown").addClass("slideInUp")
-        setTimeout(() => {
-            $(".plmsg_wrap").show()
-        }, 300);
-    })
-    $(".closePlmsg").on("click", function () {
-        $(".plmsg_con").removeClass("slideInUp").addClass("slideOutDown")
-        setTimeout(() => {
-            $(".plmsg_wrap").hide()
-        }, 300);
-    })
-    $(".openLookplWrap").on("click", function () {
-        $(".lookpl_plbtn").slideDown()
-        $(".lookpl_wrap").removeClass("slideOutDown").addClass("slideInUp")
-        setTimeout(() => {
-            $(".lookpl_wrap").show()
-        }, 300);
-    })
-    $(".closeLookplWrap").on("click", function () {
-        $(".lookpl_plbtn").hide()
-        $(".lookpl_wrap").removeClass("slideInUp").addClass("slideOutDown")
-        setTimeout(() => {
-            $(".lookpl_wrap").hide()
-        }, 300);
-    })
-    $(".changeFont").on("click", function () {
-        var id = $(this).attr('data-id')
-        //获取para的字体大小
-        var thisEle = $(".book_con > p").css("font-size");
-        //parseFloat的第二个参数表示转化的进制，10就表示转为10进制
-        var textFontSize = parseFloat(thisEle, 10);
-        //javascript自带方法
-        var unit = thisEle.slice(-2); //获取单位
-        if (id == 0) {
-            if (textFontSize == 12) {
-                return false
-            }
-            textFontSize -= 2;
+<!DOCTYPE html>
+<html lang="en">
 
-        } else if (id == 1) {
-            if (textFontSize == 24) {
-                return false
-            }
-            textFontSize += 2;
-        }
-        //设置para的字体大小
-        $(".book_con > p").css("font-size", textFontSize + unit);
-    })
-    $(".changeNight").on("click", function () {
-        if (styleFlag) {
-            $(".skin").addClass("dark-box")
-            $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
-            setTimeout(() => {
-                $(".set_wrap").hide()
-            }, 300);
-            styleFlag = false
-        } else {
-            $(".skin").removeClass("dark-box")
-            $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
-            setTimeout(() => {
-                $(".set_wrap").hide()
-            }, 300);
-            styleFlag = true
-        }
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+</head>
 
-    })
-    $(".bookq_tabs > a").on("click", function () {
-        var index = $(this).index()
-        $(this).addClass("active").siblings().removeClass("active")
-        $(".bookq_con > div").eq(index).show().siblings().hide()
-    })
+<body>
+    <!-- 签到 -->
+    <div class="layer animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <img src='images/sign_bg.png' class="layer_main_cover_bgpic">
+                <div class="layer_content">
+                    <div class="total_day">已累计签到
+                        <span class="day_num">8 </span>天</div>
+                    <div class="sign_tip">签到多多，奖励多多</div>
+                    <div class="sign_day_list">
+                        <div class="has_day">
+                            <div class="day_num">1</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <img src='images/sign_success.png' class="sign_success">
+                        </div>
+                        <div class="out_day">
+                            <div class="day_num">2</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div class="out_day_txt">漏签</div>
+                        </div>
+                        <div class="cur_day">
+                            <div class="day_num">3</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">4</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">5</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">6</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">7</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                    </div>
+                    <div>累计签到送大礼</div>
+                    <div class="total_day_list">
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_quan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                    </div>
+                    <div class="layer_btn_group">
+                        <button class="signBtn">立即签到</button>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeSign">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 目录 -->
+    <div class="main_mlwrap" catchtouchmove="myCatchTouch">
+        <div class="cover closeMl"></div>
+        <div class="ml_list animated">
+            <div class="active">第一章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第三章：死亡游戏</div>
+            <div>第四章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="main_book_intro">
+            <div class="book_cover">
+                <img src='images/book_cover.png'>
+            </div>
+            <div class="book_name">暗界神使</div>
+            <div class="book_author">火红森林</div>
+            <div class="book_intro unfold">
+                <span>大学毕业生姜爻在追查友人失踪案件中,意外得知自己本应在十年前就已死去的事实..</span>
+                <div class="icon_unfold">
+                    <img src='images/icon_unfold.png'>
+                </div>
+            </div>
+        </div>
+        <div class="main_piece clearfix">
+            <div class="fl" >
+                <a href="javascript:;" class="openMl">
+                    <img src='images/icon_ml.png' class="icon_ml">
+                    <div class="txt">查看目录</div>
+                </a>
+            </div>
+            <div class="fl openSign">
+                <img src='images/icon_sign.png' class="icon_sign">
+                <div class="txt">签到领书券</div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="main_nav">
+        <div class="nav_group clearfix">
+            <div class="fl goBookQuan">
+                <img src='images/icon_msg.png' class="icon_myshuq">
+                <div class="txt">我的书圈</div>
+            </div>
+            <div class="fl goReadingBook">
+                <div class="txt">免费阅读</div>
+            </div>
+            <div class="fl goPerson">
+                <img src='images/icon_user.png' class="icon_myinfo">
+                <div class="txt">个人中心</div>
+            </div>
+        </div>
+    </div>
+    <!-- <nav class="main_nav">
+        <div class="nav_group clearfix">
+            <a class="fl" onclick="changFont(0)">
+                <span class="icon icon_myshuq"></span>
+                <p>我的书圈</p>
+            </a>
+            <a class="fl ">
+                <p>目录</p>
+            </a>
+            <a class="fl" onclick="changFont(1)">
+                <span class="icon icon_myinfo"></span>
+                <p>个人中心</p>
+            </a>
+        </div>
+    </nav> -->
+    <!--     
+    <nav class="main_nav hide">
+        <div class="nav_group clearfix">
+            <a class="fl" onclick="changFont(0)">
+                <span class="icon icon_myshuq"></span>
+                <p>我的书圈</p>
+            </a>
+            <a class="fl openMenu">
+                <p>免费阅读</p>
+            </a>
+            <a class="fl" onclick="changFont(1)">
+                <span class="icon icon_myinfo"></span>
+                <p>个人中心</p>
+            </a>
+        </div>
+    </nav>
+    <nav id="menu" class="menu">
+        <a href="javascript:;">第一章 朝气蓬勃</a>
+        <a href="javascript:;">第二章 骨文</a>
+        <a href="javascript:;">第三章 祭灵</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+    </nav>
 
-    $(window).scroll(function () {
-        // $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
-        // setTimeout(() => {
-        //     $(".set_wrap").hide()
-        // }, 300);
-    })
-    //滚动时保存滚动位置
-    // $(window).scroll(function(){
-    //     if($(document).scrollTop()!=0){
-    //       sessionStorage.setItem("offsetTop", $(window).scrollTop());
-    //     }
-    //   });
-    //   //onload时，取出并滚动到上次保存位置
-    //   window.onload = function(){
-    //     var offset = sessionStorage.getItem("offsetTop");
-    //     $(document).scrollTop(offset);
-    //   };
-}
+    <main id="panel" class="panel">
+        <section class="book_con">
+            <p>祭台以巨石砌成，很开阔，紧邻折断的老柳树而建，此时上面堆积满了猛兽，如同一座小山似的。</p>
+            <p>鲜红的兽血染红了巨石台，沿着石面上的刻图而淌，红艳艳，加之巨兽粗长的兽毛、寒光闪烁的鳞片以及狰狞的巨角等，触目惊心，有一种惨烈的洪荒气息扑面而来。</p>
+            <p>在老族长的带领下，石村的男女老少一起祷告，请求柳木庇护，这是一场严肃的祭祀过程，而这也是一种惯例，每次狩猎回来都要进行。</p>
+            <p>焦黑的树体如同过去一样寂静，并没有一点反应，一如往日不曾取用祭品，但是很多村人却知道，它有灵！</p>
+            <p>终于，祭祀完毕，人们都长出了一口气，重新浮上了喜悦的笑容，开始搬这些猛兽的尸体，准备去放血、切割。</p>
+            <p>“很多年了，祭灵都没有动过一次供品，还需要每次都进行祭祀吗？”一个少年小声咕哝。</p>
+            <p>“臭小子你乱说什么！”他的父亲怒瞪铜铃大眼，抡起蒲扇大的手就要揍他。</p>
+        </section>
+
+    </main> -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <!-- <script src="js/zepto.min.js"></script> -->
+    <!-- 侧滑插件 -->
+    <!-- <script src="dist/slideout.min.js"></script> -->
+    <script type="text/javascript" src="js/common.js"></script>
+    <!-- <script type="text/javascript" src="js/rem.js"></script> -->
+    <!-- 侧滑插件 -->
+    <script>
+        $(function(){
+            alert(222222222333323)
+        })
+    </script>
+</body>
+
+</html>
