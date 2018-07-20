@@ -42,6 +42,7 @@ function slideMenu() {
 // }
 
 $(".signBtn").on("click", function () {
+    alert(111111111)
     $(this).addClass('active')
  })
  $(".unfold").on("click", function () {
@@ -50,12 +51,15 @@ $(".signBtn").on("click", function () {
      console.log(intro)
  })
  $(".openSign").on("click", function () {
+     alert(333333333333333333)
+     
      // $(".layer").addClass("fadeIn")
      // setTimeout(() => {
          $(".layer").show()
      // }, 300);
  })
  $(".closeSign").on("click", function () {
+     alert(222222222222222)
      // $(".layer").addClass("fadeOut")
      // setTimeout(() => {
          $(".layer").hide()
