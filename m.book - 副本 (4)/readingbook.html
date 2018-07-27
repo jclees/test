@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -119,6 +119,21 @@
     <script>
         var styleFlag = true;
 
+        var ModalHelper = (function (bodyCls) {
+            var scrollTop;
+            return {
+                afterOpen: function () {
+                    scrollTop = document.scrollingElement.scrollTop;
+                    document.body.classList.add(bodyCls);
+                    document.body.style.top = -scrollTop + 'px';
+                },
+                beforeClose: function () {
+                    document.body.classList.remove(bodyCls);
+                    // scrollTop lost after set position:fixed, restore it back.
+                    document.scrollingElement.scrollTop = scrollTop;
+                }
+            };
+        })('modal-open');
         $(function () {
             var oilgunTemp = window.localStorage.getItem("scrolltop");
             // alert(oilgunTemp)
@@ -171,14 +186,14 @@
             }, 300);
         })
         $(".openMl").on("click", function () {
-            $("body").css("overflow-y","hidden")
+            ModalHelper.afterOpen()
             $(".ml_list").removeClass("slideOutLeft").addClass("slideInLeft")
             setTimeout(() => {
                 $(".main_mlwrap").show()
             }, 300);
         })
         $(".closeMl").on("click", function () {
-            $("body").css("overflow-y","")
+            ModalHelper.beforeClose()
             $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
             setTimeout(() => {
                 $(".main_mlwrap").hide()
