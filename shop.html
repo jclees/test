@@ -18,6 +18,13 @@
 </head>
 
 <body>
+    <!-- 分享送积分 -->
+    <div class="share_layer">
+        <div class="cover closeShare"></div>
+        <div class="share_con">
+            <img src="images/share_tips.png" alt="">
+        </div>
+    </div>
     <!-- 主要内容 -->
     <div class="main_shop">
         <div class="pd_wrap clearfix">
@@ -47,12 +54,17 @@
             </div>
         </div>
         <div class="share_btn">
-            <a href="javascript:;">分享</a>
+            <a href="javascript:;"  class="openShare">分享</a>
         </div>
     </div>
     <script src="js/jquery-1.8.0.min.js"></script>
     <script>
-
+        $(".openShare").on("click", function () {
+            $(".share_layer").show()
+        })
+        $(".closeShare").on("click", function () {
+            $(".share_layer").hide()
+        })
     </script>
 </body>
 
