@@ -1568,6 +1568,7 @@ margin: auto;
   background: #fff;
   margin-right: 4vw;
   border: .2vw solid #f0f0f0;
+  margin-bottom: 5.7vw;
 }
 .main_shop .pd_wrap > div:nth-child(even){
   margin-right: 0;
@@ -1635,7 +1636,7 @@ margin: auto;
 }
 .main_shop .share_btn{
   text-align: center;
-  margin-top: 2.7vw;
+  margin-bottom: 10vw;
 }
 .main_shop .share_btn a{
   display: inline-block;
