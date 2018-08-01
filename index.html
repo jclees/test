@@ -31,77 +31,50 @@
         <div class="layer_cover"></div>
         <div class="layer_main">
             <div class="layer_main_cover">
-                <img src='images/sign_bg.png' class="layer_main_cover_bgpic">
                 <div class="layer_content">
-                    <div class="total_day">已累计签到
-                        <span class="day_num">8 </span>天</div>
-                    <div class="sign_tip">签到多多，奖励多多</div>
+                    <div class="sign_tip">温馨提示</div>
                     <div class="sign_day_list">
-                        <div class="has_day">
+                        <div>
                             <div class="day_num">1</div>
                             <img src='images/sign_gold.png' class="sign_gold">
-                            <img src='images/sign_success.png' class="sign_success">
+                            <div>+2</div>
                         </div>
-                        <div class="out_day">
+                        <div>
                             <div class="day_num">2</div>
-                            <img src='images/sign_gold.png' class="sign_gold">
-                            <div class="out_day_txt">漏签</div>
+                            <img src='images/sign_cur_gold.png' class="sign_gold">
+                            <div>+2</div>
                         </div>
                         <div class="cur_day">
                             <div class="day_num">3</div>
                             <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+3</div>
                         </div>
                         <div>
                             <div class="day_num">4</div>
                             <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
                         </div>
                         <div>
                             <div class="day_num">5</div>
                             <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
                         </div>
                         <div>
                             <div class="day_num">6</div>
+
                             <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
                         </div>
                         <div>
                             <div class="day_num">7</div>
                             <img src='images/sign_gold.png' class="sign_gold">
-                        </div>
-                    </div>
-                    <div>累计签到送大礼</div>
-                    <div class="total_day_list">
-                        <div>
-                            <div class="total_day_list_box">
-                                <img src='images/sign_quan.png' class="sign_quan">
-                                <div>100书券</div>
-                            </div>
-                            <div class="txt">已领取</div>
-                        </div>
-                        <div>
-                            <div class="total_day_list_box">
-                                <img src='images/sign_curquan.png' class="sign_quan">
-                                <div>100书券</div>
-                            </div>
-                            <div class="txt">已领取</div>
-                        </div>
-                        <div>
-                            <div class="total_day_list_box">
-                                <img src='images/sign_curquan.png' class="sign_quan">
-                                <div>100书券</div>
-                            </div>
-                            <div class="txt">已领取</div>
-                        </div>
-                        <div>
-                            <div class="total_day_list_box">
-                                <img src='images/sign_curquan.png' class="sign_quan">
-                                <div>100书券</div>
-                            </div>
-                            <div class="txt">已领取</div>
+                            <div>+10</div>
                         </div>
                     </div>
                     <div class="layer_btn_group">
-                        <button class="signBtn">立即签到</button>
+                        <button class=" button1 ">立即签到</button>
                     </div>
+                    <div class="total_day">本周累计签到3天，每周一重置签到奖励</div>
                 </div>
             </div>
             <a href="javascript:;" class="closeSign">
@@ -225,6 +198,9 @@
         })
         $(".closeShare").on("click", function () {
             $(".share_layer").hide()
+        })
+        $(".closeMorebook").on("click", function () {
+            $(".morebook_wrap").hide()
         })
         $(".signBtn").on("click", function () {
             $(".layer").hide()
