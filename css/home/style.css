@@ -92,7 +92,7 @@ img{
   font-size: 2.4vw;
   position: absolute;
   bottom: 2.3%;
-  right: 20%;
+  right: 13%;
 }
 .index_main .zp_wrap .index_main_nav{
   width: 100%;
@@ -276,7 +276,7 @@ img{
 @media screen and (max-width: 320px) {
   .index_main .zp_wrap .top_tit .cj_nums{
     bottom: 2%;
-    right: 16%;
+    right: 10%;
   }
   .index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con .pd_intro{
     width: 52vw;
