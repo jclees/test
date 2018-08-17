@@ -85,12 +85,13 @@ img{
 }
 .index_main .zp_wrap .top_tit .top_tit_img{
   width: 87.2vw;
+  margin: 0 auto;
 }
 .index_main .zp_wrap .top_tit .cj_nums{
   color: #fff;
   font-size: 2.4vw;
   position: absolute;
-  bottom: 3%;
+  bottom: 2.3%;
   right: 20%;
 }
 .index_main .zp_wrap .index_main_nav{
