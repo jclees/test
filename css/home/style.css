@@ -79,7 +79,8 @@ img{
 }
 .index_main .zp_wrap .top_tit{
   width: 100%;
-  margin: 23.1vw auto 0;
+  margin: 0 auto 0;
+  padding-top: 23.1vw;
   position: relative;
 }
 .index_main .zp_wrap .top_tit .top_tit_img{
@@ -89,14 +90,13 @@ img{
   color: #fff;
   font-size: 2.4vw;
   position: absolute;
-  bottom: 1.3vw;
-  right: 17.8vw;
+  bottom: 3%;
+  right: 20%;
 }
 .index_main .zp_wrap .index_main_nav{
   width: 100%;
   position: relative;
   top: -22vw;
-  left: 1vw;
   z-index: 2;
 }
 .index_main .zp_wrap .index_main_nav .bar_btnbg{
@@ -133,20 +133,16 @@ img{
 .index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_side{
   background: #147147;
   border-radius: 0 0 37px 0;
-  padding: 1vw 7vw;
   font-size: 2.4vw;
-  height: 10vw;
-  position: relative;
   color: #fff;
-  left: -4vw;
-  padding: 5.7vw 9vw 0 7vw;
-  top: -5.5vw;
+  padding: .3vw 5vw .3vw 4vw;
+  position: relative;
   display: inline-block;
+  top: -2px;
 }
 .index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con{
   width: 100%;
-  margin-top: -3vw;
-  padding: 0 2vw 3vw 2vw;
+  padding: 3vw 2vw;
 }
 .pd_list_box_con > div{
   float: left;
@@ -181,8 +177,8 @@ img{
   position: relative;
   top: -4vw;
 }
-.index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con .pd_rmb .rmb_nums .pd_rmb_cool{
-  position: absolute;
+.index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con .pd_rmb .rmb_nums .pd_rmb_cool img{
+  /* position: absolute;
   left: 10vw;
   top:-10vw;
   background: #f74d02;
@@ -192,7 +188,11 @@ img{
   width: 9.3vw;
   height: 9.3vw;
   border-radius:100px 100px 100px 0px;
-  display: inline-block;
+  display: inline-block; */
+  width: 9.2vw;
+  position: absolute;
+  left: 10vw;
+  top:-7vw;
 }
 .index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con .pd_rmb .main_rmb{
   color: #fd6e02;
@@ -269,4 +269,15 @@ img{
 .sovip_btn{
   width: 64.5vw;
   margin: 15% auto;
+}
+
+/* 适配小屏 */
+@media screen and (max-width: 320px) {
+  .index_main .zp_wrap .top_tit .cj_nums{
+    bottom: 2%;
+    right: 16%;
+  }
+  .index_main .pd_wrap .pd_list .pd_list_box .pd_list_box_con .pd_intro{
+    width: 52vw;
+  }
 }
