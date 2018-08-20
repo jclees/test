@@ -6,6 +6,12 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
     <link rel="stylesheet" type="text/css" href="css/home/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/home/style.css" />
     <style>
@@ -91,10 +97,10 @@
                     <a href="javascript:;" class="yzm_btn" onclick="settime(this)">发送验证码</a>
                 </div>
                 <div class="inp_box">
-                    <input type="text" placeholder="省、市、区县">
+                    <input type="text" placeholder="省、市、区县" disabled id="city-picker">
                 </div>
                 <div class="btn_group clearfix">
-                    <a href="javascript:;" class="submit_btn">提交</a>
+                    <a href="javascript:;" class="submit_btn">立即登录参与抽奖</a>
                 </div>
             </form>
         </div>
@@ -654,10 +660,19 @@
             本活动最终解释权归中国人寿财产保险股份有限公司所有
         </div>
     </div>
-
     <script src="js/home/jquery-1.8.0.min.js"></script>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
     <script src="js/home/awardRotate.js"></script>
     <script>
+        $("#city-picker").cityPicker({
+    toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">选择收货地址</h1>\
+    </header>'
+  });
         // 弹框禁止滑动
         var ModalHelper = (function (bodyCls) {
             var scrollTop;
