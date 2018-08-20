@@ -256,8 +256,12 @@ img{
 }
 .mask .mask_con .mask_con_topbar .mask_close_btn{
   width: 3vw;
+  height: 100%;
   float: right;
-  margin: 3vw 5vw;
+  padding: 3vw 8vw;
+}
+.mask .mask_con .mask_con_topbar .mask_close_btn img{
+  width: 3vw;
 }
 .mask .mask_con .mask_con_tips{
   text-align: center;
@@ -537,5 +541,11 @@ img{
   .mask .mask_con .ranking_wrap .ranking_cont{
     overflow-y: auto;
     height: 80vw;
+  }
+}
+@media screen and (min-height: 580px) and (max-height:800px){
+  .mask .mask_con .ranking_wrap .ranking_cont{
+    overflow-y: auto;
+    height: 86vw;
   }
 }
