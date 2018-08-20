@@ -49,29 +49,460 @@
 
         .banner .zp_bg {
             width: 100vw;
-    position: absolute;
-    z-index: 1;
-    top: -24.6vw;
-    left: -10vw;
+            position: absolute;
+            z-index: 1;
+            top: -24.6vw;
+            left: -10vw;
         }
     </style>
 </head>
 
 <body>
+    <div class="layer"></div>
+    <!-- 登录弹框 -->
+    <div class="mask login_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <div class="mask_con_tips">登录</div>
+            <form>
+                <div class="inp_box">
+                    <input type="text" placeholder="输入手机号">
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="输入验证码">
+                    <a href="javascript:;" class="yzm_btn" onclick="settime(this)">发送验证码</a>
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="省、市、区县">
+                </div>
+                <div class="btn_group clearfix">
+                    <a href="javascript:;" class="submit_btn">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 活动规则弹框 -->
+    <div class="mask rules_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <div class="mask_con_tips">活动规则</div>
+            <div class="rules_wrap">
+                <p>1活动时间</p>
+                <p>2活动时间</p>
+                <p>3活动时间</p>
+                <p>4活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+                <p>活动时间</p>
+            </div>
+        </div>
+    </div>
+    <!-- 排行榜弹框 -->
+    <div class="mask ranking_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <img src="images/home/ranking_tit.png" alt="" class="ranking_tit_img">
+            <div class="mask_con_tips">趣味排行</div>
+            <div class="ranking_wrap">
+                <div class="ranking_tabs clearfix">
+                    <a href="javascript:;" class="act">幸运榜</a>
+                    <a href="javascript:;">富豪榜</a>
+                    <a href="javascript:;">势力榜</a>
+                </div>
+                <div class="ranking_cont">
+                    <!-- 幸运榜 -->
+                    <div style="display: block">
+                        <table>
+                            <tr>
+                                <th>排名</th>
+                                <th>省份</th>
+                                <th>次数</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking01.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">1</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking02.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">2</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">3</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">4</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <!-- 富豪榜 -->
+                    <div>
+                        <table>
+                            <tr>
+                                <th>排名</th>
+                                <th>省份</th>
+                                <th>次数</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking01.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">1</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking02.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">2</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">3</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">4</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">4</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">4</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 势力榜 -->
+                    <div>
+                        <table>
+                            <tr>
+                                <th>排名</th>
+                                <th>省份</th>
+                                <th>次数</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking01.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">1</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking02.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">2</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">3</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">4</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/home/ranking03.png" alt="" class="ranking_img">
+                                    <span class="ranking_num">5</span>
+                                </td>
+                                <td>河北省</td>
+                                <td>20次</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中奖纪录 -->
+    <div class="mask win_record_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <img src="images/home/win_record_tit.png" alt="" class="win_record_img">
+            <div class="mask_con_tips">中奖纪录</div>
+            <div class="ranking_wrap">
+                <div class="ranking_cont">
+                    <div style="display: block">
+                        <table>
+                            <tr class="table_tit">
+                                <th>中奖时间</th>
+                                <th>奖品名称</th>
+                                <th>失效时间</th>
+                                <th>领取情况</th>
+                            </tr>
+                            <tr class="act">
+                                <td>2018-9-4</td>
+                                <td>XXXXX</td>
+                                <td>2018-9-4</td>
+                                <td>
+                                    <img src="images/home/lq_status.png" alt="" class="lq_status">已领取</td>
+                            </tr>
+                            <tr class="">
+                                <td>2018-9-4</td>
+                                <td>XXXXX</td>
+                                <td>2018-9-4</td>
+                                <td>
+                                    <a href="javascript:;" class="lq_btn">点击领取</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中奖弹框 -->
+    <div class="mask winning_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <img src="images/home/winning.png" alt="" class="is_winning">
+            <div class="winning_wrap">
+                <div class="winning_img">
+                    <img src="" alt="">
+                </div>
+                <div class="winning_name">奖品名称</div>
+                <div class="btn_group clearfix">
+                    <a href="javascript:;" class="to_winning_btn">立即领取</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 机会用完弹框 -->
+    <div class="mask notwinning_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <img src="images/home/not_winning.png" alt="" class="is_winning not_winning">
+            <div class="winning_wrap">
+                <div class="winning_name" style="font-size: 3.3vw;">您今天的抽奖机会已经用完，
+                    <br> 欢迎来日再战~
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 兑换码弹框 -->
+    <div class="mask mask2 dhcode_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn02.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <div class="dhcode_wrap">
+                <img src="images/home/zj_img.png" alt="" class="dhcode_img">
+                <div class="dhcode_txt">恭喜您！</div>
+                <div class="dhcode_tips">获得xxxxxxxxxxxxx</div>
+                <table class="dhcode_intro">
+                    <tr>
+                        <td>兑换码</td>
+                        <td>19837482374
+                            <a href="javascript:;" class="fzcode">复制</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>兑换方式</td>
+                        <td>打开京东APP--我的钱包--礼品卡
+                            <br>--绑定新卡--输入卡密绑定</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- 完善信息弹框 -->
+    <div class="mask mask2 wsinfo_mask">
+        <div class="mask_con">
+            <div class="mask_con_topbar">
+                <a href="javascript:;">
+                    <img src="images/home/mask_close_btn02.png" alt="" class="mask_close_btn">
+                </a>
+            </div>
+            <div class="dhcode_wrap">
+                <img src="images/home/zj_img.png" alt="" class="dhcode_img">
+                <div class="dhcode_txt">奖品距您只有一步之遥啦~</div>
+                <div class="dhcode_tips">请速速完善下列信息</div>
+                <form>
+                    <table class="dhcode_intro">
+                        <tr>
+                            <td>姓名</td>
+                            <td>
+                                <input type="text" placeholder="姓名">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>手机号</td>
+                            <td>
+                                <input type="text" placeholder="手机号">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>出生年月</td>
+                            <td>
+                                <input type="text" placeholder="出生年月">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>车牌号码</td>
+                            <td>
+                                <input type="text" placeholder="车牌号码">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>身份证号码</td>
+                            <td>
+                                <input type="text" placeholder="身份证号码">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="btn_group clearfix">
+                        <a href="javascript:;" class="submit_btn">提交</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 背景图 -->
     <div class="main_bg">
         <img src="images/home/zp_bg01.png" alt="">
         <img src="images/home/zp_bg02.png" alt="">
     </div>
-    <div class="layer"></div>
-    <div class="mask">
-        <div class="mask_con">
-            <div class="mask_con_tips">根据年龄发放绘本，以小区为单位共享，请确认年龄以及小区无误。</div>
-            <div class="btn_group clearfix">
-                <a href="javascript:;" class="fl edit_btn"></a>
-                <a href="vipPage.html" class="fl submit_btn"></a>
-            </div>
-        </div>
-    </div>
+    <!-- 内容 -->
     <div class="index_main">
         <div class="zp_wrap">
             <div class="top_tit">
@@ -80,6 +511,7 @@
             </div>
             <img src="images/home/1.png" id="shan-img" style="display:none;" />
             <img src="images/home/2.png" id="sorry-img" style="display:none;" />
+            <!-- 转盘 -->
             <div class="banner" style="width:82%;">
                 <img src="images/home/zp_bg.png" alt="" class="zp_bg">
                 <div class="turnplate" style="background-image:url(images/home/turnplate-bg.png);background-size:100% 100%;padding: 2vw 2vw 1vw 2vw;">
@@ -89,19 +521,19 @@
                 <div style="width: 60%;border-radius: 50%;height: 6px; background: initial;margin: -18px auto;box-shadow: 0 8px 14px #000;"></div>
             </div>
             <div class="index_main_nav">
-                <a href="javascript:;" class="bar_btnbg">
+                <a href="javascript:;" class="bar_btnbg login_btn">
                     <img src="images/home/bar_btnbg.png" alt="">
                     <div class="bar_txt" style="top: 4vw;">登录</div>
                 </a>
-                <a href="javascript:;" class="bar_btnbg" style="top: 20vw;left: 12vw;">
+                <a href="javascript:;" class="bar_btnbg win_record_btn" style="top: 20vw;left: 12vw;">
                     <img src="images/home/bar_btnbg.png" alt="">
                     <div class="bar_txt">中奖</br>记录</div>
                 </a>
-                <a href="javascript:;" class="bar_btnbg" style="top: 28vw;left: 33vw;">
+                <a href="javascript:;" class="bar_btnbg rules_btn" style="top: 28vw;left: 33vw;">
                     <img src="images/home/bar_btnbg.png" alt="">
                     <div class="bar_txt">活动</br>规则</div>
                 </a>
-                <a href="javascript:;" class="bar_btnbg" style="top: 28vw;left: 56vw;">
+                <a href="javascript:;" class="bar_btnbg ranking_btn" style="top: 28vw;left: 56vw;">
                     <img src="images/home/bar_btnbg.png" alt="">
                     <div class="bar_txt">趣味</br>排行</div>
                 </a>
@@ -197,6 +629,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="pd_list_box">
+                        <div style="border-top: 0.6vw solid #006a40;"></div>
+                        <div class="pd_list_box_side">China life P&C</div>
+                        <div class="pd_list_box_con clearfix">
+                            <div class="pd_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="pd_intro">
+                                <div class="ellipsis">"居家无忧"家财险 (经典系列)</div>
+                                <div class="mult_line_ellipsis" style="-webkit-line-clamp: 2;">在家里，在路上，陪你守护每一刻</div>
+                            </div>
+                            <div class="pd_rmb fr">
+                                <div class="rmb_nums">
+                                    <div class="pd_rmb_cool">
+                                        <img src="images/home/pd_rmb_cool.png" alt="">
+                                    </div>
+                                    <span class="main_rmb">99</span>元起</div>
+                                <a href="javascript:;" class="yh_btn">立享优惠</a>
+                            </div>
+                        </div>
+                    </div>
 
             </div>
             <a href="javascript:;">
@@ -214,10 +667,49 @@
     <script src="js/home/regionsObject2.js"></script>
     <script src="js/home/cityPicker.js"></script>
     <script>
-        $("#submitBtn").on("click", function () {
-            $(".mask,.layer").show()
-            console.log($("#location").val())
-
+        // 登录
+        $(".login_btn").on("click", function () {
+            $(".login_mask").show()
+        })
+        // 中奖纪录
+        $(".win_record_btn").on("click", function () {
+            $(".win_record_mask").show()
+        })
+        // 活动规则
+        $(".rules_btn").on("click", function () {
+            $(".rules_mask").show()
+        })
+        // 排行榜
+        $(".ranking_btn").on("click", function () {
+            $(".ranking_mask").show()
+        })
+        // 关闭弹框
+        $(".mask_close_btn").on("click", function () {
+            $(this).parents(".mask").hide()
+            $(".layer").hide()
+        })
+        // 登录倒计时60s
+        var countdown = 60;
+        function settime(val) {
+            if (countdown == 0) {
+                $(val).attr("onclick", "settime(this)")
+                val.text = "发送验证码";
+                countdown = 60;
+                return
+            } else {
+                $(val).attr("onclick", "")
+                val.text = "重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(val)
+            }, 1000)
+        }
+        // 排行榜切换
+        $(".ranking_tabs > a").on("click", function () {
+            var index = $(this).index()
+            $(this).addClass("act").siblings().removeClass("act")
+            $(".ranking_cont > div").eq(index).show().siblings().hide()
         })
 
         var turnplate = {
@@ -273,8 +765,8 @@
                 if (turnplate.bRotate) return;
                 turnplate.bRotate = !turnplate.bRotate;
                 //获取随机数(奖品个数范围内)
-                //var item = rnd(1, turnplate.restaraunts.length);
-                var item = 2;
+                var item = rnd(1, turnplate.restaraunts.length);
+                // var item = 2;
                 //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
                 rotateFn(item, turnplate.restaraunts[item - 1]);
                 /* switch (item) {
@@ -352,7 +844,7 @@
                     ctx.save();
 
                     //----绘制奖品开始----
-                    ctx.fillStyle = "#E5302F";
+                    ctx.fillStyle = "#000";
                     var text = turnplate.restaraunts[i];
                     var line_height = 17;
                     //translate方法重新映射画布上的 (0,0) 位置
