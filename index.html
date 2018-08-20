@@ -9,9 +9,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 
+    <link rel="stylesheet" href="js/home/dist/css/sm.min.css">
     <link rel="stylesheet" type="text/css" href="css/home/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/home/style.css" />
     <style>
@@ -87,7 +86,7 @@
                     <img src="images/home/mask_close_btn.png" alt="">
                 </a>
             </div>
-            <div class="mask_con_tips">登录</div>
+            <div class="mask_con_tips" style="font-size: 4.6vw;">立即登录,开始抽奖</div>
             <form>
                 <div class="inp_box">
                     <input type="text" placeholder="输入手机号">
@@ -97,10 +96,10 @@
                     <a href="javascript:;" class="yzm_btn" onclick="settime(this)">发送验证码</a>
                 </div>
                 <div class="inp_box">
-                    <input type="text" placeholder="省、市、区县" disabled id="city-picker">
+                    <input type="text" placeholder="省、市、区县" id="city-picker">
                 </div>
                 <div class="btn_group clearfix">
-                    <a href="javascript:;" class="submit_btn">立即登录参与抽奖</a>
+                    <a href="javascript:;" class="submit_btn">提交</a>
                 </div>
             </form>
         </div>
@@ -494,7 +493,7 @@
                         <tr>
                             <td>出生年月</td>
                             <td>
-                                <input type="text" placeholder="出生年月">
+                                <input type="text" placeholder="出生年月" id="my-input" >
                             </td>
                         </tr>
                         <tr>
@@ -661,18 +660,19 @@
         </div>
     </div>
     <script src="js/home/jquery-1.8.0.min.js"></script>
-    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-    <script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+    <script>$.noConflict();</script>
+    <script src="js/home/zepto.min.js"></script>
+    <script src="js/home/dist/js/sm.min.js"></script>
+    <script src="js/home/dist/js/sm-city-picker.min.js"></script>
     <script src="js/home/awardRotate.js"></script>
     <script>
         $("#city-picker").cityPicker({
     toolbarTemplate: '<header class="bar bar-nav">\
     <button class="button button-link pull-right close-picker">确定</button>\
-    <h1 class="title">选择收货地址</h1>\
+    <h1 class="title">选择省市区</h1>\
     </header>'
   });
+  $("#my-input").calendar();
         // 弹框禁止滑动
         var ModalHelper = (function (bodyCls) {
             var scrollTop;
@@ -690,41 +690,41 @@
             };
         })('modal-open');
         // 登录
-        $(".login_btn").on("click", function () {
+        jQuery(".login_btn").on("click", function () {
             ModalHelper.afterOpen()
-            $(".login_mask").show()
+            jQuery(".login_mask").show()
         })
         // 中奖纪录
-        $(".win_record_btn").on("click", function () {
+        jQuery(".win_record_btn").on("click", function () {
             ModalHelper.afterOpen()
-            $(".win_record_mask").show()
+            jQuery(".win_record_mask").show()
         })
         // 活动规则
-        $(".rules_btn").on("click", function () {
+        jQuery(".rules_btn").on("click", function () {
             ModalHelper.afterOpen()
-            $(".rules_mask").show()
+            jQuery(".rules_mask").show()
         })
         // 排行榜
-        $(".ranking_btn").on("click", function () {
+        jQuery(".ranking_btn").on("click", function () {
             ModalHelper.afterOpen()
-            $(".ranking_mask").show()
+            jQuery(".ranking_mask").show()
         })
         // 关闭弹框
-        $(".mask_close_btn").on("click", function () {
+        jQuery(".mask_close_btn").on("click", function () {
             ModalHelper.beforeClose()
-            $(this).parents(".mask").hide()
-            $(".layer").hide()
+            jQuery(this).parents(".mask").hide()
+            jQuery(".layer").hide()
         })
         // 登录倒计时60s
         var countdown = 60;
         function settime(val) {
             if (countdown == 0) {
-                $(val).attr("onclick", "settime(this)")
+                jQuery(val).attr("onclick", "settime(this)")
                 val.text = "发送验证码";
                 countdown = 60;
                 return
             } else {
-                $(val).attr("onclick", "")
+                jQuery(val).attr("onclick", "")
                 val.text = "重新发送(" + countdown + ")";
                 countdown--;
             }
@@ -733,10 +733,10 @@
             }, 1000)
         }
         // 排行榜切换
-        $(".ranking_tabs > a").on("click", function () {
-            var index = $(this).index()
-            $(this).addClass("act").siblings().removeClass("act")
-            $(".ranking_cont > div").eq(index).show().siblings().hide()
+        jQuery(".ranking_tabs > a").on("click", function () {
+            var index = jQuery(this).index()
+            jQuery(this).addClass("act").siblings().removeClass("act")
+            jQuery(".ranking_cont > div").eq(index).show().siblings().hide()
         })
 
         var turnplate = {
@@ -750,14 +750,14 @@
             bRotate: false				//false:停止;ture:旋转
         };
 
-        $(document).ready(function () {
+        jQuery(document).ready(function () {
             //动态添加大转盘的奖品与奖品区域背景颜色
             turnplate.restaraunts = ["10京东卡", "继续加油吧!", "50京东卡", "代驾10公里3次", "代驾20公里3次", "100京东卡 ", "代驾50公里3次"];
             turnplate.colors = ["#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00"];
 
 
             var rotateTimeOut = function () {
-                $('#wheelcanvas').rotate({
+                jQuery('#wheelcanvas').rotate({
                     angle: 0,
                     animateTo: 2160,
                     duration: 8000,
@@ -775,8 +775,8 @@
                 } else {
                     angles = 360 - angles + 270;
                 }
-                $('#wheelcanvas').stopRotate();
-                $('#wheelcanvas').rotate({
+                jQuery('#wheelcanvas').stopRotate();
+                jQuery('#wheelcanvas').rotate({
                     angle: 0,
                     animateTo: angles + 1800,
                     duration: 8000,
@@ -788,7 +788,7 @@
                 });
             };
 
-            $('.pointer').click(function () {
+            jQuery('.pointer').click(function () {
                 if (turnplate.bRotate) return;
                 turnplate.bRotate = !turnplate.bRotate;
                 //获取随机数(奖品个数范围内)
