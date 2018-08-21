@@ -499,7 +499,7 @@
                         <tr>
                             <td>车牌号码</td>
                             <td>
-                                <input type="text" placeholder="车牌号码" 
+                                <input type="text" placeholder="车牌号码" >
                             </td>
                         </tr>
                         <tr>
@@ -667,14 +667,6 @@
     <script src="js/home/awardRotate.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>   
     <script>
-        // 复制兑换码
-        var clipboard = new Clipboard('#copy_btn');    
-        clipboard.on('success', function(e) {    
-            alert("复制成功",1500);    
-            e.clearSelection();    
-            console.log(e.clearSelection);    
-        }); 
-
         $("#city-picker").cityPicker({
     toolbarTemplate: '<header class="bar bar-nav">\
     <button class="button button-link pull-right close-picker">确定</button>\
@@ -760,6 +752,12 @@
         };
 
         jQuery(document).ready(function () {
+             // 复制兑换码
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+            alert("复制成功");    
+        }); 
+
             //动态添加大转盘的奖品与奖品区域背景颜色
             turnplate.restaraunts = ["10京东卡", "继续加油吧!", "50京东卡", "代驾10公里3次", "代驾20公里3次", "100京东卡 ", "代驾50公里3次"];
             turnplate.colors = ["#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00", "#ffdc00"];
