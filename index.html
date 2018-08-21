@@ -60,7 +60,7 @@
 </head>
 
 <body>
-    <div class="layer"></div>
+    <div class="layer" style="display: block;"></div>
     <!-- 二维码弹框 -->
     <div class="mask ewm_mask">
         <div class="mask_con">
@@ -159,7 +159,7 @@
                             <tr>
                                 <td>
                                     <img src="images/home/ranking01.png" alt="" class="ranking_img">
-                                    <span class="ranking_num">1</span>
+                                    <span class="ranking_num" style="color:#c76500;">1</span>
                                 </td>
                                 <td>河北省</td>
                                 <td>20次</td>
@@ -167,7 +167,7 @@
                             <tr>
                                 <td>
                                     <img src="images/home/ranking02.png" alt="" class="ranking_img">
-                                    <span class="ranking_num">2</span>
+                                    <span class="ranking_num" style="color:#686d7a;">2</span>
                                 </td>
                                 <td>河北省</td>
                                 <td>20次</td>
@@ -437,7 +437,7 @@
         </div>
     </div>
     <!-- 兑换码弹框 -->
-    <div class="mask mask2 dhcode_mask">
+    <div class="mask mask2 dhcode_mask" style="display: block">
         <div class="mask_con">
             <div class="mask_con_topbar">
                 <a href="javascript:;" class="mask_close_btn">
@@ -451,8 +451,8 @@
                 <table class="dhcode_intro">
                     <tr>
                         <td>兑换码</td>
-                        <td>19837482374
-                            <a href="javascript:;" class="fzcode">复制</a>
+                        <td> <span id="target">19837482374</span>
+                            <a href="javascript:;" class="fzcode" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn">复制</a>
                         </td>
                     </tr>
                     <tr>
@@ -465,7 +465,7 @@
         </div>
     </div>
     <!-- 完善信息弹框 -->
-    <div class="mask mask2 wsinfo_mask">
+    <div class="mask mask2 wsinfo_mask" style="display: block">
         <div class="mask_con">
             <div class="mask_con_topbar">
                 <a href="javascript:;" class="mask_close_btn">
@@ -499,7 +499,7 @@
                         <tr>
                             <td>车牌号码</td>
                             <td>
-                                <input type="text" placeholder="车牌号码">
+                                <input type="text" placeholder="车牌号码" 
                             </td>
                         </tr>
                         <tr>
@@ -665,27 +665,36 @@
     <script src="js/home/dist/js/sm.min.js"></script>
     <script src="js/home/dist/js/sm-city-picker.min.js"></script>
     <script src="js/home/awardRotate.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>   
     <script>
+        // 复制兑换码
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+            alert("复制成功",1500);    
+            e.clearSelection();    
+            console.log(e.clearSelection);    
+        }); 
+
         $("#city-picker").cityPicker({
     toolbarTemplate: '<header class="bar bar-nav">\
     <button class="button button-link pull-right close-picker">确定</button>\
     <h1 class="title">选择省市区</h1>\
     </header>'
   });
-  $("#my-input").calendar();
+  $("#my-input").datetimePicker({});
         // 弹框禁止滑动
         var ModalHelper = (function (bodyCls) {
             var scrollTop;
             return {
                 afterOpen: function () {
-                    scrollTop = document.scrollingElement.scrollTop;
-                    document.body.classList.add(bodyCls);
-                    document.body.style.top = -scrollTop + 'px';
+                    // scrollTop = document.scrollingElement.scrollTop;
+                    // document.body.classList.add(bodyCls);
+                    // document.body.style.top = -scrollTop + 'px';
                 },
                 beforeClose: function () {
-                    document.body.classList.remove(bodyCls);
-                    // scrollTop lost after set position:fixed, restore it back.
-                    document.scrollingElement.scrollTop = scrollTop;
+                    // document.body.classList.remove(bodyCls);
+                    // // scrollTop lost after set position:fixed, restore it back.
+                    // document.scrollingElement.scrollTop = scrollTop;
                 }
             };
         })('modal-open');

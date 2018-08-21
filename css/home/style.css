@@ -471,13 +471,13 @@ img{
   font-size: 3.5vw;
   color: #9c9c9c;
 }
-.mask.mask2 .mask_con .dhcode_wrap .dhcode_intro tr td{
-  padding-bottom:2vw;
-}
+
 .mask.mask2 .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(1){
   color: #000;
   text-align: right;
   padding-right: 2vw;
+  padding-bottom:2vw;
+  padding-top: 4vw;
 }
 .mask.mask2 .mask_con .dhcode_wrap .dhcode_intro tr td .fzcode{
   color: #9c9c9c;
