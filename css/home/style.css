@@ -476,6 +476,8 @@ img{
 .mask.mask2 .mask_con .dhcode_wrap .dhcode_intro tr{
   font-size: 3.5vw;
   color: #9c9c9c;
+  display: flex;
+  align-items: center;
 }
 
 .mask.mask2 .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(1){
@@ -497,8 +499,6 @@ img{
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro{
   padding:1vw 0 4vw 0;
   margin: 0 auto;
-  cellpadding: 0;
-  cellspacing: 0;
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_txt{
   font-size: 5.8vw;
@@ -507,19 +507,25 @@ img{
   border-top: none;
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td{
-  padding:4vw 0 2vw 0;
+  /* padding:4vw 0 2vw 0; */
+  height: 10vw;
+  line-height: 10vw;
+  margin-top: 2vw;
 }
 
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(1){
   color: #7c7c7c;
-  padding:4vw 2vw 2vw 0;
+  /* padding:4vw 2vw 2vw 0; */
   border-bottom: 1px solid transparent;
+  flex: 1;
+  padding:0 2vw 0 0;
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(2){
   border-bottom: 1px solid #7c7c7c;
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(2) input{
   height: 100%;
+  line-height: 100%;
   background: transparent;
 }
 .mask .mask_con .ewm_wrap .ewm_img{
