@@ -517,8 +517,6 @@ img{
   border-bottom: 1px solid #7c7c7c;
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(2) input{
-  height: 100%;
-  line-height: 100%;
   background: transparent;
 }
 .mask .mask_con .ewm_wrap .ewm_img{
