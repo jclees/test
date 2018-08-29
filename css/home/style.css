@@ -508,9 +508,9 @@ img{
 }
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td{
   /* padding:4vw 0 2vw 0; */
-  height: 10vw;
-  line-height: 10vw;
-  margin-top: 2vw;
+  height: 8vw;
+  line-height: 8vw;
+  margin-top: 3vw;
 }
 
 .mask.mask2.wsinfo_mask .mask_con .dhcode_wrap .dhcode_intro tr td:nth-child(1){
