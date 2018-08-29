@@ -60,7 +60,7 @@
 </head>
 
 <body>
-    <div class="layer" style="display: block;"></div>
+    <div class="layer"></div>
     <!-- 二维码弹框 -->
     <div class="mask ewm_mask">
         <div class="mask_con">
@@ -80,6 +80,7 @@
     </div>
     <!-- 登录弹框 -->
     <div class="mask login_mask">
+        <div class="layer2"></div>
         <div class="mask_con">
             <div class="mask_con_topbar">
                 <a href="javascript:;" class="mask_close_btn">
@@ -89,17 +90,17 @@
             <div class="mask_con_tips" style="font-size: 6.6vw;">立即登录,开始抽奖</div>
             <form>
                 <div class="inp_box">
-                    <input type="text" placeholder="输入手机号">
+                    <input type="text" placeholder="输入手机号" required="required">
                 </div>
                 <div class="inp_box">
                     <input type="text" placeholder="输入验证码">
-                    <a href="javascript:;" class="yzm_btn" onclick="settime(this)">发送验证码</a>
+                    <a href="javascript:;" class="yzm_btn" onclick="sendMessage()" id="btnSendCode">发送验证码</a>
                 </div>
                 <div class="inp_box">
                     <input type="text" placeholder="所在地区" id="city-picker">
                 </div>
                 <div class="btn_group clearfix">
-                    <a href="javascript:;" class="submit_btn">提交</a>
+                    <a href="javascript:;" class="submit_btn" id="submit">提交</a>
                 </div>
             </form>
         </div>
@@ -437,7 +438,7 @@
         </div>
     </div>
     <!-- 兑换码弹框 -->
-    <div class="mask mask2 dhcode_mask" style="display: block">
+    <div class="mask mask2 dhcode_mask">
         <div class="mask_con">
             <div class="mask_con_topbar">
                 <a href="javascript:;" class="mask_close_btn">
@@ -466,7 +467,7 @@
         </div>
     </div>
     <!-- 完善信息弹框 -->
-    <div class="mask mask2 wsinfo_mask" style="display: block">
+    <div class="mask mask2 wsinfo_mask">
         <div class="mask_con">
             <div class="mask_con_topbar">
                 <a href="javascript:;" class="mask_close_btn">
@@ -582,8 +583,10 @@
                                 <div class="pd_rmb_cool">
                                     <img src="images/home/pd_rmb_cool.png" alt="">
                                 </div>
-                                <span class="main_rmb">99</span>元起</div>
-                            <a href="javascript:;" class="yh_btn">立享优惠</a>
+                                <span class="main_rmb">99.9</span>元/座起</div>
+                            <div class="box_center">
+                                <a href="javascript:;" class="yh_btn">立享优惠</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -652,6 +655,7 @@
                 </div>
 
             </div>
+            <img src="images/home/footbanner_tit.png" alt="" class="foot_tit" style="width:88.9vw;margin: 4vw auto;">
             <a href="javascript:;">
                 <img src="images/home/foot_banner.png" alt="" class="pd_banner">
             </a>
@@ -668,6 +672,40 @@
     <script src="js/home/awardRotate.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
     <script>
+        function str(s) {
+            var s = s
+            s = s.substring(0, s.length - 2)
+            Number(s)
+            return s
+        }
+        $(".pd_list_box_con").each(function (i, e) {
+            var a = Number(str($(".pd_list_box_con").eq(i).css('padding-left')))
+            var b = Number(str($(".pd_list_box_con").eq(i).css('padding-right')))
+            var c = Number(str($(".pd_rmb").eq(i).css('padding-left')))
+            var d = a + b + c
+            var e = $(".pd_list_box_con").eq(i).width() - ($(".pd_img").eq(i).width() + $(".pd_rmb").eq(i).width() + d)
+            $(".pd_intro").eq(i).width(e)
+        });
+
+        // $(".index_main .pd_wrap .pd_list").height()
+        var num = 0
+        var mt = 0
+        var mb = 0
+        $(".pd_list_box").each(function (i, e) {
+            if (i >= 4) {
+                return false
+            }
+            mt += Number(str($(".pd_list_box").eq(i).css('margin-top')))
+            mb = Number(str($(".pd_list_box").eq(i).css('margin-bottom')))
+            num += Number($(".pd_list_box").eq(i).height())
+            var a = mt + mb + num
+            console.log(mt)
+            $(".pd_list").height(a)
+        });
+
+        $(".pd_list_box").on('click', function () {
+            jQuery("body,html").animate({ scrollTop: 0 }, 300);
+        })
         // 省市区
         $("#city-picker").cityPicker({
             toolbarTemplate: '<header class="bar bar-nav">\
@@ -675,6 +713,9 @@
     <h1 class="title">选择省市区</h1>\
     </header>'
         });
+        $(".lq_btn").on('click',function(){
+            $(".wsinfo_mask,.layer").show()
+        })
         // 日期
         $("#my-input").datetimePicker({});
         // 复制兑换码
@@ -722,25 +763,43 @@
         jQuery(".mask_close_btn").on("click", function () {
             ModalHelper.beforeClose()
             jQuery(this).parents(".mask").hide()
-            jQuery(".layer").hide()
+            jQuery(".layer,.layer2").hide()
         })
         // 登录倒计时60s
-        var countdown = 60;
-        function settime(val) {
-            if (countdown == 0) {
-                jQuery(val).attr("onclick", "settime(this)")
-                val.text = "发送验证码";
-                countdown = 60;
-                return
-            } else {
-                jQuery(val).attr("onclick", "")
-                val.text = "重新发送(" + countdown + ")";
-                countdown--;
-            }
-            setTimeout(function () {
-                settime(val)
-            }, 1000)
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+        function sendMessage() {
+            curCount = count;
+            //设置button效果，开始计时
+            $("#btnSendCode").text("重新发送(" + curCount + ")");
+            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+            $("#btnSendCode").attr("onclick", "");
         }
+        //timer处理函数
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btnSendCode").attr("onclick", "sendMessage()");
+                $("#btnSendCode").text("重新发送");
+            }
+            else {
+                curCount--;
+                $("#btnSendCode").text("重新发送(" + curCount + ")");
+            }
+        }
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btnSendCode").attr("onclick", "sendMessage()");
+                $("#btnSendCode").text("重新发送");
+            }
+            else {
+                curCount--;
+                $("#btnSendCode").text("重新发送(" + curCount + ")");
+            }
+        }
+
         // 排行榜切换
         jQuery(".ranking_tabs > a").on("click", function () {
             var index = jQuery(this).index()
@@ -758,7 +817,9 @@
 
             bRotate: false				//false:停止;ture:旋转
         };
-
+        $("#submit").on("click", function () {
+            alert(1111)
+        })
         jQuery(document).ready(function () {
             //动态添加大转盘的奖品与奖品区域背景颜色
             turnplate.restaraunts = ["10京东卡", "继续加油吧!", "50京东卡", "代驾10公里3次", "代驾20公里3次", "100京东卡 ", "代驾50公里3次"];
