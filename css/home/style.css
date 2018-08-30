@@ -458,6 +458,7 @@ img{
 }
 .mask.mask2 .mask_con{
   box-shadow: none;
+  background: #fff;
 }
 .mask.mask2 .mask_con .mask_con_topbar{
   background: transparent;
