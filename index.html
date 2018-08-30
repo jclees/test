@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>首页</title>
+    <title>国寿财险客户节</title>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
@@ -369,9 +369,9 @@
                 </a>
             </div>
             <img src="images/home/win_record_tit.png" alt="" class="win_record_img">
-            <div class="mask_con_tips">中奖纪录</div>
+            <div class="mask_con_tips">中奖记录</div>
             <div class="ranking_wrap">
-                <div class="ranking_cont">
+                <div class="ranking_cont" style="height: auto !important;">
                     <div style="display: block">
                         <table>
                             <tr class="table_tit">
@@ -382,14 +382,14 @@
                             </tr>
                             <tr class="act">
                                 <td>2018-9-4</td>
-                                <td>XXXXX</td>
+                                <td class="ellipsis pd_name">奖品名称奖品名称奖品名称</td>
                                 <td>2018-9-4</td>
                                 <td>
                                     <img src="images/home/lq_status.png" alt="" class="lq_status">已领取</td>
                             </tr>
                             <tr class="">
                                 <td>2018-9-4</td>
-                                <td>XXXXX</td>
+                                <td class="ellipsis pd_name">奖品名称奖品名称奖品名称</td>
                                 <td>2018-9-4</td>
                                 <td>
                                     <a href="javascript:;" class="lq_btn">点击领取</a>
@@ -492,12 +492,12 @@
                                 <input type="text" placeholder="手机号">
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>出生年月</td>
                             <td>
                                 <input type="text" placeholder="出生年月" id="my-input">
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>车牌号码</td>
                             <td>
@@ -511,6 +511,11 @@
                             </td>
                         </tr>
                     </table>
+                    <div class="tips">
+                        <div>说明：</div>
+                        <div>本服务仅限9座及以下非营运客车及家庭自用客车</div>
+                        <div>提交成功，服务将于2018年11月1日生效</div>
+                    </div>
                     <div class="btn_group clearfix">
                         <a href="javascript:;" class="submit_btn">提交</a>
                     </div>
@@ -672,6 +677,7 @@
     <script src="js/home/awardRotate.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
     <script>
+        alert("啦啦啦啦啦")
         function str(s) {
             var s = s
             s = s.substring(0, s.length - 2)
@@ -713,8 +719,8 @@
     <h1 class="title">选择省市区</h1>\
     </header>'
         });
-        $(".lq_btn").on('click',function(){
-            $(".wsinfo_mask,.layer").show()
+        $(".lq_btn").on('click', function () {
+            $(".wsinfo_mask,.dhcode_mask,.layer").show()
         })
         // 日期
         $("#my-input").datetimePicker({});

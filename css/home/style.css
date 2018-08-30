@@ -395,6 +395,11 @@ img{
 .mask .mask_con .ranking_wrap .ranking_cont{
   margin-top: 2vw;
 }
+.mask.mask2 .mask_con .tips{
+  width: 70%;
+  margin: 2vw auto;
+  color: #999;
+}
 .mask .mask_con .ranking_wrap .ranking_cont > div{
   display: none;
 }
@@ -417,6 +422,9 @@ img{
 }
 .mask .mask_con .ranking_wrap .ranking_cont table tbody tr td{
   position: relative;
+}
+.mask .mask_con .ranking_wrap .ranking_cont table tbody tr td.pd_name{
+  width: 22vw;display: inline-block;
 }
 .mask .mask_con .ranking_wrap .ranking_cont table tbody tr td .ranking_num{
   color: #8b4f53;
