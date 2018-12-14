@@ -47,10 +47,10 @@ input,textarea,button{
 }
 /*common css  也就是我们公用的css*/
 .fl{
-    float: left !important;
+    float: left;
 }
 .fr{
-    float: right !important;
+    float: right;
 }
 .clearfix::after,
 .clearfix::before{
