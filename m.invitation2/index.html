@@ -11,95 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css" />
     <style>
-        .swiper-container {
-            position: absolute;
-            top: 10vw;
-            height: 46vw;
-            width: 60%;
-            left: 50%;
-            transform: translate(-50%, 0);
-        }
-
-
-        .swiper-pagination-bullet {
-            background: #90aecb;
-            opacity: 1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #fff;
-            opacity: 1;
-        }
-
-        .swiper-container-horizontal>.swiper-pagination-bullets,
-        .swiper-pagination-custom,
-        .swiper-pagination-fraction {
-            bottom: 0;
-        }
-
-        .sw_txt {
-            position: absolute;
-            top: 57vw;
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            font-size: 12px;
-            line-height: 6vw;
-            letter-spacing: 4px;
-            text-shadow: 0px 0px 10px #2f8990, 0px 0px 10px #2f8990, 0px 0px 10px #2f8990, 0px 0px 10px #2f8990;
-        }
-
-        .swiper-pagination-bullet {
-            width: 4px;
-            height: 4px;
-        }
-
-        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-            margin: 0 2px;
-        }
-
-        .sw_txt_intro {
-            top: 83vw;
-            font-size: 20px;
-        }
-
-        .swiper_sm {
-            position: absolute;
-            top: 67vw;
-            width: 7.5vw;
-            left: 28vw;
-            -webkit-transition-property: -webkit-transform;
-            -webkit-transition-duration: 1s;
-            -moz-transition-property: -moz-transform;
-            -moz-transition-duration: 1s;
-            -webkit-animation: rotate 4s linear infinite;
-            -moz-animation: rotate 4s linear infinite;
-            -o-animation: rotate 4s linear infinite;
-            animation: rotate 4s linear infinite;
-        }
-
-        .swiper_sm02 {
-            left: 17vw;
-            top: 73vw;
-            width: 12.8vw;
-        }
-
-        .swiper_sm03 {
-            position: absolute;
-            width: 24.1vw;
-            height: 6.4vw;
-            left: 52%;
-            transform: translate(-50%, 0);
-            top: 67vw;
-            opacity: .6;
-        }
-
-        .shadow_an {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
         ::-webkit-input-placeholder {
             /* WebKit, Blink, Edge */
             color: #fff;
@@ -125,11 +36,11 @@
 <body class="body">
     <div class="main">
         <div id="particles-js" class="main_bg"></div>
-        <div class="page page1">
+        <div class="page page1" style="display: block">
             <div class="page1_main">
                 <div class="loading_box">
                     <img src="images/loading.png" alt="" class="auto_img img">
-                    <p class="txt">0%</p>
+                    <p class="txt">1%</p>
                 </div>
                 <p class="tips">loading...</p>
             </div>
@@ -326,7 +237,7 @@
             </a>
         </div>
 
-        <div class="page page7" style="display: block">
+        <div class="page page7">
             <div class="halo_box">
                 <img src="images/halo_txt.png" alt="" class="auto_img">
                 <img src="images/halo.png" alt="" class="halo">
@@ -354,16 +265,89 @@
             </a>
         </div>
     </div>
-    
+
     <script src="js/jquery-1.8.0.min.js"></script>
     <script src="js/loadImg.js"></script>
     <script src="js/main.js"></script>
     <script src="js/swiper/js/swiper.min.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
-
     <script>
-        
+        //点击按钮跳转下一个页面
+        $(".nextShow").on('click', function () {
+            if ($(this).parents(".page").next().hasClass("page3")) {
+                setTimeout(function () {
+                    $(".txt_box1 .t1").addClass("text-row0")
+                }, 1000)
+                setTimeout(function () {
+                    $(".txt_box1 .t2").addClass("text-row1")
+                }, 1500)
+                setTimeout(function () {
+                    $(".txt_box1 .t3").addClass("text-row0")
+                }, 3000)
+
+                setTimeout(function () {
+                    $(".txt_box2 .t1").addClass("text-row0")
+                }, 7000)
+                setTimeout(function () {
+                    $(".txt_box2 .t2").addClass("text-row1")
+                }, 7500)
+                setTimeout(function () {
+                    $(".txt_box2 .t3").addClass("text-row0")
+                }, 8000)
+
+                setTimeout(function () {
+                    $(".txt_box3 .t1").addClass("text-row0")
+                }, 10500)
+                setTimeout(function () {
+                    $(".txt_box3 .t2").addClass("text-row1")
+                }, 10700)
+
+
+                setTimeout(function () {
+                    $(".txt_box4 .t1").addClass("text-row0")
+                }, 11000)
+                setTimeout(function () {
+                    $(".txt_box4 .t2").addClass("text-row1")
+                }, 11500)
+                setTimeout(function () {
+                    $(".txt_box4 .t3").addClass("text-row0")
+                }, 12000)
+
+
+
+                // let timenum = 0;
+                // 	let timer = setInterval(function () {
+                // 		parseInt(timenum++)
+                // 		// debugger
+                // 		if (timenum == 1) {
+                // 			$(".txt_box1 .t1").addClass("text-row0")
+                // 		}else if(timenum == 3){
+                // 			$(".txt_box1 .t2").addClass("text-row1")
+                // 		}else if(timenum == 5){
+                // 			$(".txt_box1 .t3").addClass("text-row0")
+                // 		}else if(timenum == 11){
+                // 			$(".txt_box2 .t1").addClass("text-row0")
+                // 		}else if(timenum == 13){
+                // 			$(".txt_box2 .t1").addClass("text-row1")
+                // 		}else if(timenum == 15){
+                // 			$(".txt_box2 .t1").addClass("text-row0")
+                // 		}
+                // 	}, 1000)
+                setTimeout(function () {
+                    $(".page2_arrow1").removeClass("animated fadeInDown").addClass("p2_arrow");
+                    $(".page2_arrow1").attr("style", "");
+                }, 4000)
+            }
+            if ($(this).parents(".page").next().hasClass("page7")) {
+                alert("生成邀请函按钮")
+            }
+            if ($(this).parents(".page").prev().hasClass("page6")) {
+                return
+            }
+            $(".page").hide();
+            $(this).parents(".page").next().addClass("animated fadeIn").show();
+        });
     </script>
 
 </body>

@@ -15,7 +15,7 @@ window.onload = function () {
 						$('.page1').hide().next().show();
 					}, 100);
 				}
-				$('.loading_box .txt').html((parseInt(percentT)) + '%');
+				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
 				callbacks[i + 1] && callbacks[i + 1]();
 			}, 100);
 		});
@@ -38,81 +38,7 @@ $(".openDown").on("click", function () {
 })
 //按钮放大缩小动画
 $(".anm_pulse").addClass("animated pulse infinite");
-//点击按钮跳转下一个页面
-$(".nextShow").on('click', function () {
-	if ($(this).parents(".page").next().hasClass("page3")) {
-		setTimeout(function () {
-			$(".txt_box1 .t1").addClass("text-row0")
-		}, 1000)
-		setTimeout(function () {
-			$(".txt_box1 .t2").addClass("text-row1")
-		}, 1500)
-		setTimeout(function () {
-			$(".txt_box1 .t3").addClass("text-row0")
-		}, 3000)
 
-		setTimeout(function () {
-			$(".txt_box2 .t1").addClass("text-row0")
-		}, 7000)
-		setTimeout(function () {
-			$(".txt_box2 .t2").addClass("text-row1")
-		}, 7500)
-		setTimeout(function () {
-			$(".txt_box2 .t3").addClass("text-row0")
-		}, 8000)
-
-		setTimeout(function () {
-			$(".txt_box3 .t1").addClass("text-row0")
-		}, 10500)
-		setTimeout(function () {
-			$(".txt_box3 .t2").addClass("text-row1")
-		}, 10700)
-
-
-		setTimeout(function () {
-			$(".txt_box4 .t1").addClass("text-row0")
-		}, 11000)
-		setTimeout(function () {
-			$(".txt_box4 .t2").addClass("text-row1")
-		}, 11500)
-		setTimeout(function () {
-			$(".txt_box4 .t3").addClass("text-row0")
-		}, 12000)
-
-
-
-		// let timenum = 0;
-		// 	let timer = setInterval(function () {
-		// 		parseInt(timenum++)
-		// 		// debugger
-		// 		if (timenum == 1) {
-		// 			$(".txt_box1 .t1").addClass("text-row0")
-		// 		}else if(timenum == 3){
-		// 			$(".txt_box1 .t2").addClass("text-row1")
-		// 		}else if(timenum == 5){
-		// 			$(".txt_box1 .t3").addClass("text-row0")
-		// 		}else if(timenum == 11){
-		// 			$(".txt_box2 .t1").addClass("text-row0")
-		// 		}else if(timenum == 13){
-		// 			$(".txt_box2 .t1").addClass("text-row1")
-		// 		}else if(timenum == 15){
-		// 			$(".txt_box2 .t1").addClass("text-row0")
-		// 		}
-		// 	}, 1000)
-		setTimeout(function () {
-			$(".page2_arrow1").removeClass("animated fadeInDown").addClass("p2_arrow");
-			$(".page2_arrow1").attr("style", "");
-		}, 4000)
-	}
-	if ($(this).parents(".page").next().hasClass("page7")) {
-		alert("生成邀请函按钮")
-	}
-	if ($(this).parents(".page").prev().hasClass("page6")) {
-		return
-	}
-	$(".page").hide();
-	$(this).parents(".page").next().addClass("animated fadeIn").show();
-});
 //滑动跳转到下一个页面
 var startX, startY;
 function GetSlideDirection(startX, startY, endX, endY) {
