@@ -75,9 +75,12 @@ input,textarea,button{
     -webkit-box-orient: vertical;
   }
 .bord_b{border-bottom: 1px solid #ccc;}
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
     .halo_box {
         width: 74%;
         margin: 0 auto 0;
     }
+    .sjzhou_box > .sjzhou_txt_box p{
+        font-size: 12px;
+      }
 } 

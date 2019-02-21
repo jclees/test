@@ -21,7 +21,7 @@ body {
   align-items: center;
   border-left: 3px solid #71dfff;
   position: relative;
-  padding: 3vw 0;
+  padding: 2vw 0;
 }
 .sjzhou_box > .sjzhou_txt_box .sjzhou_txt::after{
   content: "";
