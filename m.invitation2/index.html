@@ -294,15 +294,7 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        $('input').blur(() => {
-            var odiv = document.createElement('div')
-            odiv.style.height = "999px"
-            document.body.appendChild(odiv)
-            setTimeout(() => {
-                odiv.parentNode.removeChild(odiv)
-            }, 0)
-        })
-
+      
         //点击按钮跳转下一个页面
         $(".nextShow").on('click', function () {
             if ($(this).parents(".page").next().hasClass("page3")) {
@@ -331,11 +323,7 @@
             $(".page").hide();
             $(this).parents(".page").next().addClass("animated fadeIn").show();
         });
-        // 跳转到邀请页
-        $(".jumpShare").on("click", function () {
-            $(".page").hide();
-            $(".page6").addClass("animated fadeIn").show();
-        })
+        
     </script>
 
 </body>

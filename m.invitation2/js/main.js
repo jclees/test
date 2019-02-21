@@ -24,6 +24,16 @@ window.onload = function () {
 		}
 	});
 }
+//input 输入后不页面不下来
+$("input").on('blur', function () {
+	alert(111)
+	window.scroll(0, 0);
+});
+// 跳转到邀请页
+$(".jumpShare").on("click", function () {
+	$(".page").hide();
+	$(".page6").addClass("animated fadeIn").show();
+})
 // 显示隐藏打开分享
 $(".openShare").on("click", function () {
 	$(".share").show()
