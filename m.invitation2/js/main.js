@@ -24,7 +24,6 @@ window.onload = function () {
 		}
 	});
 }
-
 // 显示隐藏打开分享
 $(".openShare").on("click", function () {
 	$(".share").show()
