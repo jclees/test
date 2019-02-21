@@ -288,6 +288,8 @@ body {
 .halo_box{
   position: relative;
   top: 10%;
+  width: 97%;
+  margin: 0 auto 0;
 }
 .halo{
   position: absolute;
