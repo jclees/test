@@ -25,7 +25,7 @@ window.onload = function () {
 		}
 	});
 }
-//input 输入后不页面不下来
+//input 输入后解决页面不下来问题
 $("input").on('blur', function () {
 	alert(111)
 	window.scroll(0, 0);
@@ -96,7 +96,6 @@ document.addEventListener('touchend', function (ev) {
 				$(".page4").addClass("animated fadeIn").show();
 				return;
 			}
-
 			break;
 		case 2:
 			// 向下

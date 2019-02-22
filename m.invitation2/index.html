@@ -45,28 +45,31 @@
                 <p class="tips">loading...</p>
             </div>
         </div>
-        <div class="page page7">
+        <div class="page page7 page0">
             <!-- 邀请人 -->
             <div class="halo_box">
                 <img src="images/halo_txt.png" alt="" class="auto_img">
                 <img src="images/halo.png" alt="" class="halo">
             </div>
-            <div class="page2_main" style="top: 53%">
-                <p style="text-align: center;color:#fff;font-size: 24px;">李某某</p>
+            <div class="page2_main" style="top: 56%">
+                <p style="text-align: center;color:#fff;font-size: 22px;">李某某</p>
             </div>
             <div class="page2_main" style="top: 89%">
-                <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow" style="padding-top: 0;">
+                <a href="javascript:;" class="nextShow">
+                    <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow" style="padding-top: 0;">
+
+                </a>
             </div>
-            <div class="btn_group">
+            <!-- <div class="btn_group">
                 <a href="javascript:;" class="jumpShare">
                     <img src="images/share_btn_01.png" alt="" class="img anm_pulse" style="width: 37.5vw;">
                 </a>
                 <a href="javascript:;" class="nextShow">
                     <img src="images/share_btn_02.png" alt="" class="img anm_pulse" style="width: 37.5vw;">
                 </a>
-            </div>
+            </div> -->
         </div>
-        <div class="page page2">
+        <div class="page page2" data-show="1">
             <!-- 原有首页 -->
             <div class="halo_box" style="top: 18%;">
                 <img src="images/halo_txt.png" alt="" class="auto_img">
@@ -76,7 +79,7 @@
                 <img src="images/bot_btn_01.png" alt="" class="auto_img anm_pulse">
             </a>
         </div>
-        <div class="page page3">
+        <div class="page page3" data-show="1">
 
             <div class="page2_main" style="top: 57%;">
 
@@ -166,8 +169,8 @@
                         </div>
                     </div>
                 </div>
-                <p>滑动走进海尔时代</p>
-                <img src="images/page2/arrow.png" alt="" class="page2_arrow page2_arrow1 animated fadeInDown" style="animation-delay: 8s;">
+                <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow">
+                <p style="font-size: 16px;color: #d0d0d0;text-align: center;">滑动走进海尔时代</p>
             </div>
         </div>
         <div class="page page4">
@@ -208,7 +211,7 @@
                     </div>
                 </div>
                 <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow" style="padding-top: 10%;">
-                <p style="font-size: 14px;color: #fff;text-align: center;">滑动进入下一页</p>
+                <p style="font-size: 16px;color: #e4e4e4;text-align: center;">滑动进入下一页</p>
             </div>
         </div>
         <div class="page page5">
@@ -259,7 +262,7 @@
                 <img src="images/halo_txt.png" alt="" class="auto_img">
                 <img src="images/halo.png" alt="" class="halo">
             </div>
-            <div class="page2_main" style="top: 54%">
+            <div class="page2_main" style="top: 57%">
                 <input type="text" placeholder="：输入您的姓名" class="inp">
             </div>
             <a href="javascript:;" class="nextShow" style="position: absolute;top: 81%;left: 50%;width: 56vw;transform: translate(-50%,0);">
@@ -272,8 +275,8 @@
                 <img src="images/halo_txt.png" alt="" class="auto_img">
                 <img src="images/halo.png" alt="" class="halo">
             </div>
-            <div class="page2_main" style="top: 54%">
-                <p style="text-align: center;color:#fff;font-size: 18px;">李某某</p>
+            <div class="page2_main" style="top: 56%">
+                <p style="text-align: center;color:#fff;font-size: 22px;">李某某</p>
             </div>
             <div class="btn_group">
                 <a href="javascript:;" class="openShare">
@@ -301,8 +304,7 @@
     <a href="javascript:;" class="muc open_music_div" onclick="openmusic()">
         <img src="images/muc_act.png" alt="">
     </a>
-    <audio style="display:none; height: 0" id="bg-music" preload="auto" src="videos/bg_music_01.mp3"></audio>
-
+    <audio style="display:none; height: 0" id="bg-music" preload="auto" autoplay src="videos/bg_music_01.mp3" loop="loop"></audio>
 
     <script src="js/jquery-1.8.0.min.js"></script>
     <script src="js/loadImg.js"></script>

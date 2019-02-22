@@ -84,8 +84,8 @@ body {
 .muc{
   position: fixed;
   z-index: 88;
-  right: 7.2vw;
-  top: 6.7vw;
+  right: 4.2vw;
+  top: 2.7vw;
   display: none;
 }
 .muc img{
@@ -288,7 +288,7 @@ body {
 .halo_box{
   position: relative;
   top: 10%;
-  width: 97%;
+  width: 96%;
   margin: 0 auto 0;
 }
 .halo{
