@@ -36,7 +36,7 @@
 <body class="body">
     <div class="main">
         <div id="particles-js" class="main_bg"></div>
-        <div class="page page1">
+        <div class="page page1" style="display: block">
             <div class="page1_main">
                 <div class="loading_box">
                     <img src="images/loading.png" alt="" class="auto_img img">
@@ -170,9 +170,9 @@
                 <img src="images/page2/arrow.png" alt="" class="page2_arrow page2_arrow1 animated fadeInDown" style="animation-delay: 8s;">
             </div>
         </div>
-        <div class="page page4" style="display: block">
+        <div class="page page4">
             <div class="page2_main" style="top: 29%">
-                    <img src="images/halo_bg.png" alt="" class="auto_img">
+                <img src="images/halo_bg.png" alt="" class="auto_img">
 
                 <div class="halo_box" style="top: 30%;position: absolute;left: 16%;width: 77%;">
                     <img src="images/halo_txt.png" alt="" class="auto_img">
@@ -295,6 +295,14 @@
             </a>
         </div>
     </div>
+    <a href="javascript:;" class="muc close_music_div" onclick="pauseAuto()">
+        <img src="images/muc.png" alt="">
+    </a>
+    <a href="javascript:;" class="muc open_music_div" onclick="openmusic()">
+        <img src="images/muc_act.png" alt="">
+    </a>
+    <audio style="display:none; height: 0" id="bg-music" preload="auto" src="videos/bg_music_01.mp3"></audio>
+
 
     <script src="js/jquery-1.8.0.min.js"></script>
     <script src="js/loadImg.js"></script>
@@ -303,7 +311,6 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-
         //点击按钮跳转下一个页面
         $(".nextShow").on('click', function () {
             if ($(this).parents(".page").next().hasClass("page3")) {

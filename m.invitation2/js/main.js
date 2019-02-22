@@ -1,29 +1,38 @@
-// window.onload = function () {
-// 	var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_05.png', 'images/page_bg_06.png', 'images/page_bg_07.png']
-// 	$("img").each(function (i, t) {
-// 		imgurl.push($("img").eq(i).attr("src"))
-// 	})
-// 	console.log(imgurl)
-// 	var callbacks = [];
-// 	imgLoader(imgurl, function (percentage) {
-// 		var i = callbacks.length;
-// 		callbacks.push(function () {
-// 			setTimeout(function () {
-// 				var percentT = percentage * 100;
-// 				if (percentage == 1) {
-// 					setTimeout(function () {
-// 						$('.page1').hide().next().show();
-// 					}, 100);
-// 				}
-// 				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
-// 				callbacks[i + 1] && callbacks[i + 1]();
-// 			}, 100);
-// 		});
-// 		if (percentage == 1) {
-// 			callbacks[0]();
-// 		}
-// 	});
-// }
+window.onload = function () {
+	var audio = document.getElementById('bg-music');
+	audio.play();
+
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+	audio.pause();
+
+	var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_05.png', 'images/page_bg_06.png', 'images/page_bg_07.png']
+	$("img").each(function (i, t) {
+		imgurl.push($("img").eq(i).attr("src"))
+	})
+	console.log(imgurl)
+	var callbacks = [];
+	imgLoader(imgurl, function (percentage) {
+		var i = callbacks.length;
+		callbacks.push(function () {
+			setTimeout(function () {
+				var percentT = percentage * 100;
+				if (percentage == 1) {
+					setTimeout(function () {
+						$('.page1').hide().next().show();
+						$(".close_music_div").show()
+					}, 100);
+				}
+				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
+				callbacks[i + 1] && callbacks[i + 1]();
+			}, 100);
+		});
+		if (percentage == 1) {
+			callbacks[0]();
+		}
+	});
+}
 //input 输入后不页面不下来
 $("input").on('blur', function () {
 	alert(111)
@@ -105,3 +114,51 @@ document.addEventListener('touchend', function (ev) {
 		default:
 	}
 }, false);
+function openmusic() {
+	autoPlayMusic();
+	audioAutoPlay();
+	$(".close_music_div").css({ "display": "block" });
+	$(".open_music_div").css({ "display": "none" });
+}
+
+function pauseAuto() {
+	var audio = document.getElementById('bg-music');
+	audio.pause();
+	$(".close_music_div").css({ "display": "none" });
+	$(".open_music_div").css({ "display": "block" });
+}
+
+function audioAutoPlay() {
+	var audio = document.getElementById('bg-music');
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+}
+// 音乐播放
+function autoPlayMusic() {
+	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+	function musicInBrowserHandler() {
+		musicPlay(true);
+		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	}
+	document.body.addEventListener('touchstart', musicInBrowserHandler);
+	// 自动播放音乐效果，解决微信自动播放问题
+	function musicInWeixinHandler() {
+		musicPlay(true);
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			musicPlay(true);
+		}, false);
+		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay(isPlay) {
+	var media = document.getElementById('bg-music');
+	if (isPlay && media.paused) {
+		media.play();
+	}
+	if (!isPlay && !media.paused) {
+		media.pause();
+	}
+}
