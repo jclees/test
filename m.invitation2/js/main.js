@@ -1,29 +1,29 @@
-window.onload = function () {
-	var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_05.png', 'images/page_bg_06.png', 'images/page_bg_07.png']
-	$("img").each(function (i, t) {
-		imgurl.push($("img").eq(i).attr("src"))
-	})
-	console.log(imgurl)
-	var callbacks = [];
-	imgLoader(imgurl, function (percentage) {
-		var i = callbacks.length;
-		callbacks.push(function () {
-			setTimeout(function () {
-				var percentT = percentage * 100;
-				if (percentage == 1) {
-					setTimeout(function () {
-						$('.page1').hide().next().show();
-					}, 100);
-				}
-				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
-				callbacks[i + 1] && callbacks[i + 1]();
-			}, 100);
-		});
-		if (percentage == 1) {
-			callbacks[0]();
-		}
-	});
-}
+// window.onload = function () {
+// 	var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_05.png', 'images/page_bg_06.png', 'images/page_bg_07.png']
+// 	$("img").each(function (i, t) {
+// 		imgurl.push($("img").eq(i).attr("src"))
+// 	})
+// 	console.log(imgurl)
+// 	var callbacks = [];
+// 	imgLoader(imgurl, function (percentage) {
+// 		var i = callbacks.length;
+// 		callbacks.push(function () {
+// 			setTimeout(function () {
+// 				var percentT = percentage * 100;
+// 				if (percentage == 1) {
+// 					setTimeout(function () {
+// 						$('.page1').hide().next().show();
+// 					}, 100);
+// 				}
+// 				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
+// 				callbacks[i + 1] && callbacks[i + 1]();
+// 			}, 100);
+// 		});
+// 		if (percentage == 1) {
+// 			callbacks[0]();
+// 		}
+// 	});
+// }
 //input 输入后不页面不下来
 $("input").on('blur', function () {
 	alert(111)

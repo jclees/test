@@ -36,7 +36,7 @@
 <body class="body">
     <div class="main">
         <div id="particles-js" class="main_bg"></div>
-        <div class="page page1" style="display: block">
+        <div class="page page1">
             <div class="page1_main">
                 <div class="loading_box">
                     <img src="images/loading.png" alt="" class="auto_img img">
@@ -51,8 +51,11 @@
                 <img src="images/halo_txt.png" alt="" class="auto_img">
                 <img src="images/halo.png" alt="" class="halo">
             </div>
-            <div class="page2_main" style="top: 54%">
-                <p style="text-align: center;color:#fff;font-size: 18px;">李某某</p>
+            <div class="page2_main" style="top: 53%">
+                <p style="text-align: center;color:#fff;font-size: 24px;">李某某</p>
+            </div>
+            <div class="page2_main" style="top: 89%">
+                <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow" style="padding-top: 0;">
             </div>
             <div class="btn_group">
                 <a href="javascript:;" class="jumpShare">
@@ -73,9 +76,6 @@
                 <img src="images/bot_btn_01.png" alt="" class="auto_img anm_pulse">
             </a>
         </div>
-
-
-
         <div class="page page3">
 
             <div class="page2_main" style="top: 57%;">
@@ -166,11 +166,19 @@
                         </div>
                     </div>
                 </div>
+                <p>滑动走进海尔时代</p>
                 <img src="images/page2/arrow.png" alt="" class="page2_arrow page2_arrow1 animated fadeInDown" style="animation-delay: 8s;">
             </div>
         </div>
+        <div class="page page4" style="display: block">
+            <div class="page2_main" style="top: 29%">
+                    <img src="images/halo_bg.png" alt="" class="auto_img">
 
-        <div class="page page4">
+                <div class="halo_box" style="top: 30%;position: absolute;left: 16%;">
+                    <img src="images/halo_txt.png" alt="" class="auto_img">
+                    <img src="images/halo.png" alt="" class="halo">
+                </div>
+            </div>
             <div class="page2_main" style="top: 70%">
                 <div class="txt_box page4_txt_box">
                     <div class="animated fadeInDown">
@@ -294,7 +302,7 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-      
+
         //点击按钮跳转下一个页面
         $(".nextShow").on('click', function () {
             if ($(this).parents(".page").next().hasClass("page3")) {
@@ -323,7 +331,7 @@
             $(".page").hide();
             $(this).parents(".page").next().addClass("animated fadeIn").show();
         });
-        
+
     </script>
 
 </body>
