@@ -25,6 +25,13 @@ window.onload = function () {
 			callbacks[0]();
 		}
 	});
+	var audio = document.getElementById('bg-music');
+	audio.play();
+
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+	audio.pause();
 }
 //input 输入后解决页面不下来问题
 $("input").on('blur', function () {

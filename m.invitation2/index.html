@@ -313,15 +313,15 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        window.onload = function () {
-            var audio = document.getElementById('bg-music');
-            audio.play();
+        // window.onload = function () {
+        //     var audio = document.getElementById('bg-music');
+        //     audio.play();
 
-            document.addEventListener("WeixinJSBridgeReady", function () {
-                audio.play();
-            }, false);
-            audio.pause();
-        }
+        //     document.addEventListener("WeixinJSBridgeReady", function () {
+        //         audio.play();
+        //     }, false);
+        //     audio.pause();
+        // }
         //点击按钮跳转下一个页面
         $(".nextShow").on('click', function () {
             if ($(this).parents(".page").next().hasClass("page3")) {
