@@ -1,12 +1,4 @@
 window.onload = function () {
-	var audio = document.getElementById('bg-music');
-	audio.play();
-
-	document.addEventListener("WeixinJSBridgeReady", function () {
-		audio.play();
-	}, false);
-	audio.pause();
-
 	var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_05.png', 'images/page_bg_06.png', 'images/page_bg_07.png']
 	$("img").each(function (i, t) {
 		imgurl.push($("img").eq(i).attr("src"))
@@ -21,7 +13,7 @@ window.onload = function () {
 				if (percentage == 1) {
 					setTimeout(function () {
 						$('.page1').hide().next().show();
-						$(".close_music_div").show()
+						openmusic();
 					}, 100);
 				}
 				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
