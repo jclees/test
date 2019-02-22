@@ -57,7 +57,7 @@
             <div class="page2_main" style="top: 89%">
                 <a href="javascript:;" class="nextShow">
                     <img src="images/page2/arrow.png" alt="" class="page2_arrow p2_arrow" style="padding-top: 0;">
-
+                    <p style="font-size: 16px;color: #f1f1f1;text-align: center;">点击进入</p>
                 </a>
             </div>
             <!-- <div class="btn_group">
@@ -333,6 +333,7 @@
                 }, 9000)
             }
             if ($(this).parents(".page").next().hasClass("page7")) {
+                $(".page7").css("background-image","url(images/page_bg_07_act.png)")
                 alert("生成邀请函按钮")
             }
             if ($(this).parents(".page").prev().hasClass("page6")) {

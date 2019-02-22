@@ -15,6 +15,7 @@ window.onload = function () {
 						$('.page1').hide().next().show();
 						openmusic();
 					}, 100);
+					$(".page0").hide()
 				}
 				$('.loading_box .txt').html((parseInt(percentT)) + ' %');
 				callbacks[i + 1] && callbacks[i + 1]();
@@ -27,7 +28,6 @@ window.onload = function () {
 }
 //input 输入后解决页面不下来问题
 $("input").on('blur', function () {
-	alert(111)
 	window.scroll(0, 0);
 });
 // 跳转到邀请页
