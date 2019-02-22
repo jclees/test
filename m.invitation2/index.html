@@ -313,6 +313,15 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
+        window.onload = function () {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            audio.pause();
+        }
         //点击按钮跳转下一个页面
         $(".nextShow").on('click', function () {
             if ($(this).parents(".page").next().hasClass("page3")) {
@@ -333,7 +342,7 @@
                 }, 9000)
             }
             if ($(this).parents(".page").next().hasClass("page7")) {
-                $(".page7").css("background-image","url(images/page_bg_07_act.png)")
+                $(".page7").css("background-image", "url(images/page_bg_07_act.png)")
                 alert("生成邀请函按钮")
             }
             if ($(this).parents(".page").prev().hasClass("page6")) {
