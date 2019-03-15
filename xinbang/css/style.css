@@ -41,6 +41,7 @@ a:focus{
 }
 .header .navbar-default .navbar-brand {
   color: #fff;
+  padding: 40px 15px;
 }
 .header .navbar-default .navbar-brand:hover,
 .header .navbar-default .navbar-brand:focus {
@@ -50,10 +51,12 @@ a:focus{
 .header .navbar-default .navbar-text {
   color: #fff;
 }
-.header .navbar-default .navbar-nav > li{
-  margin: 0 12px;
+.header .navbar-default .navbar-nav > li {
+  margin: 0 20px;
+  padding: 0 0 12px 0;
   border-bottom: 2px solid transparent;
 }
+
 .header .navbar-default .navbar-nav > li:last-of-type{
   padding-right: 0;
 }
@@ -75,10 +78,9 @@ a:focus{
   border-bottom: 2px solid #fff;
 }
 .header .navbar-default .navbar-nav > li > a {
-  padding: 15px 0;
-  color: #fff;
   font-size: 18px;
-  border-bottom: 2px solid transparent;
+  height: 86px;
+  padding: 52px 0 0;
 }
 .header_1 .navbar-default .navbar-nav > li:hover .dropdown-menu{
   display: block;
@@ -515,21 +517,22 @@ a:focus{
 
 
 /* 适配 */
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}
 @media (min-width: 768px) {
   .container {
-    width: 1230px;
+    width: 1200px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 1230px;
+    width: 1200px;
   }
 }
 @media (min-width: 1200px) {
-  /* .auto_img{
-    width:auto;
-  } */
   .container {
-    width: 1230px;
+    width: 1200px;
   }
 }
