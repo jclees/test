@@ -8,7 +8,6 @@
     <title></title>
     <link rel="stylesheet" href="">
     <style>
-        
     </style>
 </head>
 
@@ -26,13 +25,10 @@
             }
         }
         var isWeixin = is_weixin();
-        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-        var weixinTip = $('<div id="weixinTip"><p><img src="live_weixin.png" alt="微信打开"/></p></div>');
-        
-        if(isWeixin){
+        if (isWeixin) {
             alert(1111)
-        }else{
-            window.location.href="http://appstore.huawei.com/app/C100657135";
+        } else {
+            window.location.href = "http://appstore.huawei.com/app/C100657135";
         }
     </script>
 
