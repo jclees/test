@@ -8,12 +8,19 @@
     <title></title>
     <link rel="stylesheet" href="">
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        img{
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <h1>1111</h1>
-    <img src="//i2.hdslb.com/bfs/archive/0b4d265211c7fe25934d5e4caa9609b7509a3717.jpg@320w_200h.webp" alt="">
+    <img src="wx_guide.png" alt="">
     <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
     <script>
         function is_weixin() {
@@ -26,7 +33,6 @@
         }
         var isWeixin = is_weixin();
         if (isWeixin) {
-            alert(1111)
         } else {
             window.location.href = "http://appstore.huawei.com/app/C100657135";
         }
