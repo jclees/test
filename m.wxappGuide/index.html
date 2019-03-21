@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <img src="wx_guide.png" alt="">
+    
     <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
     <script>
         function is_weixin() {
@@ -33,6 +33,7 @@
         }
         var isWeixin = is_weixin();
         if (isWeixin) {
+            $("body").append("<img src='wx_guide.png' alt=''>")
         } else {
             window.location.href = "http://appstore.huawei.com/app/C100657135";
         }
