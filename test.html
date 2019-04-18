@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            background: #f2f3f5;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+
+        .a {
+            color: green;
+            font-size: 24rpx;
+            color: #000;
+            text-shadow: 0 0 20px green;
+        }
+
+        .box {
+            width: 100px;
+            height: 300px;
+            background: red;
+            position: relative;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            width: 256px;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(rgba(242, 243, 245, .3), rgba(242, 243, 245, .98), #f2f3f5);
+        }
+
+        .fixed {
+            position: fixed;
+            left: 0;
+            bottom: -300px;
+            background: lightcoral;
+            width: 100%;
+            height: 300px;
+            transition: all .2s ease-out;
+            z-index: 99;
+        }
+
+        .fixed.cur {
+            bottom: 0;
+        }
+
+        .open {
+            display: block;
+        }
+
+        .img {
+            position: absolute;
+            left: 0%;
+            top: 60%;
+            transform: rotate(360deg);
+            animation: img1 1s ease;
+        }
+
+        .img_cur {
+            /* top: 60%;
+            left: 0;
+            transform: rotate(340deg); */
+        }
+
+        @keyframes img1 {
+            0% {
+                left: 40%;
+                top: 10%;
+                transform: rotate(0deg);
+            }
+            100% {
+                top: 60%;
+                left: 0%;
+                transform: rotate(360deg);
+            }
+        }
+
+        .nav {
+            display: flex;
+            margin: 0 auto;
+            width: 1200px;
+            position: relative;
+        }
+
+        .nav a {
+            margin: 30px;
+            font-size: 24px;
+            color: #666;
+            display: block;
+        }
+
+        .nav a.act {
+            color: #000;
+        }
+
+        .nav .line {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            height: 2px;
+            width: 100px;
+            background: #000;
+        }
+
+        .shubiao {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="line"></div>
+        <a href="javascript:;" class="act">导航1</a>
+        <a href="javascript:;">导航2</a>
+        <a href="javascript:;">导航3</a>
+    </div>
+    <div class="shubiao">
+        跑不掉了吧~
+    </div>
+    <img src="1.png" alt="" class="img">
+    <a href="javascript:;" class="open" onclick="open1()">打开</a>
+    <div class="fixed" onclick="open2()"></div>
+    <div class="a_box">
+        <a href="" data-i="0">0000</a>
+        <p>123</p>
+        <p class="123213class1"></p>
+        <a href="" data-i="1">1211</a>
+    </div>
+    <input type="text" id="d1">
+    <div class="box"></div>
+    <div id="dom">好嗨呀 ~</div>
+    <button onclick="firstFuc()">点一下我就会自闭</button>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+
+        $.ajax({
+            type: "GET",
+            url: "https://huanbaobi.weixingzpt.com/api/content/personalList",
+            data: {
+                member_id: 1,
+                page: 1
+            },
+            dataType: "json",
+            jsonp: "callbackparam",
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (data) {
+                console.log(data)
+            }
+        });
+        $(".line").css({
+            "width": $(".nav a.act").width(),
+            "left": $(".nav a.act").offset().left - $(".nav").offset().left
+        })
+
+        var initLeft = $(".nav a.act").offset().left - $(".nav").offset().left;
+        $(".nav a").hover(function () {
+            $(this).addClass("act").siblings().removeClass("act")
+            $(this).siblings(".line").stop().animate({
+                left: ($(this).offset().left - $(".nav").offset().left) + "px"
+            })
+        }, function () {
+            $(this).removeClass("act")
+            console.log(initLeft)
+            $(this).siblings(".line").stop().animate({
+                left: initLeft
+            })
+        })
+        $(".nav a").on("click", function () {
+            initLeft = $(this).offset().left - $(".nav").offset().left
+            $(this).siblings(".line").stop().animate({
+                left: ($(this).offset().left - $(".nav").offset().left) + "px"
+            })
+        })
+        $(".img").addClass("img_cur")
+        console.log($(".a_box a").eq(-2).html())
+        var d1 = document.getElementById("d1")
+        d1.onchange = function () {
+            var val = d1.value
+            console.log(val)
+        }
+
+        let a = 1
+        $(".a_box > a").each(function (i, v) {
+            // console.log($(this).attr("data-i"))
+            if (a == $(this).attr("data-i")) {
+                $(this).addClass("cur")
+            } else {
+                $(this).removeClass("cur")
+            }
+        })
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        (function (d) {
+            console.log(d)
+        })(window)
+
+        // function Card() {
+        //     this.lunzi = "1111111111"
+        // }
+        // Card.prototype = {
+        //     jingzi: function () {
+        //         console.log(this.lunzi)
+        //     }
+        // }
+        // var card = new Card;
+        // card.jingzi()
+        function open1() {
+            $(".fixed").addClass("cur");
+        }
+        function open2() {
+            $(".fixed").removeClass("cur");
+        }
+    </script>
+
+</body>
+
+</html>
