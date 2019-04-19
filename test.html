@@ -157,23 +157,25 @@
     <button onclick="firstFuc()">点一下我就会自闭</button>
     <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
     <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://huanbaobi.weixingzpt.com/api/content/personalList",
+                data: {
+                    member_id: 1,
+                    page: 1
+                },
+                dataType: "json",
+                jsonp: "callbackparam",
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function (data) {
+                    console.log(data)
+                }
+            });
+        })
 
-        $.ajax({
-            type: "GET",
-            url: "https://huanbaobi.weixingzpt.com/api/content/personalList",
-            data: {
-                member_id: 1,
-                page: 1
-            },
-            dataType: "json",
-            jsonp: "callbackparam",
-            success: function (data) {
-                console.log(data)
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        });
         $(".line").css({
             "width": $(".nav a.act").width(),
             "left": $(".nav a.act").offset().left - $(".nav").offset().left
