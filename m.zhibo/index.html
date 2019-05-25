@@ -27,27 +27,12 @@
         .video-js .vjs-fullscreen-control {
             margin-left: auto;
         }
-
-        .play_btn {
-            position: fixed;
-            left: 0;
-            top: 10%;
-            z-index: 2;
-            color: #fff;
-        }
-
-        video::-webkit-media-controls {
-            display: none !important;
-        }
     </style>
 </head>
 
 <body>
     <div class="hd">
-
-        <!-- <div onclick="plays()" class="play_btn">播放</div>
-        <div onclick="covers()" class="cover_btn">全屏</div> -->
-        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" data-setup="{}">
+        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls x-webkit-airplay="true" playsinline  webkit-playsinline="true"  x5-video-player-type="h5" preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" data-setup="{}">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
@@ -74,26 +59,10 @@
         myPlayer.play();
         myPlayer.currentTime(6000);
     });
-    function plays() {
-        myPlayer.play();
-    }
-    function covers() {
-        myPlayer.enterFullScreen();
-        // myPlayer.enterFullScreen();
-    }
-
-    var myPlayer = videojs('my-video');
-    myPlayer.play();
-    videojs("my-video").ready(function () {
-        var myPlayer = this;
-        myPlayer.play();
-        myPlayer.currentTime(60);
-    });
 
     myPlayer.on("ended", function () {
         alert(1111111111)
     });
-
 
     var data = [
         {
