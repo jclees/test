@@ -76,6 +76,7 @@
             <input type="text" placeholder="说点什么吧..." onchange="bindInput(this)">
             <a href="javascript:;" class="sava_btn" onclick="savaData()">确定</a>
         </div>
+        <div class="layer">直播已结束</div>
     </div>
 
 </body>
@@ -93,7 +94,7 @@
         myPlayer.currentTime(1200);		    //跳转
     });
     myPlayer.on("ended", function () {
-        alert(1111111111)
+        $(".layer").show()
     });
 
 

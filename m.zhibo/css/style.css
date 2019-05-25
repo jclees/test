@@ -97,3 +97,15 @@ html,body{
     font-size: .28rem;
     color: #fff;
 }
+.layer{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 10%;
+    font-size: .36rem;
+    color: red;
+    z-index: 3;
+    margin: auto;
+    text-align: center;
+    display: none;
+}
