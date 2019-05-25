@@ -8,7 +8,7 @@ html,body{
     background: #000;
 }
 .hd .video{
-    width: 120%;
+    width: 100%;
     height: 100%;
 }
 .bd{
@@ -88,7 +88,7 @@ html,body{
     background: lightskyblue;
     height: .6rem;
     line-height: .6rem;
-    padding: 0 .4rem;
-    font-size: .16rem;
+    padding: 0 1rem;
+    font-size: .28rem;
     color: #fff;
 }
