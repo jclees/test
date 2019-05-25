@@ -27,22 +27,28 @@
         .video-js .vjs-fullscreen-control {
             margin-left: auto;
         }
-        .play_btn{
+
+        .play_btn {
             position: fixed;
             left: 0;
             top: 10%;
             z-index: 2;
             color: #fff;
         }
+
+        video::-webkit-media-controls {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body>
     <div class="hd">
-        
-    <div onclick="plays()" class="play_btn">播放</div>
-    <!-- <div onclick="covers()" class="cover_btn">全屏</div> -->
-        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay preload="auto" webkit-playsinline="true" poster="m.jpg" data-setup="{}">
+
+        <div onclick="plays()" class="play_btn">播放</div>
+        <!-- <div onclick="covers()" class="cover_btn">全屏</div> -->
+        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay preload="auto" webkit-playsinline="true" poster="m.jpg"
+            data-setup="{}">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
@@ -136,7 +142,7 @@
         data.push({
             "name": "蔡徐坤",
             "con": "我是实习两年半的.......篮球...鸡你太美........",
-            "img":"https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D0%2C1%2C1000%2C660%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=b04511988bd6277ffd5d687815083301/5bafa40f4bfbfbed9c20b35c74f0f736afc31f93.jpg"
+            "img": "https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D0%2C1%2C1000%2C660%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=b04511988bd6277ffd5d687815083301/5bafa40f4bfbfbed9c20b35c74f0f736afc31f93.jpg"
         })
         b = data.length
     }, 500)
