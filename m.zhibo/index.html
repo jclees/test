@@ -53,7 +53,7 @@
     <div class="M_wrap">
         <div class="hd">
             <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls controlsList='nofullscreen nodownload noremote footbar'
-                x-webkit-airplay="true" playsinline webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
+                x-webkit-airplay="true" webkit-playsinline playsinline webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
                 data-setup="{}">
                 <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
                 <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
@@ -83,9 +83,6 @@
         var myPlayer = this;
         myPlayer.play();
         myPlayer.currentTime(600);
-    });
-    myPlayer.disableProgress({
-        autoDisable: true
     });
 
     myPlayer.on("ended", function () {
