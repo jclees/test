@@ -13,27 +13,26 @@
     <meta content="caibaojian" name="author" />
     <title>index</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/video-js.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/rem.js"></script>
     <style>
-        .video-js .vjs-progress-control,
-        .video-js .vjs-time-control,
-        .video-js .vjs-volume-panel,
-        .video-js .vjs-play-control {
-            display: none;
-        }
-
-        .video-js .vjs-fullscreen-control {
-            margin-left: auto;
-        }
-
-        .play_btn {
+        .play_btn,
+        .cover_btn,
+        .outcover_btn {
             position: fixed;
             left: 0;
             top: 10%;
             z-index: 2;
             color: #fff;
+        }
+
+        .cover_btn {
+            left: 30%;
+        }
+
+        .outcover_btn {
+            z-index: 99999999999999999999999999;
+            left: 50%;
         }
 
         video::-webkit-media-controls {
@@ -45,9 +44,11 @@
 <body>
     <div class="hd">
 
-        <!-- <div onclick="plays()" class="play_btn">播放</div>
-        <div onclick="covers()" class="cover_btn">全屏</div> -->
-        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" data-setup="{}">
+        <div onclick="plays()" class="play_btn">播放</div>
+        <div onclick="covers()" class="cover_btn">全屏</div>
+        <div onclick="outCovers()" class="outcover_btn">退出全屏</div>
+        <video id="mYvideo" class="video" autoplay controls preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
+            data-setup="{}">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
@@ -66,33 +67,39 @@
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/video.min.js"></script>
 <script>
-    var myPlayer = videojs('my-video');
-    videojs("my-video").ready(function () {
-        var myPlayer = this;
-        myPlayer.play();
-        myPlayer.currentTime(6000);
-    });
+    var mYvideo = document.getElementById("mYvideo")
     function plays() {
-        myPlayer.play();
+        mYvideo.play();
     }
     function covers() {
-        myPlayer.enterFullScreen();
-        // myPlayer.enterFullScreen();
+        FullScreen()
     }
-
-    var myPlayer = videojs('my-video');
-    myPlayer.play();
-    videojs("my-video").ready(function () {
-        var myPlayer = this;
-        myPlayer.play();
-        myPlayer.currentTime(60);
-    });
-
-    myPlayer.on("ended", function () {
-        alert(1111111111)
-    });
+    function outCovers() {
+        exitFullscreen()
+    }
+    //进入全屏
+    function FullScreen() {
+        var ele = mYvideo;
+        if (ele.requestFullscreen) {
+            ele.requestFullscreen();
+        } else if (ele.mozRequestFullScreen) {
+            ele.mozRequestFullScreen();
+        } else if (ele.webkitRequestFullScreen) {
+            ele.webkitRequestFullScreen();
+        }
+    }
+    //退出全屏
+    function exitFullscreen() {
+        var de = mYvideo;
+        if (de.exitFullscreen) {
+            de.exitFullscreen();
+        } else if (de.mozCancelFullScreen) {
+            de.mozCancelFullScreen();
+        } else if (de.webkitCancelFullScreen) {
+            de.webkitCancelFullScreen();
+        }
+    }
 
 
     var data = [
