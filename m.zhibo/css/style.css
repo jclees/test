@@ -1,6 +1,11 @@
 html,body{
     height: 100%;
 }
+.M_wrap{
+    max-width: 750px;
+    height: 100%;
+    margin: 0 auto;
+}
 .hd{
     width: 100%;
     height: 35%;

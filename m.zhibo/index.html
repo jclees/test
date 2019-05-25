@@ -19,7 +19,7 @@
     <style>
         .video-js .vjs-progress-control,
         .video-js .vjs-time-control,
-        .video-js .vjs-volume-panel{
+        .video-js .vjs-volume-panel {
             display: none;
         }
 
@@ -34,26 +34,29 @@
 </head>
 
 <body>
-    <div class="hd">
-        <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls x-webkit-airplay="true" playsinline webkit-playsinline="true"
-            x5-video-player-type="h5" preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
-            data-setup="{}">
-            <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
-            <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
-            <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
-            <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that
-                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-            </p>
-        </video>
-    </div>
-    <div class="bd">
-        <div class="con" id="scrolldIV">
+    <div class="M_wrap">
+        <div class="hd">
+            <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls x-webkit-airplay="true" playsinline webkit-playsinline="true"
+                x5-video-player-type="h5" preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
+                data-setup="{}">
+                <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
+                <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
+                <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
+                <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+        <div class="bd">
+            <div class="con" id="scrolldIV">
+            </div>
+        </div>
+        <div class="operation">
+            <input type="text" placeholder="说点什么吧..." onchange="bindInput(this)">
+            <a href="javascript:;" class="sava_btn" onclick="savaData()">确定</a>
         </div>
     </div>
-    <div class="operation">
-        <input type="text" placeholder="说点什么吧..." onchange="bindInput(this)">
-        <a href="javascript:;" class="sava_btn" onclick="savaData()">确定</a>
-    </div>
+
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/video.min.js"></script>
