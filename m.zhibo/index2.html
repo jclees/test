@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>demo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/video-js.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<style type="text/css">
+    canvas {
+        width: 100%;
+        height: 30%;
+        /* transform:rotate(180deg); */
+    }
+
+    video {
+        display: none;
+    }
+</style>
+
+<body>
+    <!-- 
+			object-fit: fill 视频内容充满整个video容器
+			webkit-playsinline、playsinline 内联播放
+
+			x5-video-player-type="h5" 启用x5内核H5播放器，是wechat安卓版特性
+			x5-video-player-fullscreen="true" 全屏设置 true为防止横屏
+			playsinline="true" iOS微信浏览器支持小窗内播放
+		 -->
+    <video style="position:relative; object-fit:fill;" loop id="myVideo" x5-video-player-type="h5" x5-video-orientation="h5"
+        x5-video-player-fullscreen="true" x-webkit-airplay="true" x5-playsinline="true" webkit-playsinline="true" playsinline="true"
+        src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4">
+    </video>
+    <canvas id="myCanvas"></canvas>
+    <img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" id="poster" style="display:none">
+</body>
+
+</html>
+<script>
+    var video = document.getElementById('myVideo');
+    var canvas = document.getElementById("myCanvas");
+    video.addEventListener('timeupdate', function (e) {
+        console.log(video.currentTime) // 当前播放的进度
+    })
+
+    video.addEventListener('ended', function (e) {
+        // 播放结束时触发
+    })
+
+    var context = canvas.getContext("2d");
+    canvas.width = window.innerWidth * 2.5;  //获取屏幕宽度作为canvas的宽度  这个设置的越大，画面越清晰（相当于绘制的图像大，然后被css缩小）
+    canvas.height = window.innerHeight;
+
+    context.drawImage(poster, 0, 0, canvas.width, canvas.height) // canvas上绘制poster图片，也可以点击播放后隐藏图片无需绘制
+
+    //video.play()
+
+    var timer = setInterval(function () { // 绘制视频
+        context.drawImage(video, 0, 0, canvas.width, canvas.height)
+    }, 40)
+
+    var isplay = false // 视频播放状态
+
+    $('#myCanvas').on('touchstart', function (e) {
+        if (!isplay) { // 暂停 
+            // 解决 由于iOS上视频不能自动播放，导致第一次需要点击两次才能播放视频的问题
+            if (video.paused) {
+                isplay = false
+                video.play()
+            } else {
+                isplay = true
+                video.pause()
+            }
+        } else { // 开始播放
+            video.play()
+            isplay = false
+        }
+    })
+</script>

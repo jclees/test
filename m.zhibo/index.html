@@ -46,6 +46,10 @@
         video[ishivideo="true"]::media-controls {
             display: none !important;
         }
+
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -83,24 +87,16 @@
 
         var myPlayer = this;
         myPlayer.play();
-        myPlayer.currentTime(600);
+        // myPlayer.currentTime(1200);
+    });
+    myPlayer.on('loadedmetadata', function () {
+        myPlayer.currentTime(1200);		    //跳转
+    });
+    myPlayer.on("ended", function () {
+        alert(1111111111)
     });
 
-    // myPlayer.on("ended", function () {
-    //     alert(1111111111)
-    // });
 
-
-    var video = docume.getElementById("my-video")
-
-    video.addEventListener('timeupdate', function (e) {
-        video.currentTime("222222222")
-    })
-
-    video.addEventListener('ended', function (e) {
-        // 播放结束时触发
-        alert(1111111111)
-    })
 
     var data = [
         {
