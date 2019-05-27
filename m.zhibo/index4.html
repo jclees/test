@@ -16,11 +16,11 @@
         }
         .hd{
             overflow: hidden;
-            height:35%;
+            height: 100%;
         }
         .coverr {
             position: absolute;
-            bottom: 0;
+            top: 0;
             height: 50px;
             background: red;
             width: 100%;
@@ -30,14 +30,13 @@
         .prism-player{
             overflow: hidden;
         }
-       
     </style>
 </head>
 
 <body>
     <div class="hd">
         <div class="prism-player" id="player-con">
-            <!-- <div class="coverr"></div> -->
+            <div class="coverr"></div>
         </div>
     </div>
 
@@ -58,6 +57,7 @@
             "autoPlayDelay": "",
             "controlBarVisibility": "hover",
             "useH5Prism": true,
+            x5_type: 'h5',
             "skinLayout": [
                 {
                     "name": "bigPlayButton",
