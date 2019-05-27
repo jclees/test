@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <title>Aliplayer在线配置</title>
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css" />
+    <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></script>
+</head>
+
+<body>
+    <div class="prism-player" id="player-con"></div>
+    <script>
+        var player = new Aliplayer({
+            "id": "player-con",
+            "cover": 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882',
+            //支持播放地址播放,此播放优先级最高
+            "source": 'http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4',
+            "width": "100%",
+            "height": "500px",
+            "autoplay": true,
+            "isLive": false,
+            "rePlay": false,
+            "playsinline": true,
+            "preload": true,
+            "autoPlayDelay": "",
+            "controlBarVisibility": "hover",
+            "useH5Prism": true,
+            "skinLayout": [
+                {
+                    "name": "bigPlayButton",
+                    "align": "blabs",
+                    "x": 30,
+                    "y": 80
+                },
+                {
+                    "name": "H5Loading",
+                    "align": "cc"
+                },
+                {
+                    "name": "errorDisplay",
+                    "align": "tlabs",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "name": "infoDisplay"
+                },
+                {
+                    "name": "tooltip",
+                    "align": "blabs",
+                    "x": 0,
+                    "y": 56
+                },
+                {
+                    "name": "thumbnail"
+                },
+                {
+                    "name": "controlBar",
+                    "align": "blabs",
+                    "x": 0,
+                    "y": 0,
+                    "children": [
+                        {
+                            "name": "fullScreenButton",
+                            "align": "tr",
+                            "x": 10,
+                            "y": 12
+                        }
+                    ]
+                }
+            ]
+        }, function (player) {
+            console.log("播放器创建了。");
+        }
+        );
+    </script>
+</body>
