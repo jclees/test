@@ -50,12 +50,29 @@
         video::-webkit-media-controls-enclosure {
             display: none !important;
         }
+
+
+        .play_btn,
+        .cover_btn,
+        .outcover_btn {
+            position: fixed;
+            left: 0;
+            top: 10%;
+            z-index: 2;
+            color: red;
+            background: #fff;
+        }
+
+        .cover_btn {
+            left: 30%;
+        }
     </style>
 </head>
 
 <body>
     <div class="M_wrap">
         <div class="hd">
+            <div onclick="covers()" class="cover_btn">全屏</div>
             <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls controlsList='nofullscreen nodownload noremote footbar'
                 x-webkit-airplay="true" webkit-playsinline playsinline webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true"
                 preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
@@ -70,6 +87,7 @@
         </div>
         <div class="bd">
             <div class="con" id="scrolldIV">
+                <!-- <div class="gf_box cur">网络不是法外之地...请谨慎发言...</div> -->
             </div>
         </div>
         <div class="operation">
@@ -97,6 +115,38 @@
         $(".layer").show()
         $(".video-js .vjs-play-control").hide()
     });
+
+    let is_full = true;
+    var lt;
+    function covers() {
+        var w = $(window).width();
+        var h = $(window).height();
+        if (is_full) {
+            $(".hd").css({
+                "height": w + "px",
+                "width": h + "px"
+            })
+            $(".hd").addClass("cur")
+
+            setTimeout(function () {
+                lt = $(".hd").offset().left
+                $(".hd").css({
+                    "left": "-" + lt + "px",
+                    "top": lt + "px"
+                })
+            }, 200)
+            is_full = false
+        } else {
+            $(".hd").css({
+                "height": "30%",
+                "width": "100%"
+            })
+            $(".hd").removeClass("cur")
+            is_full = true
+        }
+
+
+    }
 
 
 
@@ -145,16 +195,16 @@
         div.scrollTop = div.scrollHeight;
         a++
     }
-    setInterval(timer, 1500)
+    setInterval(timer, 1000)
 
-    // setInterval(function () {
-    //     data.push({
-    //         "name": "蔡徐坤",
-    //         "con": "我是实习两年半的.......篮球...鸡你太美........",
-    //         "img": "https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D0%2C1%2C1000%2C660%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=b04511988bd6277ffd5d687815083301/5bafa40f4bfbfbed9c20b35c74f0f736afc31f93.jpg"
-    //     })
-    //     b = data.length
-    // }, 500)
+    setInterval(function () {
+        data.push({
+            "name": "蔡徐坤",
+            "con": "我是实习两年半的.......篮球...鸡你太美........",
+            "img": "https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D0%2C1%2C1000%2C660%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=b04511988bd6277ffd5d687815083301/5bafa40f4bfbfbed9c20b35c74f0f736afc31f93.jpg"
+        })
+        b = data.length
+    }, 500)
     function bindInput(e) {
         inpVal = e.value
     }

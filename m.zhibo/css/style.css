@@ -12,6 +12,12 @@ html,body{
     overflow: hidden;
     background: #000;
 }
+.hd.cur{
+    position: absolute;
+    z-index: 1;
+    transform: rotate(90deg);
+    transition: all .2s ease-in;
+}
 .hd .video{
     width: 100%;
     height: 100%;
@@ -108,4 +114,14 @@ html,body{
     margin: auto;
     text-align: center;
     display: none;
+}
+.gf_box{
+    width: 100%;
+    background: #333;
+    color: #fff;
+    opacity: .6;
+    padding: .1rem .15rem;
+    position: relative;
+    left: 0;
+    top: 0;
 }
