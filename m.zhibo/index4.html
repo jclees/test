@@ -9,10 +9,24 @@
     <title>Aliplayer在线配置</title>
     <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css" />
     <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></script>
+    <style>
+        .coverr {
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            background: red;
+            width: 100%;
+            left: 0;
+            z-index: 99999999999;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="prism-player" id="player-con"></div>
+    <div class="prism-player" id="player-con">
+        <div class="coverr"></div>
+    </div>
+
     <script>
         var player = new Aliplayer({
             "id": "player-con",
