@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>demo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/video-js.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css" />
+    <script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></script>
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+
+</head>
+<style type="text/css">
+    /* video {
+        width: 100%;
+        height: 35%;
+    } */
+    .prism-player{
+        height: 35%;
+    }
+</style>
+
+<body>
+    <div class="prism-player" id="J_prismPlayer"></div>
+
+    <!-- <video id="haoroomsvideo" src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" preload="auto" webkit-playsinline="true"
+        playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint">
+    </video> -->
+</body>
+
+</html>
+<script>
+    var player = new Aliplayer({
+        id: 'J_prismPlayer',
+        width: '100%',
+        autoplay: true,
+        preload:true,
+        isLive:true,
+        //支持播放地址播放,此播放优先级最高
+        source: 'http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4',
+      
+    }, function (player) {
+        console.log('播放器创建好了。')
+    });
+
+
+</script>
