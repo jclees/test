@@ -70,9 +70,9 @@
 </head>
 
 <body>
+    <div onclick="covers()" class="cover_btn">全屏</div>
     <div class="M_wrap">
         <div class="hd">
-            <div onclick="covers()" class="cover_btn">全屏</div>
             <video id="my-video" class="video video-js vjs-big-play-centered" autoplay controls controlsList='nofullscreen nodownload noremote footbar'
                 x-webkit-airplay="true" webkit-playsinline playsinline webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true"
                 preload="auto" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
@@ -117,8 +117,8 @@
     });
 
     let is_full = true;
-    var lt;
     function covers() {
+        alert(1111)
         var w = $(window).width();
         var h = $(window).height();
         if (is_full) {
@@ -129,7 +129,7 @@
             $(".hd").addClass("cur")
 
             setTimeout(function () {
-                lt = $(".hd").offset().left
+                var lt = $(".hd").offset().left
                 $(".hd").css({
                     "left": "-" + lt + "px",
                     "top": lt + "px"
@@ -144,8 +144,6 @@
             $(".hd").removeClass("cur")
             is_full = true
         }
-
-
     }
 
 
