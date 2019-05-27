@@ -37,22 +37,38 @@
 
 </html>
 <script>
+    // var player = new Aliplayer({
+    //     id: 'J_prismPlayer',
+    //     width: '100%',
+    //     autoplay: true,
+    //     preload: true,
+    //     skinLayout: false,
+    //     cover: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882',
+    //     //支持播放地址播放,此播放优先级最高
+    //     source: 'http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4',
+
+    // }, function (player) {
+    //     console.log('播放器创建好了。')
+    // });
+
     var player = new Aliplayer({
         id: 'J_prismPlayer',
-        width: '100%',
         autoplay: true,
-        preload: true,
-        skinLayout: false,
-        cover:'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882',
-        //支持播放地址播放,此播放优先级最高
-        source: 'http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4',
-
-    }, function (player) {
-        console.log('播放器创建好了。')
+        isLive: true,
+        playsinline: true,
+        controlBarVisibility: 'always',
+        source: "",
+        useH5Prism: true,
+        x5_fullscreen: true, //全屏播放
+        x5_type: 'h5', //声明启用同层H5播放器，支持的值：h5
+        skinLayout: [
+            { name: "bigPlayButton", align: "blabs", x: "70", y: "150" },
+            { name: "H5Loading", align: "cc" }
+        ]
     });
 
 
-    function plays(){
+    function plays() {
         player.play();
     }
     let is_full = true;
