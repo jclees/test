@@ -38,6 +38,7 @@
         video::-webkit-media-controls {
             display: none !important;
         }
+
         video[ishivideo="true"]::-webkit-media-controls {
             display: none !important;
         }
@@ -62,8 +63,8 @@
         <div onclick="plays()" class="play_btn">播放</div>
         <div onclick="covers()" class="cover_btn">全屏</div>
         <div onclick="outCovers()" class="outcover_btn">退出全屏</div>
-        <video id="mYvideo" class="video" autoplay controls preload="auto" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882"
-            data-setup="{}">
+        <video id="mYvideo" class="video" autoplay preload="auto" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true"
+            poster="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" data-setup="{}">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.ogv" type="video/ogg">
@@ -87,33 +88,38 @@
     function plays() {
         mYvideo.play();
     }
+    let is_full = true;
     function covers() {
-        FullScreen()
+        alert(1111)
+        var w = $(window).width();
+        var h = $(window).height();
+        if (is_full) {
+            $(".hd").css({
+                "height": w + "px",
+                "width": h + "px"
+            })
+            $(".hd").addClass("cur")
+
+            setTimeout(function () {
+                var lt = $(".hd").offset().left
+                $(".hd").css({
+                    "left": "-" + lt + "px",
+                    "top": lt + "px"
+                })
+            }, 200)
+            is_full = false
+        } else {
+            $(".hd").css({
+                "height": "30%",
+                "width": "100%"
+            })
+            $(".hd").removeClass("cur")
+            is_full = true
+        }
     }
+
     function outCovers() {
         exitFullscreen()
-    }
-    //进入全屏
-    function FullScreen() {
-        var ele = mYvideo;
-        if (ele.requestFullscreen) {
-            ele.requestFullscreen();
-        } else if (ele.mozRequestFullScreen) {
-            ele.mozRequestFullScreen();
-        } else if (ele.webkitRequestFullScreen) {
-            ele.webkitRequestFullScreen();
-        }
-    }
-    //退出全屏
-    function exitFullscreen() {
-        var de = mYvideo;
-        if (de.exitFullscreen) {
-            de.exitFullscreen();
-        } else if (de.mozCancelFullScreen) {
-            de.mozCancelFullScreen();
-        } else if (de.webkitCancelFullScreen) {
-            de.webkitCancelFullScreen();
-        }
     }
 
 

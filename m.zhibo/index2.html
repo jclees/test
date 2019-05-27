@@ -15,7 +15,7 @@
 <style type="text/css">
     canvas {
         width: 100%;
-        height: 30%;
+        height: 100%;
         /* transform:rotate(180deg); */
     }
 
@@ -37,21 +37,26 @@
         x5-video-player-fullscreen="true" x-webkit-airplay="true" x5-playsinline="true" webkit-playsinline="true" playsinline="true"
         src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4">
     </video>
-    <canvas id="myCanvas"></canvas>
+    <div class="hd">
+            <canvas id="myCanvas"></canvas>
+
+    </div>
     <img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3328833007,2511671815&fm=58&bpow=626&bpoh=882" id="poster" style="display:none">
+    <a href="javascript:;" id="plays">播放播放</a>
+    <a href="javascript:;" id="covers">全屏</a>
 </body>
 
 </html>
 <script>
     var video = document.getElementById('myVideo');
     var canvas = document.getElementById("myCanvas");
-    video.addEventListener('timeupdate', function (e) {
-        console.log(video.currentTime) // 当前播放的进度
-    })
+    // video.addEventListener('timeupdate', function (e) {
+    //     console.log(video.currentTime) // 当前播放的进度
+    // })
 
-    video.addEventListener('ended', function (e) {
-        // 播放结束时触发
-    })
+    // video.addEventListener('ended', function (e) {
+    //     // 播放结束时触发
+    // })
 
     var context = canvas.getContext("2d");
     canvas.width = window.innerWidth * 2.5;  //获取屏幕宽度作为canvas的宽度  这个设置的越大，画面越清晰（相当于绘制的图像大，然后被css缩小）
@@ -67,7 +72,7 @@
 
     var isplay = false // 视频播放状态
 
-    $('#myCanvas').on('touchstart', function (e) {
+    $('#plays').on('touchstart', function (e) {
         if (!isplay) { // 暂停 
             // 解决 由于iOS上视频不能自动播放，导致第一次需要点击两次才能播放视频的问题
             if (video.paused) {
@@ -82,4 +87,35 @@
             isplay = false
         }
     })
+
+    let is_full = true;
+    $('#covers').on('touchstart', function (e) {
+        alert(1111)
+        var w = $(window).width();
+        var h = $(window).height();
+        if (is_full) {
+            $(".hd").css({
+                "height": w + "px",
+                "width": h + "px"
+            })
+            $(".hd").addClass("cur")
+
+            setTimeout(function () {
+                var lt = $(".hd").offset().left
+                $(".hd").css({
+                    "left": "-" + lt + "px",
+                    "top": lt + "px"
+                })
+            }, 200)
+            is_full = false
+        } else {
+            $(".hd").css({
+                "height": "30%",
+                "width": "100%"
+            })
+            $(".hd").removeClass("cur")
+            is_full = true
+        }
+    })
+
 </script>
