@@ -91,24 +91,24 @@
             height: '1920'
         })
     }
-    var imgs = [],
-        index = 0,
-        len = imgs.length,
-        progress = $('.progress');
+    // var imgs = [],
+    //     index = 0,
+    //     len = imgs.length,
+    //     progress = $('.progress');
 
-    $("img").each(function (i, t) {
-        imgs.push($("img").eq(i).attr("src"))
-    })
-    //图片预加载
-    $.preload(imgs, {
-        each: function (count) {
-            progress.html(Math.round((count + 1) / len * 100) + '%');
-        },
-        end: function () {
-            alert("图片加载好了")
-            // $('.loading').hide();
-        }
-    });
+    // $("img").each(function (i, t) {
+    //     imgs.push($("img").eq(i).attr("src"))
+    // })
+    // //图片预加载
+    // $.preload(imgs, {
+    //     each: function (count) {
+    //         progress.html(Math.round((count + 1) / len * 100) + '%');
+    //     },
+    //     end: function () {
+    //         alert("图片加载好了")
+    //         // $('.loading').hide();
+    //     }
+    // });
 
     function showPage(p) {
         let nextPage = $(".page" + (p + 1));
