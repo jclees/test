@@ -7,9 +7,6 @@ img{
 div{
     cursor: pointer;
 }
-.page{
-    transition: all .2s ease-in;
-}
 /* .page:first-of-type{
     display: block;
 } */

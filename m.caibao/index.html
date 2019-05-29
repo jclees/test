@@ -16,21 +16,12 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="js/rem.js"></script> -->
     <style>
-        h1,
-        p {
-            width: 100%;
-            color: #FFFFFF;
-            font-size: 15px;
-            position: absolute;
-            top: 248px;
-            left: 0;
-            text-align: center;
-            line-height: 1;
+        .page {
+            opacity: 0;
         }
 
-        p {
-            font-size: 9px;
-            top: 282px;
+        .page:first-of-type {
+            opacity: 1;
         }
     </style>
 </head>
@@ -39,6 +30,11 @@
     <div class="page">
         <a href="index2.html">
             <img src="images/guide_bg.jpg" alt="" width="1080" height="1920">
+        </a>
+    </div>
+    <div class="page">
+        <a href="index3.html">
+            <img src="images/guide_bg2.jpg" alt="" width="1080" height="1920">
         </a>
     </div>
 </body>
@@ -52,6 +48,9 @@
             width: '1080',
             height: '1920'
         })
+    }
+    function showPage(p) {
+        alert(111)
     }
 </script>
 
