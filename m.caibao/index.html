@@ -38,14 +38,21 @@
 <body>
     <div class="page">
         <a href="index2.html">
-            <img src="images/guide_bg.jpg" alt="" width="1080" height="1920">
+            <img src="images/guide.jpg" alt="" width="1080" height="1920">
         </a>
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/pageResponse.min.js"></script>
 <script>
- 
+    window.onload = window.onresize = function () {
+        pageResponse({
+            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
+            mode: 'contain',     // auto || contain || cover ，默认模式为auto 
+            width: '1080',
+            height: '1920'
+        })
+    }
 </script>
 
 </html>
