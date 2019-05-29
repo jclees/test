@@ -7,14 +7,14 @@ img{
 div{
     cursor: pointer;
 }
-.page{
+/* .page{
     overflow: hidden;
     display: none;
 }
 .page1{
     display: block;
 
-}
+} */
 /* .page > div > a{
     width: 100%;
     height: 100%;
