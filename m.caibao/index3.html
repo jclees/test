@@ -25,12 +25,12 @@
 <body>
     <div class="page">
         <div class="page1">
-            <a href="javascript:;" onclick="test()">
+            <a href="javascript:;" onclick="showPage(1);">
                 <img src="images/guide_bg.jpg" alt="">
             </a>
         </div>
         <div class="page2">
-            <a href="javascript:;">
+            <a href="javascript:;" onclick="showPage(2);">
                 <img src="images/guide_bg2.jpg" alt="">
             </a>
         </div>
@@ -83,7 +83,6 @@
 <script type="text/javascript" src="js/pageResponse.min.js"></script>
 <script src="js/preload.js"></script>
 <script>
-
     var imgs = [],
         index = 0,
         len = imgs.length,
@@ -101,8 +100,6 @@
             // $('.loading').hide();
         }
     });
-
-
     window.onload = window.onresize = function () {
         pageResponse({
             selectors: '.page',     //模块选择器，使用querySelectorAll的方法
@@ -111,10 +108,20 @@
             height: '1920'
         })
     }
-    
-    function test(){
-        alert("测试")
+
+    function showPage(p) {
+        let nextPage = $(".page" + (p + 1));
+        switch (p) {
+            case 1:
+                nextPage.show().siblings().hide()
+                break;
+            case 2:
+                nextPage.show().siblings().hide()
+                break;
+            default:
+        }
     }
+    
 
 
 
