@@ -7,10 +7,10 @@ img{
 div{
     cursor: pointer;
 }
-/* .page{
-    display: none;
+.page{
+    transition: all .2s ease-in;
 }
-.page:first-of-type{
+/* .page:first-of-type{
     display: block;
 } */
 /* .page{

@@ -19,8 +19,7 @@
 </head>
 
 <body>
-    
-    <div class="page page2">
+    <div class="page">
         <img src="images/main_bg.jpg" alt="">
         <div class="main">
             <a href="javascript:;" class="main_icon icon_prod" onclick="openPop(1);">
@@ -63,9 +62,6 @@
             </div>
         </div>
     </div>
-    <div class="page" onclick="showPage(1);">
-            <img src="images/guide_bg.jpg" alt="">
-        </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/pageResponse.min.js"></script>
@@ -77,21 +73,6 @@
             width: '1080',
             height: '1920'
         })
-    }
-    function showPage(p) {
-        let nextPage = $(".page" + (p + 1));
-        switch (p) {
-            case 1:
-                alert(1)
-
-                nextPage.show().siblings().hide()
-                break;
-            case 2:
-                alert(2)
-                nextPage.show().siblings().hide()
-                break;
-            default:
-        }
     }
     function openPop(p) {
         switch (p) {
