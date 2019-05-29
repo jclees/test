@@ -1,0 +1,52 @@
+html,body{
+    height: 100%;
+}
+img{
+    display: block;
+}
+.page{
+    overflow: hidden;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.main_icon{
+    position: absolute;
+    z-index: 1;
+}
+.icon_prod{
+    left: 40px;
+    top: 20px;
+}
+.icon_rule{
+    right: 40px;
+    top: 20px;
+}
+.icon_zhu{
+    left: 30px;
+    top: 760px;
+}
+.icon_zhu > a{
+    position: relative;
+    display: block;
+}
+.icon_zhu .nums{
+    background: #ce2121;
+    border-radius: 100px;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    padding:8px 25px;
+    min-width: 80px;
+    right: -15px;
+    top: 15px;
+}
+.icon_bar{
+    right: 70px;
+    top: 260px;
+}
