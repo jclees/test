@@ -16,20 +16,18 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="js/rem.js"></script> -->
     <style>
-        .page:first-of-type {
+        .page.show {
             z-index: 1;
         }
     </style>
 </head>
 
 <body>
-    <div class="page" onclick="showPage()">
+    <div class="page page1 show" onclick="showPage(1);">
         <img src="images/guide_bg.jpg" alt="">
     </div>
-    <div class="page">
-        <a href="index3.html">
-            <img src="images/guide_bg2.jpg" alt="">
-        </a>
+    <div class="page page2" onclick="showPage(2);">
+        <img src="images/guide_bg2.jpg" alt="">
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
@@ -44,7 +42,18 @@
         })
     }
     function showPage(p) {
-        alert(111)
+        let nextPage = $(".page" + (p + 1));
+        switch (p) {
+            case 1:
+                alert(2)
+                nextPage.addClass("show").siblings().removeClass("show")
+                break;
+            case 2:
+                alert(3)
+                nextPage.addClass("show").siblings().removeClass("show")
+                break;
+            default:
+        }
     }
 </script>
 
