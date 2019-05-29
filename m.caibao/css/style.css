@@ -7,12 +7,12 @@ img{
 div{
     cursor: pointer;
 }
-.page{
+/* .page{
     display: none;
 }
 .page:first-of-type{
     display: block;
-}
+} */
 /* .page{
     overflow: hidden;
     display: none;
