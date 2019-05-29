@@ -83,6 +83,14 @@
 <script type="text/javascript" src="js/pageResponse.min.js"></script>
 <script src="js/preload.js"></script>
 <script>
+    window.onload = window.onresize = function () {
+        pageResponse({
+            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
+            mode: 'contain',     // auto || contain || cover ，默认模式为auto 
+            width: '1080',
+            height: '1920'
+        })
+    }
     var imgs = [],
         index = 0,
         len = imgs.length,
@@ -101,14 +109,6 @@
             // $('.loading').hide();
         }
     });
-    window.onload = window.onresize = function () {
-        pageResponse({
-            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
-            mode: 'contain',     // auto || contain || cover ，默认模式为auto 
-            width: '1080',
-            height: '1920'
-        })
-    }
 
     function showPage(p) {
         let nextPage = $(".page" + (p + 1));
