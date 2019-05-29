@@ -7,6 +7,12 @@ img{
 .page{
     overflow: hidden;
 }
+.page > div{
+    display: none;
+}
+.page > div:first-of-type{
+    display: block;
+}
 .main{
     width: 100%;
     height: 100%;
