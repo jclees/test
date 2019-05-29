@@ -4,22 +4,25 @@ html,body{
 img{
     display: block;
 }
+div{
+    cursor: pointer;
+}
 .page{
     overflow: hidden;
-}
-.page > div{
-    width: 100%;
-    height: 100%;
     display: none;
 }
-.page > div > a{
+.page1{
+    display: block;
+
+}
+/* .page > div > a{
     width: 100%;
     height: 100%;
     display: block;
 }
 .page > div:first-of-type{
     display: block;
-}
+} */
 .main{
     width: 100%;
     height: 100%;
