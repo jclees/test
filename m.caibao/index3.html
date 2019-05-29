@@ -74,26 +74,26 @@
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/pageResponse.min.js"></script>
+<!-- <script type="text/javascript" src="js/pageResponse.min.js"></script> -->
 <!-- <script src="js/preload.js"></script> -->
 <script>
 
-    window.onresize = function () {
-        pageResponse({
-            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
-            mode: 'contain',     // auto || contain || cover 
-            width: '1080',      //输入页面的宽度，只支持输入数值，默认宽度为320px
-            height: '1920'      //输入页面的高度，只支持输入数值，默认高度为504px
-        })
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-        pageResponse({
-            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
-            mode: 'contain',     // auto || contain || cover 
-            width: '1080',      //输入页面的宽度，只支持输入数值，默认宽度为320px
-            height: '1920'      //输入页面的高度，只支持输入数值，默认高度为504px
-        })
-    })
+    // window.onresize = function () {
+    //     pageResponse({
+    //         selectors: '.page',     //模块选择器，使用querySelectorAll的方法
+    //         mode: 'contain',     // auto || contain || cover 
+    //         width: '1080',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+    //         height: '1920'      //输入页面的高度，只支持输入数值，默认高度为504px
+    //     })
+    // }
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     pageResponse({
+    //         selectors: '.page',     //模块选择器，使用querySelectorAll的方法
+    //         mode: 'contain',     // auto || contain || cover 
+    //         width: '1080',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+    //         height: '1920'      //输入页面的高度，只支持输入数值，默认高度为504px
+    //     })
+    // })
     // var imgs = [],
     //     index = 0,
     //     len = imgs.length,
@@ -117,9 +117,12 @@
         let nextPage = $(".page" + (p + 1));
         switch (p) {
             case 1:
+                alert(1)
+
                 nextPage.show().siblings().hide()
                 break;
             case 2:
+                alert(2)
                 nextPage.show().siblings().hide()
                 break;
             default:
