@@ -20,13 +20,14 @@ div{
     background-image: url("../images/guide_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    display: none;
 }
-.page3{
+.page4{
     background-image: url("../images/main_bg.jpg");
     background-position: center;
 }
 .page.show{
-    z-index: 2;
+    display: block;
 }
 .icon_guide{
     left: 50%;

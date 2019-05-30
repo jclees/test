@@ -16,12 +16,22 @@
     <link rel="stylesheet" href="css/style2.css">
     <script src="js/rem.js"></script>
     <style>
+        .page1 {
+            background: #fff;
+        }
+
+        .progress {
+            text-align: center;
+            padding-top: 20%;
+        }
     </style>
 </head>
 
 <body>
-    <div class="page page1 show" onclick="showPage(1)">
-
+    <div class="page page1 show">
+        <div class="progress"></div>
+    </div>
+    <div class="page page2" onclick="showPage(2)">
         <div class="main">
             <a href="javascript:;" class="main_icon icon_logo">
                 <img src="images/logo.png" alt="">
@@ -31,7 +41,7 @@
             </a>
         </div>
     </div>
-    <div class="page page2" onclick="showPage(2)">
+    <div class="page page3" onclick="showPage(3)">
         <div class="main">
             <a href="javascript:;" class="main_icon icon_logo">
                 <img src="images/logo.png" alt="">
@@ -41,7 +51,7 @@
             </a>
         </div>
     </div>
-    <div class="page page3">
+    <div class="page page4">
         <!-- <img src="images/main_bg.jpg" alt=""> -->
         <div class="main">
             <a href="javascript:;" class="main_icon icon_prod" onclick="openPop(1);">
@@ -86,16 +96,25 @@
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/pageResponse.min.js"></script>
+<script type="text/javascript" src="js/preload.js"></script>
 <script>
-    // window.onload = window.onresize = function () {
-    //     pageResponse({
-    //         selectors: '.page',     //模块选择器，使用querySelectorAll的方法
-    //         mode: 'cover',     // auto || contain || cover ，默认模式为auto 
-    //         width: '1080',
-    //         height: '1920'
-    //     })
-    // }
+
+    var imgs = ['images/icon_bar_lock.png', 'images/guide_bg.jpg', 'images/main_bg.jpg'];
+    progress = $('.progress');
+    $("img").each(function (i, t) {
+        imgs.push($("img").eq(i).attr("src"))
+    })
+    //图片预加载
+    $.preload(imgs, {
+        each: function (count) {
+            progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
+        },
+        end: function () {
+            showPage(1)
+            // alert("图片加载好了")
+            // $('.loading').hide();
+        }
+    });
 
     function showPage(p) {
         switch (p) {
