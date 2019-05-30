@@ -14,7 +14,7 @@
     <title>index2</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style3.css">
-    <!-- <script src="js/rem.js"></script> -->
+    <script src="js/rem.js"></script>
     <style>
         body {
             background-image: url("images/guide_bg.jpg");
@@ -22,28 +22,78 @@
             background-size: cover;
         }
 
-        /* .main{
+        .page {
             display: none;
         }
-        .show{
+
+        .show {
             display: block;
-        } */
+        }
+        .hide{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="page">
+    <a href="javascript:;" class="main_icon icon_logo">
+        <img src="images/logo.png" alt="">
+    </a>
+    <div class="page page1 show">
         <div class="main">
             <a href="javascript:;" class="main_icon icon_guide" onclick="showPage(1)">
                 <img src="images/guide_img.png" alt="">
             </a>
         </div>
     </div>
-    <div class="page">
+    <div class="page page2">
         <div class="main">
             <a href="javascript:;" class="main_icon icon_guide" style="top: 522px;" onclick="showPage(2)">
                 <img src="images/guide_img2.png" alt="">
             </a>
+        </div>
+    </div>
+    <div class="page page3">
+        <div class="main">
+            <a href="javascript:;" class="main_icon icon_prod" onclick="openPop(1);">
+                <img src="images/icon_prod.png" alt="">
+            </a>
+            <a href="javascript:;" class="main_icon icon_rule" onclick="openPop(2);">
+                <img src="images/icon_rule.png" alt="">
+            </a>
+
+            <div class="main_icon icon_zhu">
+                <a href="javascript:;" class="icon_zhusun" onclick="openPop(3);">
+                    <img src="images/icon_zhusun.png" alt="">
+                    <p class="nums">1</p>
+                </a>
+                <a href="javascript:;" class="icon_zhuzi" onclick="openPop(4);">
+                    <img src="images/icon_zhuzi.png" alt="">
+                    <p class="nums">999</p>
+                </a>
+            </div>
+
+            <div class="main_icon icon_bar">
+                <img src="images/icon_bar.png" alt="">
+                <div class="bar_list">
+                    <a href="javascript:;">
+                        <img src="images/icon_bar05.png" alt="">
+                    </a>
+                    <a href="javascript:;">
+                        <img src="images/icon_bar04.png" alt="">
+                    </a>
+                    <a href="javascript:;">
+                        <img src="images/icon_bar03.png" alt="">
+                    </a>
+                    <a href="javascript:;">
+                        <img src="images/icon_bar02.png" alt="">
+                    </a>
+                    <a href="javascript:;" class="cur">
+                        <img src="images/icon_bar01.png" alt="">
+                    </a>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -65,11 +115,35 @@
                 break;
             case 2:
                 alert("点击了第二个页面")
+                $("body").css({
+                    "background-image": 'url("images/main_bg.jpg")'
+                })
+                $(".icon_logo").hide()
                 break;
             default:
         }
-        let nextPage = $(".main" + (p + 1));
+        let nextPage = $(".page" + (p + 1));
         nextPage.addClass("show").siblings().removeClass("show")
+    }
+    function openPop(p) {
+        switch (p) {
+            case 1:
+                alert("打开产品")
+                break;
+            case 2:
+                alert("打开规则")
+                break;
+            case 3:
+                alert("喂竹笋")
+                break;
+            case 4:
+                alert("喂竹子")
+                break;
+            case 5:
+                alert("换装")
+                break;
+            default:
+        }
     }
 </script>
 
