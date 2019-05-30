@@ -37,6 +37,14 @@ div{
     width: 9.94rem;
     transform: translate(-50%,-50%);
 }
+.icon_role{
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,0);
+}
+.icon_role > img{
+    width: 5.11rem;
+}
 /* .page > div > a{
     width: 100%;
     height: 100%;
