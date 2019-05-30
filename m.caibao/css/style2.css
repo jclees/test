@@ -17,12 +17,23 @@ div{
     position: absolute;
     left: 0;
     top: 0;
-    background: url("../images/main_bg.jpg") no-repeat;
+    background-image: url("../images/guide_bg.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
 }
-.page1{
-    display: block;
-
+.page3{
+    background-image: url("../images/main_bg.jpg");
+}
+.page.show{
+    z-index: 2;
+}
+.icon_guide{
+    left: 50%;
+    top: 5.2rem;
+}
+.icon_guide > img{
+    width: 9.94rem;
+    transform: translate(-50%,0);
 }
 /* .page > div > a{
     width: 100%;

@@ -20,7 +20,21 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="page page1 show">
+        <div class="main">
+            <a href="javascript:;" class="main_icon icon_guide" onclick="showPage(1)">
+                <img src="images/guide_img.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="page page2">
+        <div class="main">
+            <a href="javascript:;" class="main_icon icon_guide" onclick="showPage(2)">
+                <img src="images/guide_img2.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="page page3">
         <!-- <img src="images/main_bg.jpg" alt=""> -->
         <div class="main">
             <a href="javascript:;" class="main_icon icon_prod" onclick="openPop(1);">
@@ -75,6 +89,20 @@
     //         height: '1920'
     //     })
     // }
+
+    function showPage(p) {
+        switch (p) {
+            case 1:
+                alert("点击了第一个页面")
+                break;
+            case 2:
+                alert("点击了第二个页面")
+                break;
+            default:
+        }
+        let nextPage = $(".page" + (p + 1));
+        nextPage.addClass("show").siblings().removeClass("show")
+    }
     function openPop(p) {
         switch (p) {
             case 1:
