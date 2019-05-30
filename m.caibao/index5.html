@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="description" content="不超过150个字符" />
+    <meta name="keywords" content="" />
+    <meta content="caibaojian" name="author" />
+    <title>index2</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style3.css">
+    <!-- <script src="js/rem.js"></script> -->
+    <style>
+        body {
+            background-image: url("images/guide_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="main main1 show">
+            <a href="javascript:;" class="main_icon icon_guide" onclick="showPage(1)">
+                <img src="images/guide_img.png" alt="">
+            </a>
+        </div>
+        <div class="main main2">
+            <a href="javascript:;" class="main_icon icon_guide" style="top: 522px;" onclick="showPage(2)">
+                <img src="images/guide_img2.png" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/pageResponse.min.js"></script>
+<script>
+    window.onload = window.onresize = function () {
+        pageResponse({
+            selectors: '.page',     //模块选择器，使用querySelectorAll的方法
+            mode: 'contain',     // auto || contain || cover ，默认模式为auto 
+            width: '1080',
+            height: '1920'
+        })
+    }
+    function showPage(p) {
+        switch (p) {
+            case 1:
+                alert("点击了第一个页面")
+                break;
+            case 2:
+                alert("点击了第二个页面")
+                break;
+            default:
+        }
+        let nextPage = $(".main" + (p + 1));
+        nextPage.addClass("show").siblings().removeClass("show")
+    }
+</script>
+
+</html>
