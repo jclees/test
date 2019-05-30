@@ -16,19 +16,21 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="js/rem.js"></script> -->
     <style>
-        .page.show {
+        /* .page.show {
             z-index: 1;
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div class="page page1 show" onclick="showPage(1);">
-        <img src="images/guide_bg.jpg" alt="">
+        <a href="index2.html">
+            <img src="images/guide_bg.jpg" alt="">
+        </a>
     </div>
-    <div class="page page2" onclick="showPage(2);">
+    <!-- <div class="page page2" onclick="showPage(2);">
         <img src="images/guide_bg2.jpg" alt="">
-    </div>
+    </div> -->
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/pageResponse.min.js"></script>
@@ -36,25 +38,26 @@
     window.onload = window.onresize = function () {
         pageResponse({
             selectors: '.page',     //模块选择器，使用querySelectorAll的方法
-            mode: 'contain',     // auto || contain || cover ，默认模式为auto 
+            mode: 'cover',     // auto || contain || cover ，默认模式为auto 
             width: '1080',
             height: '1920'
         })
     }
-    function showPage(p) {
-        let nextPage = $(".page" + (p + 1));
-        switch (p) {
-            case 1:
-                alert(2)
-                nextPage.addClass("show").siblings().removeClass("show")
-                break;
-            case 2:
-                alert(3)
-                nextPage.addClass("show").siblings().removeClass("show")
-                break;
-            default:
-        }
-    }
+
+    // function showPage(p) {
+    //     let nextPage = $(".page" + (p + 1));
+    //     switch (p) {
+    //         case 1:
+    //             alert(2)
+    //             nextPage.addClass("show").siblings().removeClass("show")
+    //             break;
+    //         case 2:
+    //             alert(3)
+    //             nextPage.addClass("show").siblings().removeClass("show")
+    //             break;
+    //         default:
+    //     }
+    // }
 </script>
 
 </html>
