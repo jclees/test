@@ -19,17 +19,21 @@
         .page1 {
             background: #fff;
         }
-
-        .progress {
-            text-align: center;
-            padding-top: 20%;
-        }
     </style>
 </head>
 
 <body>
     <div class="page page1 show">
-        <div class="progress"></div>
+        <div class="progress_wrap">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <div class="progress"></div>
+        </div>
     </div>
     <div class="page page2" onclick="showPage(2)">
         <div class="main">
@@ -119,7 +123,7 @@
     function showPage(p) {
         switch (p) {
             case 1:
-                alert("点击了第一个页面")
+                // alert("点击了第一个页面")
                 break;
             case 2:
                 alert("点击了第二个页面")
