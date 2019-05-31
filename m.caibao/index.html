@@ -56,8 +56,8 @@
         </div>
     </div>
     <div class="page page4 animated fadeIn">
-        <!-- <img src="images/main_bg.jpg" alt=""> -->
         <div class="main">
+            <!-- 产品按钮 -->
             <div class="main_icon icon_prod pop1 animated fadeInDown">
                 <img src="images/icon_prod.png" alt="">
                 <div class="prod_btn">
@@ -67,12 +67,13 @@
                     <a href="javascript:;" onclick="closePop(1)">关闭</a>
                 </div>
             </div>
+
+            <!-- 规则按钮 -->
             <a href="javascript:;" class="main_icon icon_rule" onclick="openPop(2);">
                 <img src="images/icon_rule.png" alt="">
             </a>
 
-
-
+            <!-- 喂养按钮 -->
             <div class="main_icon icon_zhu">
                 <a href="javascript:;" class="icon_zhusun" onclick="openPop(3);">
                     <img src="images/icon_zhusun.png" alt="">
@@ -84,9 +85,9 @@
                 </a>
             </div>
 
-
+            <!-- 熊猫换装 -->
             <div class="role_list">
-                <a href="javascript:;" class="main_icon icon_role show">
+                <a href="javascript:;" class="main_icon icon_role show" >
                     <img src="images/role_default.png" alt="">
                 </a>
                 <a href="javascript:;" class="main_icon icon_role icon_role1" style="top: 30%;">
@@ -105,10 +106,8 @@
                     <img src="images/role_05.png" alt="" style="width: 10.67rem;">
                 </a>
             </div>
-
-
-
-
+            
+            <!-- 进度条 -->
             <div class="main_icon icon_bar">
                 <img src="images/icon_bar.png" alt="">
                 <div class="bar_list">
@@ -186,6 +185,7 @@
             <a href="javascript:;" class="close" onclick="closePop(5)">关闭按钮</a>
         </div>
     </div>
+    <!-- 中奖信息弹框 -->
     <div class="pop pop6 animated fadeIn">
         <div class="cover"></div>
         <div class="con">
@@ -216,6 +216,27 @@
             <a href="javascript:;" class="close" onclick="closePop(6)">关闭按钮</a>
         </div>
     </div>
+    <!-- 登录弹框 -->
+    <div class="pop pop7 animated fadeIn">
+        <div class="cover"></div>
+        <div class="con">
+            <img src="images/pop_login.png" alt="" class="bg" style="width: 9.99rem;">
+            <form class="pop_login">
+                <div class="tit">登 录</div>
+                <div class="inp_box">
+                    <input type="text" placeholder="输入手机号码">
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="验证码">
+                    <a href="javascript:;" class="yzm_btn" onclick="settime(this)">发送验证码</a>
+                </div>
+                <button class="sava_btn">确定</button>
+            </form>
+
+            <a href="javascript:;" class="close" onclick="closePop(7)">关闭按钮</a>
+        </div>
+        <div class="count_down">已发送（ 12s ）</div>
+    </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/preload.js"></script>
@@ -231,13 +252,56 @@
             progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
         },
         end: function () {
-            showPage(1)
+            showPage(3)
+            // openPop(7)
         }
     });
-    $(".bar_list > a").on("click",function(){
-       var idx = $(this).index()+1;
-       $(".icon_role"+idx).show().siblings().hide()
+
+    $(".bar_list > a").on("click", function () {
+        var idx = $(this).index() + 1;
+        if (!$(this).hasClass("cur")) {
+            alert("尚未解锁此皮肤~")
+            return
+        }
+        switch (idx) {
+            case 1:
+                alert("点击了第" + idx + "套衣服")
+                break;
+            case 2:
+                alert("点击了第" + idx + "套衣服")
+                break;
+            case 3:
+                alert("点击了第" + idx + "套衣服")
+                break;
+            case 4:
+                alert("点击了第" + idx + "套衣服")
+                break;
+            case 5:
+                alert("点击了第" + idx + "套衣服")
+                break;
+            default:
+        }
+        openPop(6)
+        $(".icon_role" + idx).show().siblings().hide()
     })
+
+
+    var countdown = 60;
+    function settime(e) {
+        if (countdown == 0) {
+            $(".count_down").hide()
+            $(e).attr("onclick", "settime(this)")
+            countdown = 60;
+            return
+        } else {
+            $(e).attr("onclick", "")
+            $(".count_down").show().text("已发送 ( " + countdown + "s" + " )")
+            countdown--;
+        }
+        setTimeout(function () {
+            settime(e)
+        }, 1000)
+    }
 
     function showPage(p) {
         switch (p) {
@@ -269,8 +333,11 @@
             case 5:
                 // alert("分享")
                 break;
-            case 5:
+            case 6:
                 // alert("奖品")
+                break;
+            case 7:
+                // alert("登录")
                 break;
             default:
         }
@@ -294,6 +361,9 @@
                 break;
             case 6:
                 // alert("关闭中奖")
+                break;
+            case 7:
+                // alert("关闭登录")
                 break;
             default:
         }

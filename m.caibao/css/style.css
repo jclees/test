@@ -392,3 +392,53 @@ div{
     font-weight: 700;
     color: #fff;
 }
+.pop_login{
+    position: absolute;
+    left: 0;
+    top: 2.2rem;
+    width: 100%;
+}
+.pop_login .tit{
+    font-size: .56rem;
+    color: #2eab6c;
+    text-align: center;
+    margin-bottom: .4rem;
+}
+.pop_login .inp_box{
+    display: flex;
+    align-items: center;
+    height: 1.6rem;
+    padding: 0 1rem 0 1.6rem;
+}
+.pop_login .inp_box input{
+    background: transparent;
+    height: 100%;
+    font-size: .36rem;
+    width: 100%;
+}
+.pop_login button,.pop_login a{
+    background: transparent;
+    text-indent: -10000px;
+    display: block;
+}
+.pop_login .inp_box .yzm_btn{
+    width: 6rem;
+    height: 100%;
+}
+.pop_login .sava_btn{
+    width: 50%;
+    height: 1.6rem;
+    margin: .36rem auto 0;
+}
+.count_down{
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: #c8c8c8;
+    color: #fff;
+    font-size: .36rem;
+    padding: .4rem .3rem;
+    text-align: center;
+    border-radius: 5px;
+}
