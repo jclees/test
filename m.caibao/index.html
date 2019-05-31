@@ -115,13 +115,13 @@
                     <a href="javascript:;" class="cur">
                         <img src="images/icon_bar05.png" alt="">
                     </a>
-                    <a href="javascript:;">
+                    <a href="javascript:;" class="cur">
                         <img src="images/icon_bar04.png" alt="">
                     </a>
-                    <a href="javascript:;">
+                    <a href="javascript:;" class="cur">
                         <img src="images/icon_bar03.png" alt="">
                     </a>
-                    <a href="javascript:;">
+                    <a href="javascript:;" class="cur">
                         <img src="images/icon_bar02.png" alt="">
                     </a>
                     <a href="javascript:;">
@@ -220,7 +220,7 @@
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/preload.js"></script>
 <script>
-    var imgs = ['images/icon_bar_lock.png', 'images/guide_bg.jpg', '/images/guide_bg2', 'images/main_bg.jpg'];
+    var imgs = ['images/icon_bar_lock.png', 'images/guide_bg.jpg', 'images/guide_bg2.jpg', 'images/main_bg.jpg'];
     progress = $('.progress');
     $("img").each(function (i, t) {
         imgs.push($("img").eq(i).attr("src"))
@@ -231,9 +231,13 @@
             progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
         },
         end: function () {
-            showPage(1)
+            showPage(3)
         }
     });
+    $(".bar_list > a").on("click",function(){
+       var idx = $(this).index()+1;
+       $(".icon_role"+idx).show().siblings().hide()
+    })
 
     function showPage(p) {
         switch (p) {
