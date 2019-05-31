@@ -87,7 +87,7 @@
 
             <!-- 熊猫换装 -->
             <div class="role_list">
-                <a href="javascript:;" class="main_icon icon_role show" >
+                <a href="javascript:;" class="main_icon icon_role show">
                     <img src="images/role_default.png" alt="">
                 </a>
                 <a href="javascript:;" class="main_icon icon_role icon_role1" style="top: 30%;">
@@ -106,10 +106,13 @@
                     <img src="images/role_05.png" alt="" style="width: 10.67rem;">
                 </a>
             </div>
-            
+
             <!-- 进度条 -->
             <div class="main_icon icon_bar">
                 <img src="images/icon_bar.png" alt="">
+                <div class="bar_status">
+                    <img src="images/icon_bar_cur.png" alt="">
+                </div>
                 <div class="bar_list">
                     <a href="javascript:;" class="cur">
                         <img src="images/icon_bar05.png" alt="">
@@ -235,7 +238,7 @@
 
             <a href="javascript:;" class="close" onclick="closePop(7)">关闭按钮</a>
         </div>
-        <div class="count_down">已发送（ 12s ）</div>
+        <div class="count_down">验证码秒数按钮</div>
     </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
@@ -257,30 +260,34 @@
         }
     });
 
+    console.log($(".bar_list > a img").height() / 2)
+    console.log($(".bar_list").css('height'))
+    console.log($(".bar_list").css('padding-top'))
+
     $(".bar_list > a").on("click", function () {
         var idx = $(this).index() + 1;
         if (!$(this).hasClass("cur")) {
             alert("尚未解锁此皮肤~")
             return
         }
-        switch (idx) {
-            case 1:
-                alert("点击了第" + idx + "套衣服")
-                break;
-            case 2:
-                alert("点击了第" + idx + "套衣服")
-                break;
-            case 3:
-                alert("点击了第" + idx + "套衣服")
-                break;
-            case 4:
-                alert("点击了第" + idx + "套衣服")
-                break;
-            case 5:
-                alert("点击了第" + idx + "套衣服")
-                break;
-            default:
-        }
+        // switch (idx) {
+        //     case 1:
+        //         alert("点击了第" + idx + "套衣服")
+        //         break;
+        //     case 2:
+        //         alert("点击了第" + idx + "套衣服")
+        //         break;
+        //     case 3:
+        //         alert("点击了第" + idx + "套衣服")
+        //         break;
+        //     case 4:
+        //         alert("点击了第" + idx + "套衣服")
+        //         break;
+        //     case 5:
+        //         alert("点击了第" + idx + "套衣服")
+        //         break;
+        //     default:
+        // }
         openPop(6)
         $(".icon_role" + idx).show().siblings().hide()
     })
