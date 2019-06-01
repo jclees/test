@@ -40,7 +40,7 @@
             </a>
             <div href="javascript:;" class="main_icon icon_guide">
                 <img src="images/guide_img.png" alt="">
-                <a href="javascript:;" onclick="showPage(2)">养熊猫</a>
+                <a href="javascript:;" onclick="showPage(3)">养熊猫</a>
                 <a href="javascript:;">查看产品</a>
             </div>
         </div>
@@ -114,16 +114,16 @@
                     <img src="images/icon_bar_cur.png" alt="">
                 </div>
                 <div class="bar_list">
-                    <a href="javascript:;" class="cur">
+                    <a href="javascript:;">
                         <img src="images/icon_bar05.png" alt="">
                     </a>
-                    <a href="javascript:;" class="cur">
+                    <a href="javascript:;">
                         <img src="images/icon_bar04.png" alt="">
                     </a>
-                    <a href="javascript:;" class="cur">
+                    <a href="javascript:;">
                         <img src="images/icon_bar03.png" alt="">
                     </a>
-                    <a href="javascript:;" class="cur">
+                    <a href="javascript:;">
                         <img src="images/icon_bar02.png" alt="">
                     </a>
                     <a href="javascript:;">
@@ -256,14 +256,15 @@
         },
         end: function () {
             showPage(1)
+            // unLock(3, true)
             // openPop(7)
         }
     });
-
     console.log($(".bar_list > a img").height() / 2)
     console.log($(".bar_list").css('height'))
     console.log($(".bar_list").css('padding-top'))
 
+    //点击衣服
     $(".bar_list > a").on("click", function () {
         var idx = $(this).index() + 1;
         if (!$(this).hasClass("cur")) {
@@ -289,10 +290,10 @@
         //     default:
         // }
         openPop(6)
-        $(".icon_role" + idx).show().siblings().hide()
+        // $(".icon_role" + idx).show().siblings().hide()
     })
 
-
+    // 倒计时60s
     var countdown = 60;
     function settime(e) {
         if (countdown == 0) {
@@ -310,6 +311,7 @@
         }, 1000)
     }
 
+    //跳转页面
     function showPage(p) {
         switch (p) {
             case 1:
@@ -323,6 +325,42 @@
         var elemt = $(".page" + (p + 1));
         elemt.addClass("show").siblings().removeClass("show")
     }
+    // 解锁衣服
+    function unLock(p, n) {
+        switch (p) {
+            case 1:
+                h = "3.14rem"
+                break;
+            case 2:
+                h = "5.14rem"
+                break;
+            case 3:
+                h = "6.5rem"
+                break;
+            case 4:
+                h = "8.5rem"
+                break;
+            case 5:
+                h = "100%"
+                break;
+            default:
+        }
+
+        $(".icon_bar > .bar_status").css({
+            "height": h
+        })
+        if (n) {
+            $(".bar_list > a").eq(p - 1).addClass("cur").prevAll().addClass("cur")
+            $(".icon_role" + p).show().siblings().hide()
+        } else {
+            setTimeout(function () {
+                $(".bar_list > a").eq(p - 1).addClass("cur").prevAll().addClass("cur")
+                $(".icon_role" + p).show().siblings().hide()
+            }, 1600)
+        }
+    }
+    //打开弹框
+    let i = 0;
     function openPop(p) {
         switch (p) {
             case 1:
@@ -332,7 +370,18 @@
                 // alert("打开规则")
                 break;
             case 3:
-                alert("喂竹笋")
+                i++
+                // alert("喂竹笋")
+                unLock(i)
+                // setTimeout(function () {
+                //     openPop(6)
+                // }, 2200)
+                //解锁进度条对应的高度
+                // height: 3.14rem;
+                // height: 5.14rem;
+                // height: 6.5rem;
+                // height: 8.5rem;
+                // height: 100%;
                 break;
             case 4:
                 alert("喂竹子")
@@ -351,11 +400,15 @@
         var elemt = $(".pop" + p);
         elemt.show();
     }
+
+    // 关闭弹框
     function closePop(p) {
+        var elemt = $(".pop" + p);
         switch (p) {
             case 1:
                 // alert("关闭产品")
-                break;
+                elemt.removeClass("fadeInDown").addClass("fadeOutUp")
+                return;
             case 2:
                 // alert("关闭规则")
                 break;
@@ -374,7 +427,6 @@
                 break;
             default:
         }
-        var elemt = $(".pop" + p);
         elemt.hide()
     }
 </script>
