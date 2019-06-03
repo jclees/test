@@ -12,14 +12,23 @@
     <meta name="keywords" content="" />
     <meta content="caibaojian" name="author" />
     <title>养财宝 · 得财宝</title>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/framework7/1.6.5/css/framework7.ios.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/framework7/1.6.5/css/framework7.ios.colors.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.min.css">
 
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
     <script src="js/rem.js"></script>
     <style>
+        .date_btn{
+            color: #007aff !important;
+            font-weight: 500 !important;
+        }
+        .date_roll_mask{
+            padding: 2em 0 !important;
+        }
     </style>
 </head>
 
@@ -253,10 +262,10 @@
                     <input type="text" placeholder="请输入您的姓名">
                 </div>
                 <div class="inp_box" style="margin-top: 0.6rem;">
-                    <input type="text" id="city-picker" placeholder="请选择您所在的城市">
+                    <input type="text" id="location" placeholder="请选择您所在的城市">
                 </div>
-                <div class="inp_box" style="margin-top: 0.4rem;">
-                    <input type="text" id="dateSelectorOne" placeholder="请选择您的出生日期">
+                <div class="inp_box" style="margin-top: 0.5rem;">
+                    <input type="text" id="demo1" placeholder="请选择您的出生日期">
                 </div>
                 <button class="sava_btn">确定</button>
             </form>
@@ -266,11 +275,10 @@
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/preload.js"></script>
-<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-<script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
-
+<script src="https://cdn.bootcss.com/framework7/1.6.5/js/framework7.min.js"></script>
+<script src="js/regionsObject2.js"></script>
+<script src="js/cityPicker.js"></script>
+<script src="js/datePicker.js"></script>
 <script>
     var imgs = ['images/icon_bar_lock.png', 'images/guide_bg.jpg', 'images/guide_bg2.jpg', 'images/main_bg.jpg'];
     progress = $('.progress');
@@ -289,11 +297,17 @@
         }
     });
 
-    $("#city-picker").cityPicker({
-        toolbarTemplate: '<header class="bar bar-nav">\
-    <button class="button button-link pull-right close-picker">确定</button>\
-    <h1 class="title">请选择您所在的城市</h1>\
-    </header>'
+    var calendar = new datePicker();
+    calendar.init({
+        'trigger': '#demo1', /*按钮选择器，用于触发弹出插件*/
+        'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+        'minDate': '1900-1-1',/*最小日期*/
+        'maxDate': '2100-12-31',/*最大日期*/
+        'onSubmit': function () {/*确认时触发事件*/
+            var theSelectData = calendar.value;
+        },
+        'onClose': function () {/*取消时触发事件*/
+        }
     });
 
 
