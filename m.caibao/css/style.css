@@ -373,6 +373,7 @@ div{
 .intro_prize{
     top: 6.7rem;
     height: 7rem;
+    width: 100%;
 }
 .intro_prize dl{
     display: flex;

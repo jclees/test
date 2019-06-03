@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
     <script src="js/rem.js"></script>
     <style>
     </style>
@@ -240,9 +243,34 @@
         </div>
         <div class="count_down">验证码秒数按钮</div>
     </div>
+    <!-- 无地址弹框 -->
+    <div class="pop pop8 animated fadeIn">
+        <div class="cover"></div>
+        <div class="con">
+            <img src="images/pop_address.png" alt="" class="bg" style="width: 9.99rem;">
+            <form class="pop_login" style="top: 3.84rem;">
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的姓名">
+                </div>
+                <div class="inp_box" style="margin-top: 0.6rem;">
+                    <input type="text" id="city-picker" placeholder="请选择您所在的城市">
+                </div>
+                <div class="inp_box" style="margin-top: 0.4rem;">
+                    <input type="text" id="dateSelectorOne" placeholder="请选择您的出生日期">
+                </div>
+                <button class="sava_btn">确定</button>
+            </form>
+            <a href="javascript:;" class="close" onclick="closePop(8)">关闭按钮</a>
+        </div>
+    </div>
 </body>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/preload.js"></script>
+<script src="js/preload.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+
 <script>
     var imgs = ['images/icon_bar_lock.png', 'images/guide_bg.jpg', 'images/guide_bg2.jpg', 'images/main_bg.jpg'];
     progress = $('.progress');
@@ -255,11 +283,19 @@
             progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
         },
         end: function () {
-            showPage(1)
+            showPage(3)
             // unLock(3, true)
-            // openPop(7)
+            openPop(8)
         }
     });
+
+    $("#city-picker").cityPicker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">请选择您所在的城市</h1>\
+    </header>'
+    });
+
 
     //点击衣服
     $(".bar_list > a").on("click", function () {
@@ -273,12 +309,15 @@
     })
 
     // 倒计时60s
-    var countdown = 60;
+    var countdown = 3;
     function settime(e) {
+        if ($(e).attr("onclick") != "") {
+            console.log(111)
+        }
         if (countdown == 0) {
             $(".count_down").hide()
             $(e).attr("onclick", "settime(this)")
-            countdown = 60;
+            countdown = 3;
             return
         } else {
             $(e).attr("onclick", "")
@@ -289,6 +328,7 @@
             settime(e)
         }, 1000)
     }
+
 
     //跳转页面
     function showPage(p) {
