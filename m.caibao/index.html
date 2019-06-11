@@ -22,12 +22,46 @@
 
     <script src="js/rem.js"></script>
     <style>
-        .date_btn{
+        .date_btn {
             color: #007aff !important;
             font-weight: 500 !important;
         }
-        .date_roll_mask{
+
+        .date_roll_mask {
             padding: 2em 0 !important;
+        }
+
+        .shubiao {
+            font-size: .24rem;
+            color: pink;
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            z-index: 4;
+        }
+
+        .shubiao.cur {
+            animation: shu 1s ease-in;
+        }
+
+        @keyframes shu {
+            0% {
+                opacity: 1;
+            }
+            50% {}
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .copy_txt {
+            text-align: center;
+            font-size: .28rem;
+            color: #009b63;
+        }
+
+        .copy_txt p:last-of-type {
+            font-size: .24rem;
         }
     </style>
 </head>
@@ -45,15 +79,24 @@
             <div class="progress">0%</div>
         </div>
     </div>
-    <div class="page page2 animated fadeIn">
+    <div class="page page2 animated fadeIn" style="background-size: 100% 100%;">
         <div class="main">
+            <img src="images/comp_txt.png" alt="" style="width: 4.06rem;margin: 0 auto 0;position: absolute;left: 50%;margin-left:-2.03rem;bottom: 1rem;">
             <a href="javascript:;" class="main_icon icon_logo">
                 <img src="images/logo.png" alt="">
             </a>
-            <div href="javascript:;" class="main_icon icon_guide">
+            <div class="main_icon icon_guide">
                 <img src="images/guide_img.png" alt="">
                 <a href="javascript:;" onclick="showPage(3)">养熊猫</a>
-                <a href="javascript:;">查看产品</a>
+                <div class="prods">
+                    <a href="https://www.bilibili.com?1">第一个产品链接</a>
+                    <a href="javascript:;" onclick="window.location.href='https://www.bilibili.com?2'">第二个产品链接</a>
+                    <a href="javascript:;" onclick="window.location.href='https://www.bilibili.com?3'">第三个产品链接</a>
+                </div>
+                <!-- <div class="copy_txt">
+                    <p>用科技让复杂的世界更简单</p>
+                    <p>Make the complicated world simpler...</p>
+                </div> -->
             </div>
         </div>
     </div>
@@ -84,12 +127,11 @@
             <a href="javascript:;" class="main_icon icon_rule" onclick="openPop(2);">
                 <img src="images/icon_rule.png" alt="">
             </a>
-
             <!-- 喂养按钮 -->
             <div class="main_icon icon_zhu">
                 <a href="javascript:;" class="icon_zhusun" onclick="openPop(3);">
                     <img src="images/icon_zhusun.png" alt="">
-                    <p class="nums">1</p>
+                    <p class="nums">999</p>
                 </a>
                 <a href="javascript:;" class="icon_zhuzi" onclick="openPop(4);">
                     <img src="images/icon_zhuzi.png" alt="">
@@ -102,25 +144,30 @@
                 <a href="javascript:;" class="main_icon icon_role show">
                     <img src="images/role_default.png" alt="">
                 </a>
-                <a href="javascript:;" class="main_icon icon_role icon_role1" style="top: 30%;">
+                <a href="javascript:;" class="main_icon icon_role icon_role1">
                     <img src="images/role_01.png" alt="">
                 </a>
-                <a href="javascript:;" class="main_icon icon_role icon_role2" style="top: 40%;">
+                <a href="javascript:;" class="main_icon icon_role icon_role2">
                     <img src="images/role_02.png" alt="">
                 </a>
-                <a href="javascript:;" class="main_icon icon_role icon_role3" style="top: 42%;">
+                <a href="javascript:;" class="main_icon icon_role icon_role3">
                     <img src="images/role_03.png" alt="">
                 </a>
-                <a href="javascript:;" class="main_icon icon_role icon_role4" style="left:61%;top: 37%;">
-                    <img src="images/role_04.png" alt="" style="width: 11.67rem;">
+                <a href="javascript:;" class="main_icon icon_role icon_role4">
+                    <img src="images/role_04.png" alt="">
                 </a>
-                <a href="javascript:;" class="main_icon icon_role icon_role5" style="left:57%;top: 34%;">
-                    <img src="images/role_05.png" alt="" style="width: 10.67rem;">
+                <a href="javascript:;" class="main_icon icon_role icon_role5">
+                    <img src="images/role_05.png" alt="">
                 </a>
             </div>
 
             <!-- 进度条 -->
             <div class="main_icon icon_bar">
+                <p style="position: absolute;bottom: -1rem;left:0;width: 120%;color: #fff;font-size: .28rem;font-weight: 700;">
+                    能量值：
+                    <br>
+                    <span id="unLockIng">0/2500</span>
+                </p>
                 <img src="images/icon_bar.png" alt="">
                 <div class="bar_status">
                     <img src="images/icon_bar_cur.png" alt="">
@@ -210,22 +257,9 @@
                     <dt style="background-image: url()"></dt>
                     <dd>
                         <p>“家多保”家庭综合保障计划</p>
-                        <p>您的每一次购买，都是在帮助发生地震灾害的地区重建家园！ 活动：</p>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt style="background-image: url()"></dt>
-                    <dd>
-                        <p>“家多保”家庭综合保障计划</p>
-                        <p>您的每一次购买，都是在帮助发生地震灾害的地区重建家园！ 活动：</p>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt style="background-image: url()"></dt>
-                    <dd>
-                        <p>“家多保”家庭综合保障计划</p>
                         <p>“家多保”家庭综合保障计划</p>
                     </dd>
+                    <dd class="lqbtn" onclick="openPop(8)">领取</dd>
                 </dl>
             </div>
             <a href="javascript:;" class="close" onclick="closePop(6)">关闭按钮</a>
@@ -257,23 +291,69 @@
         <div class="cover"></div>
         <div class="con">
             <img src="images/pop_address.png" alt="" class="bg" style="width: 9.99rem;">
-            <form class="pop_login" style="top: 3.84rem;">
+            <form class="pop_login" style="top: 3.84rem;" id="form1">
                 <div class="inp_box">
-                    <input type="text" placeholder="请输入您的姓名">
+                    <input type="text" placeholder="请输入您的姓名" name="a1">
                 </div>
                 <div class="inp_box" style="margin-top: 0.6rem;">
-                    <input type="text" id="location" placeholder="请选择您所在的城市">
+                    <input type="text" id="location" placeholder="请选择您所在的城市" name="a2">
                 </div>
                 <div class="inp_box" style="margin-top: 0.5rem;">
-                    <input type="text" id="demo1" placeholder="请选择您的出生日期">
+                    <input type="text" id="myDate" placeholder="请选择您的出生日期" name="a3" readonly>
                 </div>
-                <button class="sava_btn">确定</button>
+                <button class="sava_btn" onclick="savaData()">确定</button>
             </form>
             <a href="javascript:;" class="close" onclick="closePop(8)">关闭按钮</a>
         </div>
     </div>
+    <!-- 有地址弹框 -->
+    <div class="pop pop9 animated fadeIn">
+        <div class="cover"></div>
+        <div class="con">
+            <img src="images/pop_address2.png" alt="" class="bg" style="width: 9.99rem;">
+            <form class="pop_login" style="top: 4.14rem;">
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的姓名">
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的电话">
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的邮寄地址">
+                </div>
+                <button class="sava_btn">确定</button>
+            </form>
+            <a href="javascript:;" class="close" onclick="closePop(9)">关闭按钮</a>
+        </div>
+    </div>
+    <!-- 引导 -->
+    <div class="pop pop10 animated fadeIn">
+        <div class="cover" style="background: rgba(0, 0, 0, .9);"></div>
+        <div class="con" style="top: 40%;left: 60%;">
+            <a href="javascript:;" onclick="closePop(10)">
+                <img src="images/pop_share2.png" alt="" class="bg" style="width: 7.61rem;">
+            </a>
+        </div>
+    </div>
+    <!-- 有地址弹框3 -->
+    <div class="pop pop11 animated fadeIn">
+        <div class="cover"></div>
+        <div class="con">
+            <img src="images/pop_address3.png" alt="" class="bg" style="width: 9.99rem;">
+            <form class="pop_login" style="top: 4.12rem;">
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的姓名">
+                </div>
+                <div class="inp_box">
+                    <input type="text" placeholder="请输入您的电话">
+                </div>
+                <button class="sava_btn">确定</button>
+            </form>
+            <a href="javascript:;" class="close" onclick="closePop(11)">关闭按钮</a>
+        </div>
+    </div>
 </body>
-<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/preload.js"></script>
 <script src="https://cdn.bootcss.com/framework7/1.6.5/js/framework7.min.js"></script>
 <script src="js/regionsObject2.js"></script>
@@ -291,15 +371,37 @@
             progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
         },
         end: function () {
-            showPage(3)
-            // unLock(3, true)
-            openPop(8)
+            showPage(1)
+            unLock2(1000, true)
+            // openPop(7)
         }
     });
 
+    $("input").blur(function () {
+        $("html,body").animate({ scrollTop: document.documentElement.clientHeight }, 500);
+    });
+    $.prototype.serializeObject = function () {
+        var a, o, h, i, e;
+        a = this.serializeArray();
+        o = {};
+        h = o.hasOwnProperty;
+        for (i = 0; i < a.length; i++) {
+            e = a[i];
+            if (!h.call(o, e.name)) {
+                o[e.name] = e.value;
+            }
+        }
+        return o;
+    }
+    function savaData() {
+        let inputData = $("#form1").serializeObject();
+        debugger
+        console.log(inputData)
+    }
+
     var calendar = new datePicker();
     calendar.init({
-        'trigger': '#demo1', /*按钮选择器，用于触发弹出插件*/
+        'trigger': '#myDate', /*按钮选择器，用于触发弹出插件*/
         'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
         'minDate': '1900-1-1',/*最小日期*/
         'maxDate': '2100-12-31',/*最大日期*/
@@ -319,7 +421,7 @@
             return
         }
         openPop(6)
-        // $(".icon_role" + idx).show().siblings().hide()
+        $(".icon_role" + idx).show().siblings().hide()
     })
 
     // 倒计时60s
@@ -342,7 +444,6 @@
             settime(e)
         }, 1000)
     }
-
 
     //跳转页面
     function showPage(p) {
@@ -392,6 +493,63 @@
             }, 1600)
         }
     }
+    function unLock2(p, n) {
+        var nums = p
+        var val = [1000, 1200, 1500, 2000, 2500]
+        var val2 = [18.2, 34.5, 50.8, 67, 83.3]
+        var elem;
+        var flag = true;
+
+        var curVal;
+        var curKey;
+        for (var j in val) {
+            if (val[j] >= nums) {
+                curVal = val[j]
+                curKey = j
+                break
+            }
+        }
+        //13 7
+
+        var H = (val2[curKey] * (Math.round(nums / curVal * 10000) / 10000.00));
+        if (nums >= 1000 && nums < 1200) {
+            elem = 1
+        } else if (nums >= 1200 && nums < 1500) {
+            elem = 2
+        } else if (nums >= 1500 && nums < 2000) {
+            elem = 3
+        } else if (nums >= 2000 && nums < 2500) {
+            elem = 4
+        } else if (nums >= 2500) {
+            elem = 5
+            H = 100
+        } else {
+            flag = false
+        }
+
+
+        $("#unLockIng").text(nums + "/2500")
+        $(".icon_bar > .bar_status").css({
+            "height": H + "%"
+        })
+        console.log(H)
+        console.log(nums)
+
+        if (flag) {
+            flag = true
+            if (n) {
+                $(".bar_list > a").eq(elem - 1).addClass("cur").prevAll().addClass("cur")
+                $(".icon_role" + elem).show().siblings().hide()
+            } else {
+                setTimeout(function () {
+                    $(".bar_list > a").eq(elem - 1).addClass("cur").prevAll().addClass("cur")
+                    $(".icon_role" + elem).show().siblings().hide()
+                }, 1600)
+            }
+        }
+
+
+    }
     //打开弹框
     let i = 0;
     function openPop(p) {
@@ -403,15 +561,13 @@
                 // alert("打开规则")
                 break;
             case 3:
-                i++
-                // alert("喂竹笋")
-                unLock(i)
-                // setTimeout(function () {
-                //     openPop(6)
-                // }, 2200)
+                i += 10
+                unLock2(i)
                 break;
             case 4:
-                alert("喂竹子")
+                i += 50
+                unLock2(i)
+                // alert("喂竹子")
                 break;
             case 5:
                 // alert("分享")

@@ -9,6 +9,12 @@ img{
 div{
     cursor: pointer;
 }
+.lee_wrap{
+    max-width: 750px;
+    position: relative;
+    height: 100%;
+    margin:0 auto;
+}
 .page{
     overflow: hidden;
     width: 100%;
@@ -39,12 +45,31 @@ div{
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.icon_guide > a{
+.icon_guide > a,.icon_guide .prods{
     width: 50%;
     height: 50%;
     position: absolute;
     bottom: 0;
     text-indent: -10000px;
+    z-index: 10;
+}
+.icon_guide .prods{
+    right: 0;
+}
+.icon_guide .prods > a{
+    position: absolute;
+    bottom: 1.9rem;
+    left: 0;
+    height: .6rem;
+    width: 100%;
+    text-indent: -10000px;
+    /* background: pink; */
+}
+.icon_guide .prods > a:nth-child(1){
+    bottom:3.4rem;
+}
+.icon_guide .prods > a:nth-child(2){
+    bottom: 2.64rem;
 }
 .icon_guide > a:first-of-type{
     left: 0;
@@ -56,8 +81,8 @@ div{
     width: 9.94rem;
 }
 .icon_role{
-    left: 50%;
-    top: 35%;
+    left: 54%;
+    top: 26%;
     transform: translate(-50%,0);
     display: none;
 }
@@ -65,7 +90,7 @@ div{
     display: block;
 }
 .icon_role > img{
-    width: 5.11rem;
+    width: 8.45rem;
 }
 /* .page > div > a{
     width: 100%;
@@ -178,7 +203,7 @@ div{
     height: 100%;
     left: 0;
     top: 0;
-    padding-top: 2.3rem;
+    padding-top: 2.1rem;
 }
 .bar_list > a{
     display: block;
@@ -396,6 +421,16 @@ div{
     padding: 0;
     line-height: initial;
 }
+.intro_prize dl .lqbtn{
+    color: #fff;
+    font-size: .28rem;
+    background: #2eab6c;
+    padding: .1rem .2rem;
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-left: .2rem;
+}
 .intro_prize dl dd p{
     font-size: .28rem;
     color: #fff;
@@ -463,5 +498,22 @@ div{
     }
     .page2{
         background-size: 100% 100%;
+    }
+    .icon_guide .prods > a{
+        bottom: 1.63rem;
+    }
+    .icon_guide .prods > a:nth-child(1){
+        bottom: 3rem;
+    }
+    .icon_guide .prods > a:nth-child(2){
+        bottom: 2.3rem;
+    }
+}
+@media (min-height: 750px){
+    .icon_bar{
+        top: 4.6rem;
+    }
+    .icon_role{
+        top: 35%;
     }
 }
