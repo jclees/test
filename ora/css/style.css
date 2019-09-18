@@ -1,0 +1,292 @@
+/********公共样式************/
+body{
+  color: #fff;
+}
+.auto_img{
+  width: 100%;
+}
+a{
+  color: #fff;
+}
+a:focus{
+  color: initial;
+  text-decoration: none;
+}
+a:hover{
+  color: #ffffff;
+}
+/* .page1{
+  width: 19.2rem;
+  height: 11.21rem;
+  background: url(../images/bg_1.jpg) no-repeat;
+}
+.page2{
+  width: 100%;
+  height: 8.99rem;
+  background: url(../images/bg_2.jpg) no-repeat;
+}
+.page3{
+  width: 100%;
+  height: 10.40rem;
+  background: url(../images/bg_3.jpg) no-repeat;
+}
+.page4{
+  width: 100%;
+  height: 16rem;
+  background: url(../images/bg_4.jpg) no-repeat;
+}
+.page5{
+  width: 100%;
+  height: 17.63rem;
+  background: url(../images/bg_5.jpg) no-repeat;
+} */
+.mian_title{
+}
+.mian_title .lt{
+  padding: .7rem .5rem 0 0;
+}
+.mian_title .lt .line{
+  background: #6671cd;
+  width: 1.88rem;
+  height: 1px;
+}
+.mian_title .rt{
+  font-size: .84rem;
+  font-weight: 700;
+}
+.mian_title .sub_tit{
+  font-size: .18rem;
+  color: #6671cd;
+  font-weight: 500;
+  padding-top: .05rem;
+}
+.page{
+  position: relative;
+}
+.main{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top:0;
+}
+.tabs{
+  width: 9.55rem;
+  margin: 0 auto;
+  height: 7.7rem;
+  padding-top: 1rem;
+}
+.tab-swiper{
+  padding: 1.9rem 0 1.4rem;
+}
+.tab-swiper .lt{
+  width: 4.7rem;
+}
+.tab-swiper .lt img{
+  width: 3.76rem;
+}
+.tab-swiper .rt .tit{
+    font-size: .5rem;
+}
+.tab-swiper .rt{
+  width: 4.7rem;
+  padding:.7rem 0 0 0;
+}
+.tab-swiper .rt .sub_tit{
+  font-size:.125rem;
+}
+.tab-swiper .rt .intro{
+  font-size:.166rem;
+  padding-top: .6rem;
+}
+.members{
+  width: 14.44rem;
+  margin: 0 auto;
+  padding: .3rem 0 0;
+  height: 6.3rem;
+}
+.members img{
+  margin: 0 auto;
+  width: 5.4rem;
+}
+.investors{
+  width: 16.4rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.investors .lt{
+  width: 7.5rem;
+}
+.investors .lt img{
+  width: 5.8rem;
+  box-shadow: -.6rem .6rem .3rem rgb(0, 0, 0,.2);
+}
+.investors .rt .tit{
+  font-size: .58rem;
+  color: #ff0009;
+}
+.investors .rt{
+  width: 8.7rem;
+  height: 6.1rem;
+  padding:.7rem 0 0 0;
+}
+.investors .rt .intro{
+font-size:.25rem;
+padding-top: .6rem;
+}
+.abouts{
+  width: 14.44rem;
+  margin: 0 auto 0;
+  padding-top: .7rem;
+}
+.abouts p{
+  float: right;
+  width: 9rem;
+  font-size: .21rem;
+  line-height: .33rem;
+  padding-bottom: .3rem;
+}
+
+.headers{
+  position: absolute;
+  top: .8rem;
+  left: 50%;
+  margin-left: -7.22rem;
+  width: 14.44rem;
+  font-size: .25rem;
+  color: #a7b0ff;
+}
+.headers .lt{
+  float: left;
+}
+.headers .lt img{
+  width: 2.6rem
+}
+.headers .rt{
+  float: right;
+}
+.headers .rt a{
+  color: #a7b0ff;
+  font-size: .25rem;
+}
+.headers .rt a.active{
+  color: #fff;
+}
+.footers{
+  position: absolute;
+  bottom: .9rem;
+  left: 50%;
+  margin-left: -7.22rem;
+  width: 14.44rem;
+  padding-top: .8rem;
+  border-top: 2px solid #6671cd;
+}
+.footers .lt,.footers .ct,.footers .rt{
+  width: 33.333%;
+  float: left;
+}
+.footers .lt dt{
+  font-size: .3rem;
+  font-weight: 500;
+  padding-bottom: .35rem;
+}
+.footers .lt dd{
+  padding-bottom: .2rem;
+}
+.footers .lt dd a{
+  font-size: .17rem;
+}
+.footers .lt dd.line{
+  width: .45rem;
+  height: 1px;
+  background: #fff;
+  padding: 0;
+  margin-top: .5rem;
+}
+.footers .ct{
+  padding-top: .3rem;
+  text-align: center;
+}
+.footers .ct img{
+  width: 1.58rem;
+  display: inline-block;
+}
+.footers .rt{
+  padding-top: .3rem;
+  text-align: right;
+}
+.footers .rt img{
+  display: inline-block;
+  width: 1.38rem;
+}
+.footers .rt p{
+  padding-right: .1rem;
+  padding-bottom: .17rem;
+}
+@media (max-width: 768px) {
+
+}
+@media (min-width: 768px) {
+ 
+}
+@media (min-width: 992px) {
+ 
+}
+@media (min-width: 1200px) {
+ 
+}
+
+.container {
+padding-right: 0;
+padding-left: 0;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .index .intro .intro-bot .container {
+    width: 1436px;
+  }
+}
+@media (min-width: 992px) {
+ 
+}
+@media (min-width: 1200px) {
+  /* .index .intro .intro-bot .container {
+    width: 1436px;
+  } */
+}
