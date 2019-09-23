@@ -1,6 +1,7 @@
 /********公共样式************/
 body{
   color: #fff;
+  /* background: red; */
 }
 .auto_img{
   width: 100%;
@@ -9,7 +10,7 @@ a{
   color: #fff;
 }
 a:focus{
-  color: initial;
+  color: #fff;
   text-decoration: none;
 }
 a:hover{
@@ -62,6 +63,7 @@ a:hover{
 }
 .page{
   position: relative;
+  margin-top: -1px;
 }
 .main{
   position: absolute;
@@ -103,15 +105,94 @@ a:hover{
   margin: 0 auto;
   padding: .3rem 0 0;
   height: 6.3rem;
+  position: relative;
 }
-.members img{
+/* .members img{
   margin: 0 auto;
   width: 5.4rem;
+} */
+
+.members .member-swiper{
+  margin: 0 auto;
+  width: 5.4rem;
+  height: 5.43rem;
+  background-image: url(../images/member_02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.members .member-swiper .swiper-slide{
+    padding:.8rem .5rem 0 .6rem;
+}
+
+.members .members_info{
+  font-size: .166rem;
+  overflow-y: auto;
+  max-height: 4rem;
+
+  -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+    -ms-content-zooming: zoom;
+    -ms-scroll-rails: none;
+    -ms-content-zoom-limit-min: 100%;
+    -ms-content-zoom-limit-max: 500%;
+    -ms-scroll-snap-type: proximity;
+    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+    -ms-overflow-style: none;
+    overflow: auto;
+
+}
+.members .members_info::-webkit-scrollbar {
+  width:0px;
+  height:0px;
+}
+
+.members .members_info .-o-scrollbar{
+  -moz-appearance: none !important;   
+  background: rgba(0,255,0,0) !important;  
+}
+
+.members_info .info_hd .title{
+  font-weight: 700;
+}
+.members_info .info_hd .name{
+  font-size: .29rem;
+  margin-right: .35rem;
+}
+.members_info .info_hd .post{
+  padding-top: .13rem;
+}
+.members_info .info_hd .line{
+  height: .02rem;
+  width: .17rem;
+  background: #cbcbcb;
+  margin: .14rem 0 .16rem;
+}
+.members_info .info_bd li{
+  padding-bottom: .3rem;
 }
 .investors{
   width: 16.4rem;
   margin: 0 auto;
   padding-top: 2rem;
+}
+.investors .book{
+  margin: 1.8rem auto 0;
+  width: 10.5rem;
+  height:3.1rem;
+  background-image: url(../images/investors_book.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+}
+.investors .book a{
+  display: inline-block;
+  border:.02rem solid #fff;
+  width: 1.76rem;
+  padding: .1rem 0;
+
+  margin: 1.35rem 1.20rem 0 0;
+  text-align: center;
 }
 .investors .lt{
   width: 7.5rem;
@@ -190,7 +271,7 @@ padding-top: .6rem;
   padding-bottom: .35rem;
 }
 .footers .lt dd{
-  padding-bottom: .2rem;
+  padding-bottom: .16rem;
 }
 .footers .lt dd a{
   font-size: .17rem;
@@ -213,14 +294,17 @@ padding-top: .6rem;
 .footers .rt{
   padding-top: .3rem;
   text-align: right;
+  position: relative;
 }
 .footers .rt img{
   display: inline-block;
   width: 1.38rem;
 }
 .footers .rt p{
-  padding-right: .1rem;
-  padding-bottom: .17rem;
+  width: 1.38rem;
+  position: absolute;
+  bottom: -.35rem;
+  right: .24rem;
 }
 @media (max-width: 768px) {
 
