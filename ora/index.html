@@ -118,7 +118,7 @@
                 <div class="investors">
                     <div class="clearfix">
                         <div class="fl lt">
-                            <img src="images/investors_1.png" alt="" id="investor-left">
+                            <img src="images/investors_0.png" alt="" id="investor-left">
                         </div>
                         <div class="fl rt">
                             <!-- Swiper -->
@@ -274,7 +274,7 @@
         }
         var enData = {
             tabs: {
-                title: 'PROJECT INTRODUCTION',
+                title: '项目介绍',
                 subTitle: 'PROJECT INTRODUCTION',
                 lists: [
                     {
@@ -297,7 +297,7 @@
                 ]
             },
             members: {
-                title: 'TEAM MEMBERS',
+                title: '团队成员',
                 subTitle: 'TEAM MEMBERS',
                 lists: [
                     {
@@ -312,7 +312,7 @@
                 ]
             },
             investors: {
-                title: 'INVESTMENT INSTITUTIONS',
+                title: '投资机构',
                 subTitle: 'INVESTMENT INSTITUTIONS',
                 lists: [
                     {
@@ -329,7 +329,7 @@
                 ]
             },
             abouts: {
-                title: 'About ORA CHAIN',
+                title: '关于我们',
                 subTitle: 'About ORA CHAIN',
                 lists: ['ORA，Oracle Data Chain, is the leader of the global block chain database，the innovative application of traditional database under the consensus mechanism and governance mechanism of block chain. It is the bottom public chain and infrastructure of the autonomy of the whole industry ecological database based on building a credible block chain. It is also a de-centralized data clearing system.', 'ORA is the first global block chain merger and acquisition case. It integrates the basic and technical solutions obtained by BLACK FIREFLY OPERATION SYSTEM (BFOS) in Greater China market and promotes the rapid development of ORA.', 'ORA is the first public chain to implement block chain file storage and retrieval functions.ORA is the first public chain to implement two DAPP test realization.ORA is the first to achieve effective data storage and block chain asset exchange.ORA is the first architecture to propose IPFS+AI+IOT+BLOCKCHAIN.ORA has the largest IPFS community in the world.', "ORA is the first one in the world to realize the sharing, storage and reading of complete database data, and to realize the effective operation of data through the powerful computing ability on the distributed network. It can open up the encrypted storage and redundant backup of full-chain data, and ensure the reliability and security of database data reading and writing. It can guarantee the right of application program to call database through the entirely autonomous incentive system, realizing the data rights that the creator of present value is the owner of value.ORA team has the operation capability of the largest block chain storage community in the world, the construction capability of the global block chain storage ecosystem, the implementation capability of block chain storage technology of the third generation Internet Web 3.0, and the design capability of the world's strongest block chain storage economic model. At the same time, ORA team optimizes data storage by different hierarchies and grades, based on the cognitive ability of mining life cycle in block chain storage projects and key winning factors, making data storage more economical, more efficient and more orderly.", 'ORA, keeping in mind the original idea of "let data regain freedom", strives to solve the shortcomings of the centralized data storage, so that citizens exercise their data sovereignty. ORA focuses on the construction of industry-wide data ecological chain, and builds up ORA mining pond, DApp, mining machinery, enterprise-level storage and other industrial ecological applications. It also takes many measures to build database’s public chain ecology. ORA achieves the leap from block chain file storage to block chain database storage, fully compatible with and supporting the development and application of various DApp and DWeb. ORA builds artificial intelligence, Internet of Things, industrial data, automobile travel, biomedicine, smart city, wine food traceability, agricultural products traceability, smart agricultural ecology and Industry 4.0’s pan-data ecology with database, and improves data value through database calculation, protects data ownership of users, and realizes value promotion and circulation of users’ data.', 'ORA we must be a participant and pioneer of the Web 3.0 standard!']
             },
@@ -344,6 +344,12 @@
                 check: 'check now'
             }
         }
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
         var app = new Vue({
             el: '#app',
             data: {
@@ -356,8 +362,9 @@
                 that.initImgs(function () {
                     $(".page").show()
                     $(".lee_loading").hide()
-                    var en = !1
-                    if (en) {
+                    // console.log(GetQueryString("flag"))
+                    var is_en = GetQueryString("flag") || 'cn'
+                    if (is_en == 'en') {
                         that.langActive = 0
                         that.pageInfo = enData
                         that.initSwiper({
@@ -366,7 +373,9 @@
                             txt3: 'Data Value-added Circulation',
                             tabssize: '.2rem'
                         })
-                    } else {
+                    }
+
+                    if (is_en == 'cn') {
                         that.langActive = 1
                         that.pageInfo = cnData
                         that.initSwiper({
@@ -395,7 +404,7 @@
                     });
                 },
                 initSwiper: function (options = {}) {
-                    new Swiper('.tab-swiper', {
+                    var tabSwiper = new Swiper('.tab-swiper', {
                         pagination: {
                             el: '.tab-pagination',
                             clickable: true,
@@ -410,9 +419,12 @@
                                 }
                                 return '<div class="' + className + '" style="font-size:' + options.tabssize + ';">' + text + '</div>';
                             },
+                            observer: true,
+                            observeParents: true,
+                            observeSlideChildren: true,
                         }
                     });
-                    new Swiper('.member-swiper', {
+                    var memberSwiper = new Swiper('.member-swiper', {
                         autoplay: true,
                         effect: 'fade',
                         fadeEffect: {
@@ -422,26 +434,41 @@
                             el: '.member-pagination',
                             type: 'progressbar',
                             modifierClass: 'member-pagination-',
-                        }
+                        },
+                        observer: true,
+                        observeParents: true,
+                        observeSlideChildren: true,
                     });
-                    new Swiper('.investor-swiper', {
-                        slidesPerView: 1.45,
+                    var investorSwiper = new Swiper('.investor-swiper', {
+                        slidesPerView: 1,
                         spaceBetween: 0,
-                        loop: true,
-                        autoplay: false,
+                        loop: false,
+                        autoplay: true,
                         pagination: {
                             el: '.investor-pagination',
                             type: 'progressbar',
                             modifierClass: 'investor-pagination-',
                         },
                         on: {
-                            slideChangeTransitionEnd: function () {
-                                if (this.activeIndex == 0) this.activeIndex = 3
-                                $("#investor-left").attr('src', 'images/investors_' + this.activeIndex + '.png')
+                            slideChangeTransitionEnd: function (e) {
+                                // console.log(e)
+                                console.log(this.activeIndex)
+                                // if (this.activeIndex == 0) this.activeIndex = 3
+                                $("#investor-left").attr('src', 'images/investors_' + Number(this.activeIndex) + '.png')
 
-                            }
+                            },
+                            slideChangeTransitionStart: function () {
+                                // console.log(this.activeIndex)
+                            },
                         },
+                        observer: true,
+                        observeParents: true,
+                        observeSlideChildren: true,
                     });
+
+                    tabSwiper.update()
+                    memberSwiper.update()
+                    investorSwiper.update()
                 },
                 changeLang: function (who) {
                     var that = this
