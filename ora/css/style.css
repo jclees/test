@@ -1,6 +1,7 @@
 /********公共样式************/
 body{
   color: #fff;
+  word-wrap: break-word;
   /* background: red; */
 }
 .auto_img{
@@ -16,6 +17,72 @@ a:focus{
 a:hover{
   color: #ffffff;
 }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+.tab-pagination-bullets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.tab-bullet {
+  font-size: .25rem;
+  font-weight: bold;
+  width: 33.33%;
+  float: left;
+  padding: 0 0 .45rem;
+  border-bottom: .02rem solid rgba(107, 120, 224, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.tab-bullet-active {
+  border-bottom: .02rem solid #fff;
+}
+
+
+.investor-pagination-progressbar,
+.member-pagination-progressbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .02rem;
+  background: rgba(107, 120, 224, 1);
+}
+
+.member-pagination-progressbar .swiper-pagination-progressbar-fill,
+.investor-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+}
+
+.investor-swiper .swiper-slide {
+  transition: 300ms;
+  transform: scale(0.7);
+}
+
+.investor-swiper .swiper-slide-active,
+.investor-swiper .swiper-slide-duplicate-active {
+  transform: scale(1);
+}
+
 /* .page1{
   width: 19.2rem;
   height: 11.21rem;
@@ -129,27 +196,6 @@ a:hover{
   font-size: .166rem;
   overflow-y: auto;
   max-height: 4rem;
-
-  -ms-scroll-chaining: chained;
-    -ms-overflow-style: none;
-    -ms-content-zooming: zoom;
-    -ms-scroll-rails: none;
-    -ms-content-zoom-limit-min: 100%;
-    -ms-content-zoom-limit-max: 500%;
-    -ms-scroll-snap-type: proximity;
-    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
-    -ms-overflow-style: none;
-    overflow: auto;
-
-}
-.members .members_info::-webkit-scrollbar {
-  width:0px;
-  height:0px;
-}
-
-.members .members_info .-o-scrollbar{
-  -moz-appearance: none !important;   
-  background: rgba(0,255,0,0) !important;  
 }
 
 .members_info .info_hd .title{
@@ -206,17 +252,22 @@ a:hover{
 }
 .investors .rt{
   width: 8.7rem;
-  height: 6.1rem;
+  min-height: 6.1rem;
   padding:.7rem 0 0 0;
 }
 .investors .rt .intro{
 font-size:.25rem;
 padding-top: .6rem;
 }
+.investors .rt .intro p{
+  padding-bottom:.6rem;
+}
 .abouts{
   width: 14.44rem;
   margin: 0 auto 0;
   padding-top: .7rem;
+  overflow-y: auto;
+  height: 10rem;
 }
 .abouts p{
   float: right;
