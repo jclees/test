@@ -264,18 +264,17 @@ padding-top: .6rem;
   width: 33.333%;
   float: left;
 }
-.footers .lt dt{
+.footers .lt .tit{
   font-size: .3rem;
   font-weight: 500;
   padding-bottom: .35rem;
 }
-.footers .lt dd{
+.footers .lt .link{
   padding-bottom: .08rem;
-}
-.footers .lt dd a{
   font-size: .17rem;
+  display: block;
 }
-.footers .lt dd.line{
+.footers .lt .line{
   width: .45rem;
   height: 1px;
   background: #fff;
