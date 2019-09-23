@@ -178,19 +178,27 @@
             </div>
 
         </div>
+        <div class="lee_loading">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <div class="lee_loading_txt">0%</div>
+        </div>
     </div>
 
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <!-- <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/rem.js"></script>
     <script src="js/preload.js"></script>
     <script>
-        // $(function () {
-        //     $(".members_info .info_hd").niceScroll({ cursorborder: "", cursorcolor: "rgba(0,0,0,0)", boxzoom: true });
-        // })
-
+        $(function () {
+            $(".hide_scroll").niceScroll({ cursorborder: "", cursorcolor: "rgba(0,0,0,0)", boxzoom: true });
+        })
         var cnData = {
             tabs: {
                 title: '项目介绍',
@@ -336,7 +344,6 @@
                 check: 'check now'
             }
         }
-
         var app = new Vue({
             el: '#app',
             data: {
@@ -364,9 +371,27 @@
                         txt3: '数据增值流通'
                     })
                 }
+                //图片预加载
+                that.initImgs()
 
             },
             methods: {
+                initImgs: function () {
+                    var imgs = ['images/member_02.png'];
+                    progress = $('.lee_loading_txt');
+                    $("img").each(function (i, t) {
+                        imgs.push($("img").eq(i).attr("src"))
+                    })
+                    $.preload(imgs, {
+                        each: function (count) {
+                            progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
+                        },
+                        end: function () {
+                            $(".page").show()
+                            $(".lee_loading").hide()
+                        }
+                    });
+                },
                 initSwiper: function (options = {}) {
                     new Swiper('.tab-swiper', {
                         pagination: {

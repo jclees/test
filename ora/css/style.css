@@ -131,6 +131,7 @@ a:hover{
 .page{
   position: relative;
   overflow: hidden;
+  display: none;
 }
 .main{
   position: absolute;
