@@ -352,31 +352,34 @@
             },
             mounted() {
                 var that = this
-                var en = !1
-                if (en) {
-                    that.langActive = 0
-                    that.pageInfo = enData
-                    that.initSwiper({
-                        txt1: 'Blockchain Database',
-                        txt2: 'Unified Identity System',
-                        txt3: 'Data Value-added Circulation',
-                        tabssize: '.2rem'
-                    })
-                } else {
-                    that.langActive = 1
-                    that.pageInfo = cnData
-                    that.initSwiper({
-                        txt1: '区块链数据库',
-                        txt2: '统一身份系统',
-                        txt3: '数据增值流通'
-                    })
-                }
                 //图片预加载
-                that.initImgs()
+                that.initImgs(function () {
+                    $(".page").show()
+                    $(".lee_loading").hide()
+                    var en = !1
+                    if (en) {
+                        that.langActive = 0
+                        that.pageInfo = enData
+                        that.initSwiper({
+                            txt1: 'Blockchain Database',
+                            txt2: 'Unified Identity System',
+                            txt3: 'Data Value-added Circulation',
+                            tabssize: '.2rem'
+                        })
+                    } else {
+                        that.langActive = 1
+                        that.pageInfo = cnData
+                        that.initSwiper({
+                            txt1: '区块链数据库',
+                            txt2: '统一身份系统',
+                            txt3: '数据增值流通'
+                        })
+                    }
+                })
 
             },
             methods: {
-                initImgs: function () {
+                initImgs: function (callback) {
                     var imgs = ['images/member_02.png'];
                     progress = $('.lee_loading_txt');
                     $("img").each(function (i, t) {
@@ -387,8 +390,7 @@
                             progress.html(Math.round((count + 1) / imgs.length * 100) + '%');
                         },
                         end: function () {
-                            $(".page").show()
-                            $(".lee_loading").hide()
+                            typeof callback == 'function' && callback()
                         }
                     });
                 },
