@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="book">
-                        <a href="javascript:;">查看白皮书</a>
+                        <a href="javascript:;">{{pageInfo.books.check}}</a>
                     </div>
                 </div>
             </div>
@@ -259,6 +259,9 @@
                 link2: '推特',
                 link3: '电报群',
                 qrcode: '微信公众号'
+            },
+            books: {
+                check: '查看白皮书'
             }
         }
         var enData = {
@@ -328,6 +331,9 @@
                 link2: 'Twitter',
                 link3: 'Telegraph group',
                 qrcode: 'WeChat'
+            },
+            books: {
+                check: 'check now'
             }
         }
 
@@ -347,7 +353,7 @@
                         txt1: 'Blockchain Database',
                         txt2: 'Unified Identity System',
                         txt3: 'Data Value-added Circulation',
-                        tabssize:'.2rem'
+                        tabssize: '.2rem'
                     })
                 } else {
                     that.langActive = 1
@@ -375,7 +381,7 @@
                                     case 1: text = options.txt2; break;
                                     case 2: text = options.txt3; break;
                                 }
-                                return '<div class="' + className + '" style="font-size:'+options.tabssize+';">' + text + '</div>';
+                                return '<div class="' + className + '" style="font-size:' + options.tabssize + ';">' + text + '</div>';
                             },
                         }
                     });
@@ -416,11 +422,11 @@
                         that.langActive = 0
                         that.pageInfo = enData
                         that.initSwiper({
-                        txt1: 'Blockchain Database',
-                        txt2: 'Unified Identity System',
-                        txt3: 'Data Value-added Circulation',
-                        tabssize:'.2rem'
-                    })
+                            txt1: 'Blockchain Database',
+                            txt2: 'Unified Identity System',
+                            txt3: 'Data Value-added Circulation',
+                            tabssize: '.2rem'
+                        })
                     }
                     if (who == 'cn') {
                         that.langActive = 1
