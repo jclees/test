@@ -77,11 +77,73 @@
                     </div>
                 </div>
                 <div class="members">
+                    <div class="box" id="wrapper3">
+                        <div class="scroll">
+                            <img src="images/member_line.png" alt="" class="members_img">
+                            <!-- <img src="images/member_line.png" alt="" class="cn"> -->
+                            <div class="lists members_list">
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con">
+                        <!-- <img src="images/member_02.png" alt=""> -->
+                        <div class="members_info hide_scroll">
+                            <div class="info_hd">
+                                <div class="title clearfix">
+                                    <div class="name fl">123123213123213</div>
+                                    <div class="post">23232323</div>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <ul class="info_bd">
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                                <li>232323232</li>
+                            </ul>
+                        </div>
+                        <!-- 
+                        <div class="" v-for="(item, key) in pageInfo.members.lists">
+                                <div class="members_info hide_scroll">
+                                    <div class="info_hd">
+                                        <div class="title clearfix">
+                                            <div class="name fl">{{item.name}}</div>
+                                            <div class="post">{{item.post}}</div>
+                                        </div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <ul class="info_bd">
+                                        <li v-for="(subitem) in item.intro">{{subitem}}</li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                    </div>
+                    <!-- <div class="gund">
+                        <div class="gund_sub"></div>
+                    </div> -->
+
                     <!-- Add Pagination -->
-                    <div class="swiper-pagination member-pagination"></div>
-                    <!-- <img src="images/member_02.png" alt=""> -->
+                    <!-- <div class="swiper-pagination member-pagination"></div> -->
                     <!-- Swiper -->
-                    <div class="swiper-container member-swiper">
+                    <!-- <div class="swiper-container member-swiper">
                         <div class="swiper-wrapper" id="membersWrap">
 
                             <div class="swiper-slide" v-for="(item, key) in pageInfo.members.lists">
@@ -99,7 +161,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -195,10 +257,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/rem.js"></script>
     <script src="js/preload.js"></script>
+    <script src="js/my_scrollbar.js"></script>
     <script>
         $(function () {
             $(".hide_scroll").niceScroll({ cursorborder: "", cursorcolor: "rgba(0,0,0,0)", boxzoom: true });
         })
+
         var cnData = {
             tabs: {
                 title: '项目介绍',
@@ -358,6 +422,40 @@
             },
             mounted() {
                 var that = this
+                $(".members_list > a").on('click', function () {
+                    $(".members .con").toggleClass('cur')
+                    var _index = Number($(this).index())
+                    $(".members_info").empty()
+                    var data = cnData.members.lists[_index]
+                    var ali = ''
+                    for(var i in data.intro){
+                        ali +=`<li>${data.intro[i]}</li>`
+                        
+                    }
+                    $(".members_info").append(`<div class="info_hd">
+                                <div class="title clearfix">
+                                    <div class="name fl">${data.name}</div>
+                                    <div class="post">${data.post}</div>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <ul class="info_bd">
+                                ${ali}
+                            </ul>`)
+
+                })
+                $(".members .scroll").width($(".members_img").width())
+                new MyScrollBar({
+                    selId: 'wrapper3',
+                    enterColor: '#fff',
+                    bgColor: '#6b78e0',
+                    barColor: '#fff',
+                    enterShow: false,
+                    hasX: true,
+                    hasY: false,
+                    hasX: true,
+                    width: 6,
+                })
                 //图片预加载
                 that.initImgs(function () {
                     $(".page").show()
