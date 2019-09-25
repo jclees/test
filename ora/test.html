@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
     <!-- <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .box {
+        /* .box {
             overflow: hidden;
         }
 
         .box .scroll {
             width: 4000px;
+        } */
+
+        .swiper-slide {
+            overflow: hidden;
         }
-
-
-     
     </style>
 </head>
 
@@ -38,6 +41,85 @@
                 </div>
             </div>
             <div class="members">
+
+
+                <!-- Add Pagination -->
+                <!-- <div class="swiper-pagination member-pagination"></div> -->
+                <!-- Swiper -->
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="membersWrap">
+
+                        <div class="swiper-slide">
+
+                            <div class="box">
+                                <img src="images/member_line_en.png" alt="" class="en">
+                                <!-- <img src="images/member_line.png" alt="" class="cn"> -->
+                                <div class="lists members_list">
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class="box" style="margin-left: -14.44rem;">
+                                <img src="images/member_line_en.png" alt="" class="en">
+                                <!-- <img src="images/member_line.png" alt="" class="cn"> -->
+                                <div class="lists members_list">
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="width: 8rem;">
+                            <div class="box" style="margin-left: -28.88rem;">
+                                <img src="images/member_line_en.png" alt="" class="en">
+                                <!-- <img src="images/member_line.png" alt="" class="cn"> -->
+                                <div class="lists members_list">
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+
                 <div class="box" id="wrapper3">
                     <div class="scroll">
                         <img src="images/member_line_en.png" alt="" class="en">
@@ -87,19 +169,48 @@
         </div>
     </div>
 
-
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
     <script src="js/rem.js"></script>
     <script src="js/my_scrollbar.js"></script>
     <script>
-        window.onload = function () {
-            var oMyBar3 = new MyScrollBar({
-                selId: 'wrapper3',
-                enterColor: '#999',
-                hasX: true,
-                hasY: false,
-                width: 6
-            })
-        }
+        var mySwiper = new Swiper('.swiper-container', {
+            freeMode: true,
+            loop: false,
+            autoplay: false,
+            draggable: false,
+            slidesPerView: 'auto',
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            on: {
+                touchMove: function (event) {
+                    //你的事件
+                },
+                touchStart: function (event) {
+                    // $(".members .con").removeClass('cur')
+                }, touchEnd: function (event) {
+                    $(".members .con").removeClass('cur')
+                },
+            },
+        })
+        mySwiper.scrollbar.$dragEl.css('background','#fff');
+        mySwiper.scrollbar.$el.css('height','4px');
+        mySwiper.scrollbar.updateSize();
+
+        $(".members_list > a").on('click', function () {
+            $(".members .con").toggleClass('cur')
+            console.log($(this).index())
+        })
+        // window.onload = function () {
+        //     var oMyBar3 = new MyScrollBar({
+        //         selId: 'wrapper3',
+        //         enterColor: '#999',
+        //         hasX: true,
+        //         hasY: false,
+        //         width: 6
+        //     })
+        // }
     </script>
 </body>
 

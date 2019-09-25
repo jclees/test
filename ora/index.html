@@ -77,6 +77,102 @@
                     </div>
                 </div>
                 <div class="members">
+
+
+                    <div class="swiper-container member-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="box">
+                                    <img src="images/member_line_en.png" alt="" class="members_img en" v-if="langActive == 0">
+                                    <img src="images/member_line.png" alt="" class="members_img cn" v-if="langActive == 1">
+                                    <div class="lists members_list">
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box" style="margin-left: -14.44rem;">
+                                    <img src="images/member_line_en.png" alt="" class="members_img en" v-if="langActive == 0">
+                                    <img src="images/member_line.png" alt="" class="members_img cn" v-if="langActive == 1">
+                                    <div class="lists members_list">
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" style="width: 8rem;">
+                                <div class="box" style="margin-left: -28.88rem;">
+                                    <img src="images/member_line_en.png" alt="" class="members_img en" v-if="langActive == 0">
+                                    <img src="images/member_line.png" alt="" class="members_img cn" v-if="langActive == 1">
+                                    <div class="lists members_list">
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                        <a href="javascript:;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                    <div class="con">
+                        <div class="members_info hide_scroll">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- 
                     <div class="box" id="wrapper3">
                         <div class="scroll">
                             <img src="images/member_line_en.png" alt="" class="members_img en" v-if="langActive == 0">
@@ -101,7 +197,7 @@
                     <div class="con">
                         <div class="members_info hide_scroll">
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="gund">
                         <div class="gund_sub"></div>
                     </div> -->
@@ -191,12 +287,9 @@
             <div class="footers clearfix">
                 <div class="lt">
                     <div class="tit">{{pageInfo.footers.title}}</div>
-                    <a class="link" href="http://www.facebook.com/ora.chain.96"
-                        target="_blank">{{pageInfo.footers.link1}}：http://www.facebook.com/ora.chain.96</a>
-                    <a class="link" href="https://twitter.com/ChainOracle"
-                        target="_blank">{{pageInfo.footers.link2}}：https://twitter.com/ChainOracle</a>
-                    <a class="link" href="http://t.me/orachain"
-                        target="_blank">{{pageInfo.footers.link3}}：http://t.me/orachain</a>
+                    <a class="link" href="http://www.facebook.com/ora.chain.96" target="_blank">{{pageInfo.footers.link1}}：http://www.facebook.com/ora.chain.96</a>
+                    <a class="link" href="https://twitter.com/ChainOracle" target="_blank">{{pageInfo.footers.link2}}：https://twitter.com/ChainOracle</a>
+                    <a class="link" href="http://t.me/orachain" target="_blank">{{pageInfo.footers.link3}}：http://t.me/orachain</a>
                     <div class="line"></div>
                 </div>
                 <div class="ct">
@@ -217,7 +310,8 @@
                 <div class="rect4"></div>
                 <div class="rect5"></div>
             </div>
-            <div class="lee_loading_txt">正在努力加载中<span>1%</span>...</div>
+            <div class="lee_loading_txt">正在努力加载中
+                <span>1%</span>...</div>
         </div>
     </div>
 
@@ -265,28 +359,28 @@
                         })
                     }
                     // $(".hide_scroll").niceScroll({ cursorborder: "", cursorcolor: "rgba(0,0,0,0)", boxzoom: true });
-                    $(".members .scroll").width($(".members_img").width())
-                    new MyScrollBar({
-                        selId: 'wrapper3',
-                        enterColor: '#fff',
-                        bgColor: '#6b78e0',
-                        barColor: '#fff',
-                        enterShow: false,
-                        hasX: true,
-                        hasY: false,
-                        hasX: true,
-                        width: 6,
-                    })
+                    // $(".members .scroll").width($(".members_img").width())
+                    // new MyScrollBar({
+                    //     selId: 'wrapper3',
+                    //     enterColor: '#fff',
+                    //     bgColor: '#6b78e0',
+                    //     barColor: '#fff',
+                    //     enterShow: false,
+                    //     hasX: true,
+                    //     hasY: false,
+                    //     hasX: true,
+                    //     width: 6,
+                    // })
                     $(".members_list > a").on('click', function () {
                         $(".members .con").toggleClass('cur')
                         var _index = Number($(this).index())
                         $(".members_info").empty()
                         var data = that.pageInfo.members.lists[_index]
                         var ali = ''
-                    for (var i in data.intro) {
-                        ali += `<li>${data.intro[i]}</li>`
-                    }
-                    $(".members_info").append(`<div class="info_hd">
+                        for (var i in data.intro) {
+                            ali += `<li>${data.intro[i]}</li>`
+                        }
+                        $(".members_info").append(`<div class="info_hd">
                                 <div class="title clearfix">
                                     <div class="name fl">${data.name}</div>
                                     <div class="post">${data.post}</div>
@@ -338,6 +432,32 @@
                             observeSlideChildren: true,
                         }
                     });
+
+                    var memberSwiper = new Swiper('.member-swiper', {
+                        freeMode: true,
+                        loop: false,
+                        autoplay: false,
+                        draggable: false,
+                        slidesPerView: 'auto',
+                        scrollbar: {
+                            el: '.swiper-scrollbar',
+                        },
+                        on: {
+                            touchMove: function (event) {
+                            },
+                            touchStart: function (event) {
+                            }, touchEnd: function (event) {
+                                $(".members .con").removeClass('cur')
+                            },
+                        },
+                        observer: true,
+                        observeParents: true,
+                        observeSlideChildren: true,
+                    })
+                    memberSwiper.scrollbar.$dragEl.css('background', '#fff');
+                    memberSwiper.scrollbar.$el.css('height', '4px');
+                    memberSwiper.scrollbar.updateSize();
+
                     // var memberSwiper = new Swiper('.member-swiper', {
                     //     autoplay: true,
                     //     effect: 'fade',
@@ -380,9 +500,9 @@
                         observeSlideChildren: true,
                     });
 
-                    tabSwiper.update()
+                    // tabSwiper.update()
                     // memberSwiper.update()
-                    investorSwiper.update()
+                    // investorSwiper.update()
                 },
                 changeLang: function (who) {
                     $(".members .con").removeClass('cur')

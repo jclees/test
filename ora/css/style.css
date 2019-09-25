@@ -300,7 +300,7 @@ a:hover{
   margin: 0 auto;
   width: 5.4rem;
 } */
-
+/* 
 .members .member-swiper{
   margin: 0 auto;
   width: 5.4rem;
@@ -310,9 +310,10 @@ a:hover{
   background-size: cover;
 
 }
+*/
 .members .member-swiper .swiper-slide{
-    padding:.8rem .5rem 0 .6rem;
-}
+    overflow: hidden;
+} 
 .members .members_info{
   /* padding:.8rem .5rem 0 .6rem; */
   width: 4rem;
