@@ -387,6 +387,7 @@ padding-top: .6rem;
 }
 .investors .rt .intro p{
   padding-bottom:.6rem;
+  text-align:justify;
 }
 .abouts{
   width: 14.44rem;
@@ -401,6 +402,8 @@ padding-top: .6rem;
   font-size: .21rem;
   line-height: .33rem;
   padding-bottom: .3rem;
+  text-align:justify;
+  text-indent:2em;
 }
 
 .headers{
