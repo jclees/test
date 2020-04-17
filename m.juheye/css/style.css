@@ -1,11 +1,13 @@
 body{
     background: #000;
     width: 100%;
+    overflow: scroll;
+    overflow-y: auto;
 }
 .main{
     width: 100%;
     display: block;
-    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .main img{
