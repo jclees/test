@@ -1,0 +1,11 @@
+body{
+    background: red;
+}
+.main a{
+    display: block;
+    width: 100%;
+}
+.main img{
+    display: block;
+    width: 100%;
+}

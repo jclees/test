@@ -1,0 +1,73 @@
+body{
+    background-color:#ffce21;
+}
+.hd_wp{
+    position: relative;
+}
+.hd_wp .top_bg{
+    width: 100%;
+}
+.hd_wp .top_txt{
+    width: 100%;
+    position: absolute;
+    top: .78rem;
+    left: 0;
+}
+.bt_txt{
+    width: 100%;
+    margin: .6rem 0 .6rem;
+}
+.con_wp{
+    width: 100%;
+    padding:0 .2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.con_wp > dl{
+    width: 48%;
+    margin-top: .15rem;
+}
+.con_wp > dl:nth-child(2n){
+    margin:0  0  0 3%;
+}
+.con_wp > dl > dt{
+    background-color: #4e3a48;
+    color: #ffce21;
+    width: 2.1rem;
+    margin: 0 auto 0;
+    transform: translate(0,.3rem);
+    text-align: center;
+    border-radius: 100px;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .45rem;
+}
+
+.con_wp > dl > dd{
+    background-color: #fff;
+    min-height: 4.1rem;
+    border-radius: .2rem;
+    padding: .6rem .3rem .12rem;
+}
+.con_wp .use{
+    display: flex;
+    align-items: center;
+    padding-bottom: .18rem;
+}
+.con_wp .use .pic{
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-right: .26rem;
+    flex-shrink: 0;
+}
+.con_wp .use .name{
+    flex: 1;
+    width: 0;
+    color: #4e3a48;
+    font-size: .3rem;
+}
