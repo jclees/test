@@ -1,12 +1,14 @@
 body{
-    background: red;
-}
-.main a{
-    display: block;
+    background: #000;
     width: 100%;
 }
+.main{
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
+
 .main img{
     display: block;
     width: 100%;
-    margin-top: -1px;
 }
