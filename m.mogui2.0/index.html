@@ -40,6 +40,7 @@
             <a href="javascript:;" class="see_btn" style="width: 1.8rem;">查看分组</a>
         </div>
     </div>
+
     <!-- 功能 -->
     <div class="fun_wrap">
         <div class="col">
@@ -68,7 +69,7 @@
         </div>
     </div>
     <div style="text-align: center;">
-        <img src="images/bt_bg.png" alt="" style="width:3.35rem;position: fixed;bottom: .1rem;left: 50%;margin-left: -1.675rem;">
+        <img src="images/bt_bg.png" alt="" style="width:3.35rem;position: absolute;bottom: .1rem;left: 50%;margin-left: -1.675rem;">
     </div>
     <!-- 弹框 -->
     <div class="pop">
@@ -80,10 +81,10 @@
 
                 <div>
                     <div class="pop_txt">
-                        <a href="https://www.baidu.com/" id="btn2">https://www.baidu.com/</a>
+                        <a href="https://www.baidu.com/" id="link">https://www.baidu.com/</a>
                     </div>
                     <div class="pop_tips">点击即可进入，也可复制发送保存</div>
-                    <a href="javascript:;" class="pop_btn" id="codeBtn" data-clipboard-target="#code" onclick="copy()">复制链接</a>
+                    <a href="javascript:;" class="pop_btn" id="copyBtn" data-clipboard-target="#link" onclick="copyLink()">复制链接</a>
                 </div>
 
                 <div>
@@ -103,12 +104,25 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
     <script>
         function popShow() {
             $(".pop").show()
         }
         function popClose() {
             $(".pop").hide()
+        }
+        function copyLink() {
+            var clipboard = new ClipboardJS('#copyBtn');
+            clipboard.on("success", function (e) {
+                alert('复制成功');
+                e.clearSelection();
+                clipboard.destroy();
+            });
+            clipboard.on("error", function (e) {
+                alert("复制失败，请手动复制!");
+                clipboard.destroy();
+            });
         }
 
 
