@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="description" content="不超过150个字符" />
+    <meta name="keywords" content="" />
+    <meta content="caibaojian" name="author" />
+    <title>魔鬼 · 训练营</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/rem.js"></script>
+    <style>
+    </style>
+</head>
+
+<body style="background-image: url(./images/bg.png)">
+
+    <!-- 头部文字，top_txt_01.png可动态替换 -->
+    <img src="images/top_txt_07.png" alt="" style="width:100%;padding: .5rem 0 .8rem;">
+    <!-- 用户信息 -->
+    <div class="us_wrap">
+        <div class="l">
+            <!-- 用户头像 style="background-image: url() 可动态替换 -->
+            <div class="us_pic" style="background-image: url(./images/top_bg.jpg)">
+                <img src="./images/us_bg.png" alt="">
+            </div>
+            <div class="us_info">
+                <div>某某某</div>
+                <div class="us_job">7营8组组员</div>
+            </div>
+        </div>
+        <div class="r">
+            <a href="javascript:;" class="see_btn" style="width: 1.8rem;">查看分组</a>
+        </div>
+    </div>
+    <!-- 功能 -->
+    <div class="fun_wrap">
+        <div class="col">
+            <div>小组群二维码</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+        <div class="col">
+            <div>个人课程链接</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+        <div class="col">
+            <div>作业打卡链接</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+        <div class="col">
+            <div>行业群二维码</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+        <div class="col">
+            <div>课件资料包下载</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+        <div class="col">
+            <div>问卷调查</div>
+            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <img src="images/bt_bg.png" alt="" style="width:3.35rem;position: fixed;bottom: .1rem;left: 50%;margin-left: -1.675rem;">
+    </div>
+    <!-- 弹框 -->
+    <div class="pop">
+        <div class="cover"></div>
+        <div class="pop_main">
+            <div class="pop_con">
+                <img class="pop_bg" src="./images/pop_bg.jpg" alt="">
+                <div class="pop_tit">文字提示</div>
+
+                <div>
+                    <div class="pop_txt">
+                        <a href="https://www.baidu.com/" id="btn2">https://www.baidu.com/</a>
+                    </div>
+                    <div class="pop_tips">点击即可进入，也可复制发送保存</div>
+                    <a href="javascript:;" class="pop_btn" id="codeBtn" data-clipboard-target="#code" onclick="copy()">复制链接</a>
+                </div>
+
+                <div>
+                    <div class="pop_ewm" style="background-image: url(./images/pop_close.png)"></div>
+                    <div class="pop_tips">长按识别二维码添加行业群</div>
+                    <a href="javascript:;" class="pop_btn" onclick="popClose()">确 定</a>
+                </div>
+
+
+            </div>
+            <a href="javascript:;" style="display: block;padding: .4rem;" onclick="popClose()">
+                <span class="pop_close" style="background-image: url(./images/pop_close.png)"></span>
+            </a>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function popShow() {
+            $(".pop").show()
+        }
+        function popClose() {
+            $(".pop").hide()
+        }
+
+
+    </script>
+</body>
+
+
+
+</html>
