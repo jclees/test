@@ -45,27 +45,27 @@
     <div class="fun_wrap">
         <div class="col">
             <div>小组群二维码</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'小组群二维码','url':'二维码链接地址',status:2})">查 看</a>
         </div>
         <div class="col">
             <div>个人课程链接</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'个人课程链接','url':'复制的链接地址',status:1})">查 看</a>
         </div>
         <div class="col">
             <div>作业打卡链接</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'作业打卡链接','url':'复制的链接地址',status:1})">查 看</a>
         </div>
         <div class="col">
             <div>行业群二维码</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'行业群二维码','url':'二维码链接地址',status:2})">查 看</a>
         </div>
         <div class="col">
             <div>课件资料包下载</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'课件资料包下载','url':'复制的链接地址',status:1})">查 看</a>
         </div>
         <div class="col">
             <div>问卷调查</div>
-            <a href="javascript:;" class="see_btn" onclick="popShow()">查 看</a>
+            <a href="javascript:;" class="see_btn" onclick="popShow({'tit':'问卷调查','url':'复制的链接地址',status:1})">查 看</a>
         </div>
     </div>
     <div style="text-align: center;">
@@ -77,23 +77,7 @@
         <div class="pop_main">
             <div class="pop_con">
                 <img class="pop_bg" src="./images/pop_bg.jpg" alt="">
-                <div class="pop_tit">文字提示</div>
-
-                <div>
-                    <div class="pop_txt">
-                        <a href="https://www.baidu.com/" id="link">https://www.baidu.com/</a>
-                    </div>
-                    <div class="pop_tips">点击即可进入，也可复制发送保存</div>
-                    <a href="javascript:;" class="pop_btn" id="copyBtn" data-clipboard-target="#link" onclick="copyLink()">复制链接</a>
-                </div>
-
-                <div>
-                    <div class="pop_ewm" style="background-image: url(./images/pop_close.png)"></div>
-                    <div class="pop_tips">长按识别二维码添加行业群</div>
-                    <a href="javascript:;" class="pop_btn" onclick="popClose()">确 定</a>
-                </div>
-
-
+                <div id="urlWrap"></div>
             </div>
             <a href="javascript:;" style="display: block;padding: .4rem;" onclick="popClose()">
                 <span class="pop_close" style="background-image: url(./images/pop_close.png)"></span>
@@ -104,9 +88,29 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
     <script>
-        function popShow() {
+        function popShow(data) {
+            var newHl = ''
+            if (data.status == 1) {
+                newHl = `
+                    <div class="pop_tit">${data.tit}</div>
+                    <div class="pop_txt">
+                        <a href="${data.url}" id="link">${data.url}</a>
+                    </div>
+                    <div class="pop_tips">点击即可进入，也可复制发送保存</div>
+                    <a href="javascript:;" class="pop_btn" id="copyBtn" data-clipboard-target="#link" onclick="copyLink()">复制链接</a>
+                    `
+            } else {
+                newHl = ` 
+                    <div class="pop_tit">${data.tit}</div>
+                    <div class="pop_ewm" style="background-image: url(${data.url})"></div>
+                    <div class="pop_tips">长按识别二维码添加行业群</div>
+                    <a href="javascript:;" class="pop_btn" onclick="popClose()">确 定</a>
+                    `
+            }
+            $("#urlWrap").empty()
+            $("#urlWrap").append(newHl)
             $(".pop").show()
         }
         function popClose() {
