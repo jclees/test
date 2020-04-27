@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="description" content="不超过150个字符" />
+    <meta name="keywords" content="" />
+    <meta content="caibaojian" name="author" />
+    <title>魔鬼 · 训练营</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style3.css">
+    <script src="js/rem.js"></script>
+    <style>
+    </style>
+</head>
+
+<body style="background-color: #3d3039;background-size: cover;background-repeat: no-repeat;background-image: url(./images/bg.png);padding-top: .8rem;">
+    <div class="form_wrap">
+        <!-- 用户信息 -->
+        <div class="us_wrap">
+            <div class="l">
+                <!-- 用户头像 style="background-image: url() 可动态替换 -->
+                <div class="us_pic" style="background-image: url(./images/top_bg.jpg)">
+                    <img src="./images/us_bg.png" alt="">
+                </div>
+                <div class="us_info">
+                    <div>某某某</div>
+                    <div class="us_job">7营8组组员</div>
+                </div>
+            </div>
+        </div>
+        <div class="i_form">
+            <form action="">
+                <div class="cols">
+                    <div class="l">粉丝数<span>*</span></div>
+                    <div class="r">
+                        <input type="text" placeholder="请输入您的粉丝数量" class="i_inp">
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="l">手机号<span>*</span></div>
+                    <div class="r">
+                        <input type="text" placeholder="请输入您的手机号" class="i_inp">
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="l">手机号<span>*</span></div>
+                    <div class="r">
+                        <input type="text" placeholder="请输入您的微信号" class="i_inp">
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="l">行业<span>*</span></div>
+                    <div class="r">
+                        <input type="text" placeholder="请输入您的所属行业" class="i_inp">
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="l">直播ID<span>*</span></div>
+                    <div class="r">
+                        <input type="text" placeholder="请输入您的直播间ID" class="i_inp">
+                    </div>
+                </div>
+                <div class="cols cols2">
+                    <div class="l">直播二维码<span>*</span></div>
+                    <div class="r">
+                        <input type="file" name="" id="" class="add_pic">
+                        <!-- <img src="images/form_addpic.png" alt="" class="add_pic"> -->
+                    </div>
+                </div>
+                <div class="cols cols2">
+                    <div class="l">是否完成有效直播<span>*</span></div>
+                    <div class="r">
+                        <p>有效直播：直播时长1个小时+ 人气500+</p>
+
+                        <div class="radio-box">
+                            <div class='radio-check'>
+                                <input type='radio' name='test' id='test1' checked />
+                                <label for='test1' class>已完成</label>
+                            </div>
+                            <div class='radio-check'>
+                                <input type='radio' name='test' id='test2' />
+                                <label for='test2' class>未完成</label>
+                            </div>
+                        </div>
+                        <input type="file" name="" id="" class="add_pic">
+                        <!-- <img src="images/form_addpic.png" alt="" class="add_pic"> -->
+                        <span>上传直播数据截图</span>
+                    </div>
+                </div>
+                <button class="submit_btn">提 交</button>
+            </form>
+        </div>
+    </div>
+    <!-- 弹框 -->
+    <div class="pop">
+        <div class="cover"></div>
+        <div class="pop_main">
+            <div class="pop_con">
+                <img class="pop_bg" src="./images/pop_bg.jpg" alt="">
+                <div class="pop_status" style="background-image: url(images/form_st_status1.png)"></div>
+                <div class="pop_tit" style="padding:.24rem 0 .36rem;">提交完成</div>
+                <div class="pop_tips" style="padding:0 .2rem .4rem;">如需下载课程资料包，请完成有效直播有效直播：直播时长1个小时+ 人气500+</div>
+                <div class="pop_tips" style="padding:0 .2rem .4rem;">等待审核完成后可以
+                    <br> 加入行业群 下载课程资料包</div>
+                <a href="javascript:;" class="pop_btn" onclick="popClose()">确 定</a>
+            </div>
+            <a href="javascript:;" style="display: block;padding: .4rem;" onclick="popClose()">
+                <span class="pop_close" style="background-image: url(./images/pop_close.png)"></span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function popClose() {
+            $(".pop").hide()
+        }
+    </script>
+</body>
+
+
+
+</html>
