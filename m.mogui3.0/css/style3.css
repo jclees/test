@@ -1,5 +1,6 @@
 body{
     background-color:#ffce21;
+    overflow-x: hidden;
 }
 .hd_wp{
     position: relative;
@@ -75,10 +76,11 @@ body{
 
 .con_wp{
     width: 100%;
-    padding:.54rem .2rem 0;
+    padding:0.1rem .2rem 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 .con_wp > dl{
     width: 48%;
@@ -136,6 +138,7 @@ body{
     margin: 0 auto 0;
     position: relative;
     min-height: 100%;
+    overflow-y: auto;
 }
 .form_wrap .us_wrap{
     position: absolute;
