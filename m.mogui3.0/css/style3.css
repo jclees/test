@@ -1,5 +1,6 @@
 body{
     background-color:#ffce21;
+    -webkit-overflow-scrolling: touch;
 }
 .hd_wp{
     position: relative;
@@ -75,18 +76,17 @@ body{
 
 .con_wp{
     width: 100%;
-    padding:0.1rem .2rem 0;
+    padding:0 .2rem 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    -webkit-overflow-scrolling: touch;
 }
 .con_wp > dl{
     width: 48%;
     margin-top: .15rem;
 }
 .con_wp > dl:nth-child(2n){
-    margin:0  0  0 3%;
+    margin:.15rem  0  0 3%;
 }
 .con_wp > dl > dt{
     background-color: #4e3a48;
@@ -137,7 +137,6 @@ body{
     margin: 0 auto 0;
     position: relative;
     min-height: 100%;
-    -webkit-overflow-scrolling: touch;
 }
 .form_wrap .us_wrap{
     position: absolute;
