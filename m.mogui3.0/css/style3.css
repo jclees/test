@@ -17,6 +17,9 @@ body{
 .bt_txt{
     width: 100%;
     margin: .6rem 0 .6rem;
+    position: absolute;
+    left: 0;
+    bottom:0;
 }
 
 .see_btn{
@@ -29,16 +32,14 @@ body{
     border-radius: 20px;
     text-align: center;
     font-size: .30rem !important;
+    box-shadow: 0 1px 9px #ffce21;
 }
 .us_wrap{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 .6rem;
-    position: absolute;
-    left: 0;
-    bottom: 1.37rem;
+    padding: .3rem;
 }
 .us_wrap .l{
     display: flex;
@@ -62,11 +63,11 @@ body{
 }
 .us_wrap .l .us_info{
     font-size: .34rem;
-    color: #fff;
+    color: #4e3a48;
     padding-left: .15rem;
 }
 .us_wrap .l .us_info .us_job{
-    font-size: .22rem;
+    font-size: .26rem;
     border-radius: 20px;
     padding: .07rem .2rem;
     margin-top: .2rem;
@@ -80,13 +81,15 @@ body{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background: #fff7e7;
+    border-radius: .2rem;
 }
 .con_wp > dl{
-    width: 48%;
+    width: 49%;
     margin-top: .15rem;
 }
 .con_wp > dl:nth-child(2n){
-    margin:.15rem  0  0 3%;
+    /* margin:.15rem  0  0 3%; */
 }
 .con_wp > dl > dt{
     background-color: #4e3a48;
@@ -102,7 +105,7 @@ body{
 }
 
 .con_wp > dl > dd{
-    background-color: #fff;
+    background-color: #ffd022;
     min-height: 4.1rem;
     border-radius: .2rem;
     padding: .6rem .3rem .12rem;
@@ -144,6 +147,7 @@ body{
     top: -.6rem;
     bottom: 1;
     display: block;
+    padding: 0;
 }
 .form_wrap .us_wrap .l{
     flex-direction: column;
